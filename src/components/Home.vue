@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="home col-8">
     <link rel="text/css" type="stylesheet" href="../iobras-own-css/home.css"/>
         <nav class="navbar navbar-light navbar-expand-lg bg-light">
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -14,9 +14,22 @@
               <li><a class="nav-item nav-link" href="#" >Obras</a></li>
               <li><a class="nav-item nav-link" href="#" >Quem somos</a></li>
               <li><a class="nav-item nav-link" href="#" >Contate-nos</a></li>
+              <li><a class="nav-item nav-link" href="#" >Cadastre-se</a></li>
             </ul>
           </div>
         </nav>  
+        <p class="h2">Obras</p>
+        <hr>
+
+        <p class="h2">Quem somos</p>
+        <hr>
+
+        <p class="h2">Contate-nos</p>
+        <hr>
+
+        <p class="h2">Cadastre-se</p>
+        <hr>
+
   </div>
 </template>
 
@@ -51,6 +64,11 @@ a {
   color: #35495E;
 }
 
+.home{
+  float:center;
+}
+
+/*
 .menu{
     font-family: Arial, Helvetica, sans-serif;
     font-weight:bold;
@@ -68,7 +86,7 @@ a {
     color: #000;
     text-decoration:none;    
 }
-/*
+
 #name{
   float: left;
   font-size:25px;
