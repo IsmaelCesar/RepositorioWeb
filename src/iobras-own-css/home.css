@@ -1,0 +1,13 @@
+
+
+.menu{
+    border: 10px solid black;
+    border-radius: 25%;
+    background-color:brown;
+    color: #FFF;    
+}
+
+.menu:hover{
+    background-color:white;
+    color: #000;    
+}
