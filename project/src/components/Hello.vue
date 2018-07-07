@@ -1,22 +1,87 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank">Twitter</a></li>
-      <br>
-      <li><a href="http://vuejs-templates.github.io/webpack/" target="_blank">Docs for This Template</a></li>
-    </ul>
-    <h2>Ecosystem</h2>
-    <ul>
-      <li><a href="http://router.vuejs.org/" target="_blank">vue-router</a></li>
-      <li><a href="http://vuex.vuejs.org/" target="_blank">vuex</a></li>
-      <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
-    </ul>
+    <b-navbar toggleable="md" type="dark" variant="info">
+
+  <b-collapse is-nav id="nav_collapse">
+
+
+     <b-navbar-nav>
+        <b-nav-item href="#"></b-nav-item>
+         <b-nav-item href="#"></b-nav-item>
+         <b-nav-item href="#"></b-nav-item>
+         <b-nav-item href="#"></b-nav-item>
+      <b-nav-item href="#/">Home</b-nav-item>
+       <b-nav-item href="#"></b-nav-item>
+        <b-nav-item href="#"></b-nav-item>
+        <b-nav-item href="#"></b-nav-item>
+         <b-nav-item href="#"></b-nav-item>
+         <b-nav-item href="#"></b-nav-item>
+         <b-nav-item href="#"></b-nav-item>
+      <b-nav-item href="#">Obras</b-nav-item>
+       <b-nav-item href="#"></b-nav-item>
+        <b-nav-item href="#"></b-nav-item>
+        <b-nav-item href="#"></b-nav-item>
+         <b-nav-item href="#"></b-nav-item>
+         <b-nav-item href="#"></b-nav-item>
+         <b-nav-item href="#"></b-nav-item>
+       <b-nav-item href="#">Quem Somos</b-nav-item>
+        <b-nav-item href="#"></b-nav-item>
+         <b-nav-item href="#"></b-nav-item>
+         <b-nav-item href="#"></b-nav-item>
+         <b-nav-item href="#"></b-nav-item>
+         <b-nav-item href="#"></b-nav-item>
+         <b-nav-item href="#"></b-nav-item>
+        <b-nav-item href="#">Contate-nos</b-nav-item>
+    </b-navbar-nav>
+
+  </b-collapse>
+
+</b-navbar>
+
+   
+  
+<br>
+
+    <b-card-group deck>
+        <b-card title="Title"
+                img-src="https://2.bp.blogspot.com/-Q7WZDQx4j7o/VeUO3tVlWHI/AAAAAAAAAUI/XYd9dStlZEc/s1600/predio-inteiro-2.jpg"
+                img-alt="Img"
+                img-top>
+            <p class="card-text">
+                This is a wider card with supporting text below as a
+                natural lead-in to additional content. This content
+                is a little bit longer.
+            </p>
+            <div slot="footer">
+                <small class="text-muted">Last updated 3 mins ago</small>
+            </div>
+        </b-card>
+        <b-card title="Title"
+                img-src="http://www.atitudessustentaveis.com.br/wp-content/uploads/2008/11/300x211xpredios-sustentaveis-300x211.jpg.pagespeed.ic.5gd8Ieqqqs.jpg"
+                img-alt="Img"
+                img-top>
+            <p class="card-text">
+                This card has supporting text below as a natural lead-in
+                to additional content.
+            </p>
+            <div slot="footer">
+                <small class="text-muted">Last updated 3 mins ago</small>
+            </div>
+        </b-card>
+        <b-card title="Title"
+                img-src="http://www.karpat.adv.br/wp-content/uploads/2016/11/fachadas-de-predios-3.jpg"
+                img-alt="Img"
+                img-top>
+            <p class="card-text">
+                This is a wider card with supporting text below as a natural
+                lead-in to additional content. This card has even longer content
+                than the first to show that equal height action.
+            </p>
+            <div slot="footer">
+                <small class="text-muted">Last updated 3 mins ago</small>
+            </div>
+        </b-card>
+    </b-card-group>
   </div>
 </template>
 
