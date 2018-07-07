@@ -1,12 +1,15 @@
 <template>
   <div id="app">
-    <header>
-      <span>Vue.js PWA</span>
-    </header>
-    <main>
-      <img src="./assets/logo.png" alt="Vue.js PWA">
-      <router-view></router-view>
+     <main>
+      <router-view></router-view>      
     </main>
+    <footer>
+      <b-card bg-variant="dark" class="mb-3" title="iObras">
+        <p>Alunos:</p>
+        Viviane Araujo <br>
+        Ismael Cesar 
+      </b-card>
+    </footer>
   </div>
 </template>
 
@@ -19,6 +22,12 @@ export default {
 <style>
 body {
   margin: 0;
+}
+
+footer{
+  background-color: #7D7F49;
+  color:#fff;
+  align-items: center;
 }
 
 #app {
