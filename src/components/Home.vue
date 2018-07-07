@@ -13,7 +13,7 @@
                 </b-navbar-nav>
                 </b-collapse>    
             </b-navbar>
-        <b-container>  <!--Container De navegacao -->           
+        <b-container fluid>  <!--Container De navegacao -->           
             <h2 id="quem_somos">Quem somos</h2>
             <hr>        
             <div> <!--Container quem somos-->
@@ -52,6 +52,20 @@
 
             <h2 id="cadastre_se">Cadastre-se</h2>
             <hr>   
+            <b-form @submit="onSubmit" @reset="onReset"> 
+                <b-form-group>
+                    Seu Nome:
+                    <b-form-input type="text" placeholder="Nome usuario" v-model="form.usuario"></b-form-input>
+                    Numero do Crea:
+                    <b-form-input type="number" placeholder="Numero Crea" v-model="form.usuario"></b-form-input>
+                    Digite sua senha:
+                    <b-form-input type="password" placeholder="Digite sua senha" v-model="form.senha"></b-form-input>
+                    Digite sua senha novamente:
+                    <b-form-input type="password" placeholder="Confirme sua senha"></b-form-input>
+                    <b-button type="submit" @click="validarDados" v-model="form.val_senha" variant="danger">Submit</b-button>
+                    <b-button type="button" @click="onReset" variant="primary">Reset</b-button>
+                </b-form-group>
+            </b-form>            
         </b-container>     
     </div>        
 </template>
@@ -62,8 +76,33 @@ export default {
     name:'Home',
     data(){
        return {
+           form:{
+               usuario:'',
+                senha:'',
+                val_senha:''
+           },
            msg:'Testando valores'
        }
+   },
+   methods:{
+       onSubmit(evt){
+            alert('Submeteu');
+       },
+       validarDados(evt){
+           alert('Validar dados?')
+       },
+       scrollIntoView(evt){
+          evt.preventDefault()
+          const href = evt.target.getAttribute('href')
+          const el = href ? document.querySelector(href) : null
+          if (el) {     
+             this.$refs.content.scrollTop = el.offsetTop
+          }
+        },
+        onReset() {
+              alert('resetou?')
+        }
+
    }
 }
 
