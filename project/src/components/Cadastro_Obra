@@ -1,5 +1,5 @@
 <template>
-  <div class="cadastro">
+  <div class="cadastroObra">
     <!--b-navbar toggleable="md" type="dark" variant="info">
 
   <b-collapse is-nav id="nav_collapse">
@@ -99,7 +99,7 @@
 
 <script>
 export default {
-  name: 'cadastro',
+  name: 'cadastroObra',
   data () {
 
     return {
