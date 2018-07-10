@@ -6,10 +6,13 @@ import Cadastro from '@/components/Cadastro'
 import BoostrapVue from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
-
+import JQuery from   'jquery'
+import JQueryCycle from 'jquery-cycle'
 
 Vue.use(Router)
 Vue.use(BoostrapVue)
+Vue.use(JQuery)
+Vue.use(JQueryCycle)
 
 export default new Router({
   routes: [
