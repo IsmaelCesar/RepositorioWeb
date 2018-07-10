@@ -7,7 +7,7 @@
           <b-navbar-nav class="mx-auto">
             <b-nav-item href="#/">Home</b-nav-item>
             <b-nav-item href="#">Obras</b-nav-item>
-            <b-nav-item href="#">Quem Somos</b-nav-item>
+            <b-nav-item href="#quem_somos">Quem Somos</b-nav-item>
             <b-nav-item href="#">Contate-nos</b-nav-item>
           </b-navbar-nav>
         </b-navbar>  
@@ -68,8 +68,49 @@
       </b-card-group>
 
       <!-- Quem somos-->
-      <div id="quem_somos">
-      </div> 
+      <div id="quem_somos" class="my-5 bg-secondary _campo_home">
+        <p class="text-left ml-3 mt-2">Quem somos</p>
+        <hr>
+        <div class="_img_campo_home position-relative float-left" fluid>
+          <b-img src="./assets/obras.png" fluid alt="responsive image"/>
+        </div>
+        <div class="_txt_campo_home position-relative ">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse congue, libero in cursus hendrerit, purus dui sollicitudin metus, id hendrerit sem ante in mi. 
+          Sedrhoncus, velit non mollis consequat, justo nisi viverra magna, vitae mollis lacus ligula vel leo. 
+          Etiam pellentesque odio in tempus elementum. Donec rhoncus, enim veleuismod tempus, arcu sem scelerisque metus,
+          et hendrerit magna tellus ac sem. Vivamus quis pulvinar dui, a vulputate sapien. Mauris viverra magna ac venenatis scelerisque.
+          Nam scelerisque id dolor a mattis. Proin quis tortor nibh. Aliquam cursus sollicitudin nunc,
+          vitae tincidunt nisl porta eu. Nunc scelerisque lectus ac arcu viverra commodo.
+          Aenean mattis eros sit amet nulla hendrerit laoreet. 
+          Phasellus justo purus, mollis et quam ac, accumsan dignissim magna. 
+          Duis sapien ante, dapibus aliquet tincidunt non, dignissim vel arcu.
+           Vestibulum arcu augue, dapibus a egestas at, finibus sit amet magna.
+            Quisque eros risus, tempor vel eleifend et, bibendum nec urna.
+        </div>
+      </div>
+      <div id="contate-nos" class="bg-secondary my-5 _campo_home">
+        <p class="text-left ml-3  mt-2">Contate-nos</p>
+        <hr>
+        <div class="_txt_campo_home position-relative ">
+            <b-form @submit="onsubmit" method="POST" class="inline">
+              <b-form-group>            
+                  
+                  <label for="nome">Nome:</label>
+                  <b-input id="nome" v-model="form.nome" type="text" required placeholder="seu nome"/>
+                  <br>
+                  <label for="email">E-mail</label>
+                  <b-input id="email" v-model="form.email" type="email" required placeholder="seu email aqui para resposta"/>                
+                  <br>
+                  <b-form-textarea v-model="form.texto" rows="6" max-rows="10" required placeholder="seu texto aqui">
+                  </b-form-textarea>   
+                  <br>
+                  <b-button type="submit" class="btn btn-danger mr-2"> Submeter </b-button>
+                  <b-button class="btn btn-primary mr-2" @click="onreset"> Limpar </b-button>
+              </b-form-group> 
+            </b-form>  
+        </div>
+      </div>
+
   </div>
 </template>
 
@@ -78,7 +119,22 @@ export default {
   name: 'home',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Welcome to Your Vue.js App',
+      form:{
+        nome:'',
+        email:'',
+        texto:''
+      }
+    }
+  },
+  methods:{
+    onsubmit (evt) {
+        
+    },
+    onreset () {
+      this.form.nome = ''
+      this.form.email = ''
+      this.form.texto = ''
     }
   }
 }
@@ -102,5 +158,9 @@ li {
 
 a {
   color: #42b983;
+}
+
+._campo_home{
+  color:white;
 }
 </style>

@@ -48,11 +48,11 @@
               <form action="https://formspree.io/YOUREMAILHERE" method="POST">
                 <div class="form-group">
                   <label for="email">Login</label>
-                  <input name="email" type="email" class="form-control" placeholder="Enter Login">
+                  <input id="email" name="email" type="email" class="form-control" placeholder="Enter Login">
                 </div>
                 <div class="form-group">
                   <label for="password">Senha</label>
-                  <input name="password" type="password" class="form-control" placeholder="Senha"> 
+                  <input id="password" name="password" type="password" class="form-control" placeholder="Senha"> 
                 </div>
                 <button type="submit" class="btn btn-primary">Login</button>
                 <button class="btn btn-secondary"> Cadastre-se </button> 
