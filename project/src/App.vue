@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" fluid>
       <b-navbar toggleable="md" type="dark" variant="info">
         <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
         <b-navbar-brand href="#/" class="ml-5">iObras</b-navbar-brand>
@@ -8,10 +8,13 @@
       <router-view></router-view>
     </main>  
     <footer>
-      <b-card bg-variant="light" class="mb-3 bg-dark " title="iObras">
-        <p>Alunos:</p>
-        Viviane Araujo <br>
-        Ismael Cesar 
+      <b-card header-tag="header"> 
+        <h5 slot="header">iObras</h5>
+        <p slot="card-text" >
+          <p>Alunos:</p>
+          Viviane Araujo <br>
+          Ismael Cesar 
+        </p>
       </b-card>
     </footer>
 
@@ -20,7 +23,7 @@
 
 <script>
 export default {
-  name: 'app'
+  name: 'app' 
 }
 </script>
 
