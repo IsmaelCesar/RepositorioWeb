@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <b-navbar toggleable="md" type="dark" variant="info">
+    <b-navbar class="align-middle" toggleable="md" type="dark" variant="info">
       <b-collapse is-nav class="ml-9" id="nav_collapse">
         
         <b-navbar>

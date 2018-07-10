@@ -38,28 +38,34 @@
 
 </b-navbar>   
 <div class="py-5">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-3"> </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3"> </div>
         <div class="col-md-6">
           <div class="card text-white p-5 bg-primary">
-  <div class="card-body" >
+            <div class="card-body" >
               <h1 class="mb-4">Entrar</h1>
-              <form action="https://formspree.io/YOUREMAILHERE">
+              <form action="https://formspree.io/YOUREMAILHERE" method="POST">
                 <div class="form-group">
-                  <label>Login</label>
-                  <input type="email" class="form-control" placeholder="Enter Login"> </div>
+                  <label for="email">Login</label>
+                  <input name="email" type="email" class="form-control" placeholder="Enter Login">
+                </div>
                 <div class="form-group">
-                  <label>Senha</label>
-                  <input type="password" class="form-control" placeholder="Senha"> </div>
+                  <label for="password">Senha</label>
+                  <input name="password" type="password" class="form-control" placeholder="Senha"> 
+                </div>
                 <button type="submit" class="btn btn-primary">Login</button>
+                <button class="btn btn-secondary"> Cadastre-se </button> 
+                <br>
+                <br>
+                <a href="#"> Esqueci minha senha</a>
               </form>
-            </div>
-           </div>
-            </div>
-             </div>  
-              </div>
-               </div>
+          </div>
+        </div>
+      </div>
+    </div>  
+  </div>
+</div>
 
   </div>
 </template>
@@ -92,7 +98,12 @@ li {
 }
 
 a {
-  color: #42b983;
+  color: #660000;
+  text-decoration: none;
+}
+
+a:hover{
+  text-decoration: underline;
 }
 
 .bg-primary{

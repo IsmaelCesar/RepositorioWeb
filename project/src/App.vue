@@ -8,7 +8,7 @@
       <router-view></router-view>
     </main>  
     <footer>
-      <b-card bg-variant="dark" class="mb-3" title="iObras">
+      <b-card bg-variant="light" class="mb-3 bg-dark " title="iObras">
         <p>Alunos:</p>
         Viviane Araujo <br>
         Ismael Cesar 
