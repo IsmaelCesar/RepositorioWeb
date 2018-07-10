@@ -1,27 +1,28 @@
 <template>
   <div class="home">
     <b-navbar class="align-middle" toggleable="md" type="dark" variant="info">
-      <b-collapse is-nav class="ml-9" id="nav_collapse">
-        
-        <b-navbar>
-          <b-navbar-nav class="mx-auto">
-            <b-nav-item href="#/">Home</b-nav-item>
-            <b-nav-item href="#">Obras</b-nav-item>
-            <b-nav-item href="#quem_somos">Quem Somos</b-nav-item>
-            <b-nav-item href="#">Contate-nos</b-nav-item>
-          </b-navbar-nav>
-        </b-navbar>  
+      <b-container>
+        <b-collapse is-nav class="ml-9" id="nav_collapse">
+          
+          <b-navbar>
+            <b-navbar-nav class="mx-auto">
+              <b-nav-item href="#/">Home</b-nav-item>
+              <b-nav-item href="#">Obras</b-nav-item>
+              <b-nav-item href="#quem_somos">Quem Somos</b-nav-item>
+              <b-nav-item href="#contate_nos">Contate-nos</b-nav-item>
+            </b-navbar-nav>
+          </b-navbar>  
 
 
-        <b-navbar class="ml-9">
-          <b-navbar-nav  class="bg-secondary">
-            <b-nav-item href="#/login">Login</b-nav-item>
-            <b-nav-item href="#/cadastro">Cadastre-se</b-nav-item>
-          </b-navbar-nav>      
-        </b-navbar> 
+          <b-navbar class="ml-9">
+            <b-navbar-nav  class="bg-secondary">
+              <b-nav-item href="#/login">Login</b-nav-item>
+              <b-nav-item href="#/cadastro">Cadastre-se</b-nav-item>
+            </b-navbar-nav>      
+          </b-navbar> 
 
-      </b-collapse>
-
+        </b-collapse>
+      </b-container>
   </b-navbar> 
     
   <br>
@@ -69,7 +70,7 @@
 
       <!-- Quem somos-->
       <div id="quem_somos" class="my-5 bg-secondary _campo_home">
-        <p class="text-left ml-3 mt-2">Quem somos</p>
+        <p class="text-left ml-3 mt-2 w-25 h-25">Quem somos</p>
         <hr>
         <div class="_img_campo_home position-relative float-left" fluid>
           <b-img src="./assets/obras.png" fluid alt="responsive image"/>
@@ -88,7 +89,7 @@
             Quisque eros risus, tempor vel eleifend et, bibendum nec urna.
         </div>
       </div>
-      <div id="contate-nos" class="bg-secondary my-5 _campo_home">
+      <div id="contate_nos" class="bg-secondary my-5 _campo_home">
         <p class="text-left ml-3  mt-2">Contate-nos</p>
         <hr>
         <div class="_txt_campo_home position-relative ">
@@ -105,7 +106,7 @@
                   </b-form-textarea>   
                   <br>
                   <b-button type="submit" class="btn btn-danger mr-2"> Submeter </b-button>
-                  <b-button class="btn btn-primary mr-2" @click="onreset"> Limpar </b-button>
+                  <b-button class="btn btn-info mr-2" @click="onreset"> Limpar </b-button>
               </b-form-group> 
             </b-form>  
         </div>
