@@ -106,10 +106,7 @@
         </b-card>
     </b-card-group>
      </div>
-      </div>
-     </div>
-    
-  </div>
+     
 </template>
 
 <script>

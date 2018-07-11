@@ -1,0 +1,150 @@
+<template>
+  <div class="cadastroObra">
+    <!--b-navbar toggleable="md" type="dark" variant="info">
+
+  <b-collapse is-nav id="nav_collapse">
+
+
+     <b-navbar-nav>
+        <b-nav-item href="#"></b-nav-item>
+         <b-nav-item href="#"></b-nav-item>
+         <b-nav-item href="#"></b-nav-item>
+         <b-nav-item href="#"></b-nav-item>
+      <b-nav-item href="#/">Home</b-nav-item>
+       <b-nav-item href="#"></b-nav-item>
+        <b-nav-item href="#"></b-nav-item>
+        <b-nav-item href="#"></b-nav-item>
+         <b-nav-item href="#"></b-nav-item>
+         <b-nav-item href="#"></b-nav-item>
+         <b-nav-item href="#"></b-nav-item>
+      <b-nav-item href="#">Obras</b-nav-item>
+       <b-nav-item href="#"></b-nav-item>
+        <b-nav-item href="#"></b-nav-item>
+        <b-nav-item href="#"></b-nav-item>
+         <b-nav-item href="#"></b-nav-item>
+         <b-nav-item href="#"></b-nav-item>
+         <b-nav-item href="#"></b-nav-item>
+       <b-nav-item href="#">Quem Somos</b-nav-item>
+        <b-nav-item href="#"></b-nav-item>
+         <b-nav-item href="#"></b-nav-item>
+         <b-nav-item href="#"></b-nav-item>
+         <b-nav-item href="#"></b-nav-item>
+         <b-nav-item href="#"></b-nav-item>
+         <b-nav-item href="#"></b-nav-item>
+        <b-nav-item href="#">Contate-nos</b-nav-item>
+    </b-navbar-nav>
+
+  </b-collapse>
+
+</b-navbar-->
+
+<div class="py-5">
+<div class="container">
+      <div class="row">
+  <!--div class="col-md-1"> </div-->
+        <div class="col-md-12">
+<div class="card text-white p-5 bg-primary">
+  <div class="card-body" >
+    <b-form @submit="onSubmit" @reset="onReset">
+    <fieldset><h2>Cadastro</h2></fieldset>
+    <br>
+    
+
+      <b-form-group id="exampleInputGroup2"
+                    label="Nome da Obra:"
+                    label-for="exampleInput2">
+        <b-form-input id="exampleInput2"
+                      type="text"
+                      v-model="form.name"
+                      required
+                      placeholder="Nome da Obra">
+        </b-form-input>
+      </b-form-group>
+
+
+         <b-form-group id="exampleInputGroup6"
+                    label="Numero CREA:"
+                    label-for="exampleInput6">
+        <b-form-input id="exampleInput6"
+                      type="number"
+                      v-model="form.crea"
+                      required
+                      placeholder="CREA">
+        </b-form-input>
+      </b-form-group>
+
+   <b-form-group label="A obra possuirá Piscina?">
+      <b-form-radio-group v-model="selected"
+                          :options="options"
+                          name="radioInline">
+      </b-form-radio-group>
+    </b-form-group>
+    
+
+
+      <b-button type="submit" variant="primary">Submit</b-button>
+      <b-button type="reset" variant="danger">Reset</b-button>
+    </b-form>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+ 
+
+   </div>
+</template>
+
+<script>
+export default {
+  name: 'cadastroObra',
+  data () {
+
+    return {
+      form: {
+        name_obra: '',
+        crea:'',
+        checked: []
+      },
+        cargos: [
+        { text: 'Select One', value: null },
+        'Engenheiro', 'Tecnico'
+      ],
+      show: true,
+      selected: '',
+      options: [
+        { text: 'Nao', value: 'Nao' },
+        { text: 'Sim', value: 'Sim' }
+      ]
+    }
+    
+
+  }
+}
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped>
+h1, h2 {
+  font-weight: normal;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+a {
+  color: #42b983;
+}
+.bg-primary{
+  background-color: #17a2b8 !important;
+}
+</style>

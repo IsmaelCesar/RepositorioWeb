@@ -198,4 +198,7 @@ a {
 .bg-primary{
   background-color: #17a2b8 !important;
 }
+.cadastro{
+   background-image: url("https://st2.depositphotos.com/3319333/7991/v/950/depositphotos_79918192-stock-illustration-architectural-linear-sketch-multistory-apartment.jpg");
+}
 </style>
