@@ -55,9 +55,9 @@
                 <input type="password" class="form-control" placeholder="Senha">
               </div>
                 <button type="submit" class="btn btn-primary">Login</button>
-                <button class="btn btn-info">Cadastre-se</button>
-                <br>
-                <a>Esqueci minha senha</a>
+                <button class="btn btn-danger">Cadastre-se</button>
+                <br><br>
+                <a href="#">Esqueci minha senha</a>
             </form>
           </div>
         </div>
