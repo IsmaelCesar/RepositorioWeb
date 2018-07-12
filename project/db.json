@@ -1,0 +1,68 @@
+{
+    "usuarios":[
+        {
+            "email":"fulanodetal@email.com",
+            "senha":"123"
+        },
+        {
+            "email":"cicranodecoisa@email.com",
+            "senha":"321"
+        }
+    ],
+    "pessoas":[
+        {
+            "id":1,
+            "nome":"Fulano de Tal",
+            "endereco":"avenida tal",
+            "telefone":"1111-4444",
+            "is_engenheiro":true,
+            "obras":[1,2,3]
+        },
+        {
+            "id":2,
+            "nome":"Cicrano de coisa",
+            "endereco":"rua tal",
+            "telefone":"2222-4444",
+            "is_engenheiro":false,
+            "obras":[4,5,6]
+        }
+    ],
+    "obras":[
+        {
+            "id_obra":1,
+            "nome_obra":"Obra 1",
+            "thubnail_obra":"https://picsum.photos/200/300?image=1058",
+            "descricao_obra":"Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        },
+        {
+            "id_obra":2,
+            "nome_obra":"Obra 1",
+            "thubnail_obra":"https://picsum.photos/200/300?image=1048",
+            "descricao_obra":"Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        },
+        {
+            "id_obra":3,
+            "nome_obra":"Obra 1",
+            "thubnail_obra":"https://picsum.photos/200/300?image=978",
+            "descricao_obra":"Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        },
+        {
+            "id_obra":4,
+            "nome_obra":"Obra 1",
+            "thubnail_obra":"https://picsum.photos/200/300?image=972",
+            "descricao_obra":"Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        },
+        {
+            "id_obra":5,
+            "nome_obra":"Obra 1",
+            "thubnail_obra":"https://picsum.photos/200/300?image=965",
+            "descricao_obra":"Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        },
+        {
+            "id_obra":6,
+            "nome_obra":"Obra 1",
+            "thubnail_obra":"https://picsum.photos/200/300?image=953",
+            "descricao_obra":"Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        }
+    ]
+}
