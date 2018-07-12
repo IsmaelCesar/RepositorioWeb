@@ -99,12 +99,12 @@
         <div class="col-md-12">
           
           
-          <h4 class="text-left ml-3 mt-2 w-25 h-25">Quem somos</h4>
+          <h2 class="text-left ml-3 mt-2 w-25 h-25">Quem somos</h2>
         <hr>
         <div class="_img_campo_home position-relative float-left" fluid>
           <b-img src="./assets/obras.png" fluid alt="responsive image"/>
         </div>
-        <div class="_txt_campo_home position-relative" >sus dui sollicitudin metus, id hendrerit sem ante in mi. 
+        <div class="_txt_campo_home position-relative _txt_quem_somos" >sus dui sollicitudin metus, id hendrerit sem ante in mi. 
           Sedrhoncus, velit non mollis consequat, justo nisi viverra magna, vitae mollis lacus ligula vel leo. 
           Etiam pellentesque odio in tempus elementum. Donec rhoncus, enim veleuismod tempus, arcu sem scelerisque metus,
           et hendrerit magna tellus ac sem. Vivamus quis pulvinar dui, a vulputate sapien. Mauris viverra magna ac venenatis scelerisque.
@@ -220,11 +220,18 @@ a {
     font-style:italic;
 
   }
-  ._txt_campo_home{
-    color: black;
+  ._txt_campo_home{    
     font-size: 16;
     font-weight: bold;
   }
+
+._txt_quem_somos{
+    color: white;
+    background-color: rgba(0,0,0,0.9);
+    padding: 5%;
+    border-radius: 10px;
+}
+
  div {
    
     -webkit-transition-property: width; /* Safari */
