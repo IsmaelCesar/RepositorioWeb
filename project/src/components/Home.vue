@@ -38,10 +38,6 @@
 
 </b-navbar>
 
-   
-  
-
-
 
      <div class="py-5 text-center bg-gradient2 " id="obra"  >
     <div class="container py-5">
@@ -63,34 +59,33 @@
     >
 
       <!-- Text slides with image -->
-      <b-carousel-slide caption="First slide"
-                        text="Nulla vitae elit libero, a pharetra augue mollis interdum."
-                        img-src="https://2.bp.blogspot.com/-Q7WZDQx4j7o/VeUO3tVlWHI/AAAAAAAAAUI/XYd9dStlZEc/s1600/predio-inteiro-2.jpg"
+      <b-carousel-slide 
+        caption="Obras inovadoras"
+        text="Nulla vitae elit libero, a pharetra augue mollis interdum."
+        img-src="https://picsum.photos/1024/480?image=1031"
       ></b-carousel-slide>
 
       <!-- Slides with custom text -->
-      <b-carousel-slide img-src="http://www.atitudessustentaveis.com.br/wp-content/uploads/2008/11/300x211xpredios-sustentaveis-300x211.jpg.pagespeed.ic.5gd8Ieqqqs.jpg">
-        <h1>Hello world!</h1>
+      <b-carousel-slide
+        caption="Melhor ferramenta"
+        text="Melhor ferramenta de gerenciamento para as suas empreitadas"
+        img-src="https://picsum.photos/1024/480?image=1033">        
       </b-carousel-slide>
 
       <!-- Slides with image only -->
-      <b-carousel-slide img-src="http://www.karpat.adv.br/wp-content/uploads/2016/11/fachadas-de-predios-3.jpg">
+      <b-carousel-slide 
+        caption="Tabalhe conosto"
+        text="Trabalhe desenvolvendo as ferramentas necessárias para auxiliar os profissionais de construção"
+        img-src="https://picsum.photos/1024/480?image=1047">
       </b-carousel-slide>
 
-      <!-- Slides with img slot -->
-      <!-- Note the classes .d-block and .img-fluid to prevent browser default image alignment -->
-      <b-carousel-slide>
-        <img slot="img" class="d-block img-fluid w-100" width="1024" height="480"
-             src="https://picsum.photos/1024/480/?image=55" alt="image slot">
-      </b-carousel-slide>
 
-      <!-- Slide with blank fluid image to maintain slide aspect ratio -->
-      <b-carousel-slide caption="Blank Image" img-blank img-alt="Blank image">
-        <p >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-          eros felis, tincidunt a tincidunt eget, convallis vel est. Ut pellentesque
-          ut lacus vel interdum.
-        </p>
+      <b-carousel-slide 
+        caption="Tabalhe conosto"
+        text="Trabalhe desenvolvendo as ferramentas necessárias para auxiliar os profissionais de construção"
+        img-src="https://picsum.photos/1024/480?image=1054">
+      </b-carousel-slide>
+     
       </b-carousel-slide>
     </b-carousel>
         </div>
@@ -161,7 +156,7 @@
 
 <script>
 export default {
-  name: 'hello',
+  name: 'home',
   data () {
     return {
       form:{
