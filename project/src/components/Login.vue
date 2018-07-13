@@ -47,15 +47,15 @@
             <h1 class="mb-4">Entrar</h1>
             <form action="https://formspree.io/YOUREMAILHERE">
               <div class="form-group">
-                <label>Login</label>
-                <input type="email" class="form-control" placeholder="Enter Login">
+                <label for="email">Login</label>
+                <input id="email" type="email" class="form-control" placeholder="Enter Login">
               </div>
               <div class="form-group">
-                <label>Senha</label>
-                <input type="password" class="form-control" placeholder="Senha">
+                <label for="senha">Senha</label>
+                <input id="senha" type="password" class="form-control" placeholder="Senha">
               </div>
                 <button type="submit" class="btn btn-primary">Login</button>
-                <button class="btn btn-danger">Cadastre-se</button>
+                <button type="button" href="#/cadastro" class="btn btn-danger">Cadastre-se</button>
                 <br><br>
                 <a href="#">Esqueci minha senha</a>
             </form>
