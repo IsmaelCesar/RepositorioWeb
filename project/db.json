@@ -39,35 +39,35 @@
         },
         {
             "id_obra":2,
-            "nome_obra":"Obra 1",
+            "nome_obra":"Obra 2",
             "thubnail_obra":"https://picsum.photos/200/300?image=1048",
             "descricao_obra":"Ut at pharetra turpis, non dapibus erat.",
             "edficios_obra":[3,4]
         },
         {
             "id_obra":3,
-            "nome_obra":"Obra 1",
-            "thubnail_obra":"https://picsum.photos/200/300?image=978",
+            "nome_obra":"Obra 3",
+            "thubnail_obra":"https://picsum.photos/200/300?image=1076",
             "descricao_obra":"Phasellus et ante scelerisque, condimentum lectus eu, pellentesque dui.",
             "edficios_obra":[5,6]
         },
         {
             "id_obra":4,
-            "nome_obra":"Obra 1",
+            "nome_obra":"Obra 4",
             "thubnail_obra":"https://picsum.photos/200/300?image=972",
             "descricao_obra":"Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
             "edficios_obra":[7,8]
         },
         {
             "id_obra":5,
-            "nome_obra":"Obra 1",
+            "nome_obra":"Obra 5",
             "thubnail_obra":"https://picsum.photos/200/300?image=965",
             "descricao_obra":"Ut dignissim arcu vitae lorem venenatis fermentum.",
             "edficios_obra":[10,11]
         },
         {
             "id_obra":6,
-            "nome_obra":"Obra 1",
+            "nome_obra":"Obra 6",
             "thubnail_obra":"https://picsum.photos/200/300?image=953",
             "descricao_obra":"Suspendisse vitae elementum erat, at pellentesque nunc.",
             "edficios_obra":[12,13]
