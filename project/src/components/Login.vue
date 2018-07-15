@@ -20,28 +20,33 @@
 </b-navbar>
 
 <div class="py-5">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-3"> </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3"> </div>
         <div class="col-md-6">
           <div class="card text-white p-5 bg-primary">
-  <div class="card-body" >
-              <h1 class="mb-4">Entrar</h1>
-              <form action="https://formspree.io/YOUREMAILHERE">
-                <div class="form-group">
-                  <label>Login</label>
-                  <input type="email" class="form-control" placeholder="Enter Login"> </div>
-                <div class="form-group">
-                  <label>Senha</label>
-                  <input type="password" class="form-control" placeholder="Senha"> </div>
-                <button type="submit" class="btn btn-primary">Login</button>
-              </form>
-            </div>
-           </div>
-            </div>
-             </div>  
+          <div class="card-body" >
+            <h1 class="mb-4">Entrar</h1>
+            <form action="https://formspree.io/YOUREMAILHERE">
+              <div class="form-group">
+                <label for="email">Login</label>
+                <input id="email" type="email" class="form-control" placeholder="Enter Login">
               </div>
-               </div>
+              <div class="form-group">
+                <label for="senha">Senha</label>
+                <input id="senha" type="password" class="form-control" placeholder="Senha">
+              </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+                <button type="button" href="#/cadastro" class="btn btn-danger">Cadastre-se</button>
+                <br><br>
+                <a href="#/redefinirSenha">Esqueci minha senha</a>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>  
+  </div>
+</div>
 
   </div>
 </template>
@@ -74,8 +79,15 @@ li {
 }
 
 a {
-  color: #42b983;
+  color:#cc0000;
+  text-decoration: none;
 }
+
+a:hover{
+  text-decoration: underline;
+}
+
+
 
 .bg-primary{
   background-color: #17a2b8 !important;

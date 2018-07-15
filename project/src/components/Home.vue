@@ -56,7 +56,6 @@
 
 </b-navbar>
 
-   
 
       <div class=" py-5 text-center " id="obra" style="background-image: url('https://www.aarquiteta.com.br/blog/wp-content/uploads/2017/02/planta-baixa-o-que-e-para-que-serve.png');background-position:center center;background-size:cover; " >
     <div class="container py-5">
@@ -78,34 +77,31 @@
     >
 
       <!-- Text slides with image -->
-      <b-carousel-slide caption="Edificio Palace"
-                        text="Nulla vitae elit libero, a pharetra augue mollis interdum."
-                        img-src="https://2.bp.blogspot.com/-Q7WZDQx4j7o/VeUO3tVlWHI/AAAAAAAAAUI/XYd9dStlZEc/s1600/predio-inteiro-2.jpg"
+      <b-carousel-slide 
+        caption="Obras inovadoras"
+        text="Nulla vitae elit libero, a pharetra augue mollis interdum."
+        img-src="https://picsum.photos/1024/480?image=1031"
       ></b-carousel-slide>
 
       <!-- Slides with custom text -->
-      <b-carousel-slide img-src="http://www.culturamix.com/wp-content/gallery/dubai/foto-dubai-02.jpg">
-        <h1>Dubai</h1>
+      <b-carousel-slide
+        caption="Melhor ferramenta"
+        text="Melhor ferramenta de gerenciamento para as suas empreitadas"
+        img-src="https://picsum.photos/1024/480?image=1033">        
       </b-carousel-slide>
 
       <!-- Slides with image only -->
-      <b-carousel-slide img-src="http://www.karpat.adv.br/wp-content/uploads/2016/11/fachadas-de-predios-3.jpg">
+      <b-carousel-slide 
+        caption="Tabalhe conosto"
+        text="Trabalhe desenvolvendo as ferramentas necessárias para auxiliar os profissionais de construção"
+        img-src="https://picsum.photos/1024/480?image=1047">
       </b-carousel-slide>
 
-      <!-- Slides with img slot -->
-      <!-- Note the classes .d-block and .img-fluid to prevent browser default image alignment -->
-      <b-carousel-slide>
-        <img slot="img" class="d-block img-fluid w-100" width="1024" height="480"
-             src="http://www.essenciamoveis.com.br/blog/wp-content/uploads/2011/02/burj-al-arab-dubai6.jpg" alt="image slot">
-      </b-carousel-slide>
 
-      <!-- Slide with blank fluid image to maintain slide aspect ratio -->
-      <b-carousel-slide caption="Blank Image"  img-src="https://fotos.vivadecora.com.br/fachadas-de-predios-fachada-de-predio-com-jardim-danielnunespaisagismo-73875-proportional-height_cover_medium.jpg">
-        <p >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-          eros felis, tincidunt a tincidunt eget, convallis vel est. Ut pellentesque
-          ut lacus vel interdum.
-        </p>
+      <b-carousel-slide 
+        caption="Tabalhe conosco"
+        text="Trabalhe desenvolvendo as ferramentas necessárias para auxiliar os profissionais de construção"
+        img-src="https://picsum.photos/1024/480?image=1054">
       </b-carousel-slide>
     </b-carousel>
         </div>
@@ -119,12 +115,12 @@
         <div class="col-md-12">
           
           
-          <h4 class="text-left ml-3 mt-2 w-25 h-25">Quem somos</h4>
+          <h2 class="text-left ml-3 mt-2 w-25 h-25">Quem somos</h2>
         <hr>
         <div class="_img_campo_home position-relative float-left" fluid>
           <b-img src="./assets/obras.png" fluid alt="responsive image"/>
         </div>
-        <div class="_txt_campo_home position-relative" >sus dui sollicitudin metus, id hendrerit sem ante in mi. 
+        <div class="_txt_campo_home position-relative _txt_quem_somos" >sus dui sollicitudin metus, id hendrerit sem ante in mi. 
           Sedrhoncus, velit non mollis consequat, justo nisi viverra magna, vitae mollis lacus ligula vel leo. 
           Etiam pellentesque odio in tempus elementum. Donec rhoncus, enim veleuismod tempus, arcu sem scelerisque metus,
           et hendrerit magna tellus ac sem. Vivamus quis pulvinar dui, a vulputate sapien. Mauris viverra magna ac venenatis scelerisque.
@@ -177,7 +173,7 @@
 
 <script>
 export default {
-  name: 'hello',
+  name: 'home',
   data () {
     return {
       form:{
@@ -232,11 +228,18 @@ a {
     font-style:italic;
 
   }
-  ._txt_campo_home{
-    color: black;
+  ._txt_campo_home{    
     font-size: 16;
     font-weight: bold;
   }
+
+._txt_quem_somos{
+    color: white;
+    background-color: rgba(0,0,0,0.9);
+    padding: 5%;
+    border-radius: 10px;
+}
+
  div {
    
     -webkit-transition-property: width; /* Safari */
