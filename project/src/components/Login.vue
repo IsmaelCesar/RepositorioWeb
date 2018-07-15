@@ -12,7 +12,7 @@
 
     <!-- Right aligned nav items -->
     <b-navbar-nav class="ml-auto">
-       <b-nav-item href="#/login">Login</b-nav-item>
+       <b-nav-item href="#/Login">Login</b-nav-item>
       <b-nav-item href="#/cadastro">Cadastre-se</b-nav-item>
     </b-navbar-nav>
 
@@ -36,10 +36,10 @@
                 <label for="senha">Senha</label>
                 <input id="senha" type="password" class="form-control" placeholder="Senha">
               </div>
-                <button type="submit" @click="onClickLogin" class="btn btn-primary">Login</button>
-                <button type="button" href="#/cadastro" class="btn btn-danger">Cadastre-se</button>
-                <br><br>
-                <a href="#/redefinirSenha">Esqueci minha senha</a>
+              <button type="submit" @click="onClickLogin" href="#/user" class="btn btn-primary">Login</button>
+              <button type="button" @click="onCarregarCadastro" class="btn btn-danger">Cadastre-se</button>
+              <br><br>
+              <a href="#/redefinirSenha">Esqueci minha senha</a>
             </form>
           </div>
         </div>
@@ -62,6 +62,11 @@ export default {
   methods:{
     onClickLogin(){
       alert("Clicou no login")
+       window.location.href ="#/user"
+      
+    },
+    onCarregarCadastro(){
+      window.location.href ="#/cadastro"
     }
   }
 }
