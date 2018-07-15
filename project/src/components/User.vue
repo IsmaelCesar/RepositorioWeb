@@ -1,6 +1,6 @@
 <template>
-  <div class="cadastroObra">
-   
+  <div class="user">
+
   <nav class="navbar navbar-expand-md navbar-dark bg-secondary my-3" >
     <div class="container">
       <a class="navbar-brand" href="#">
@@ -31,8 +31,8 @@
          <b-nav-item href="#"></b-nav-item>
       <b-nav-item-dropdown text="Cadastrar" right>
         <b-dropdown-item href="#/cadastroObra">Obra</b-dropdown-item>
-        <b-dropdown-item href="#/cadastroEdificio">Edificaçao</b-dropdown-item>
-        <b-dropdown-item href="#">Andar</b-dropdown-item>
+        <b-dropdown-item href="#cadastroEdificio">Edificaçao</b-dropdown-item>
+        <b-dropdown-item href="#/cadastroAndar">Andar</b-dropdown-item>
         <b-dropdown-item href="#">Apartamento</b-dropdown-item>
       </b-nav-item-dropdown>
          <b-nav-item href="#"></b-nav-item>
@@ -61,90 +61,135 @@
   </b-collapse>
 
 </b-navbar>
+     
+<br>
 
-<div class="py-5">
-<div class="container">
-      <div class="row">
-  <!--div class="col-md-1"> </div-->
-        <div class="col-md-12">
-<div class="card text-white p-5 bg-primary">
-  <div class="card-body" >
-    <b-form @submit="onSubmit" @reset="onReset">
-    <fieldset><h2>Cadastro</h2></fieldset>
-    <br>
-    
+       
+  
+    <b-card-group deck>
+      <b-card title="Card Title"
+          img-src="https://2.bp.blogspot.com/-Q7WZDQx4j7o/VeUO3tVlWHI/AAAAAAAAAUI/XYd9dStlZEc/s1600/predio-inteiro-2.jpg"
+          img-alt="Image"
+          img-top
+          tag="article"
+          style="max-width: 20rem;"
+          class="mb-2">
+    <p class="card-text">
+      Some quick example text to build on the card title and make up the bulk of the card's content.
+    </p>
+    <b-button href="#" variant="primary">Go somewhere</b-button>
+  </b-card>
 
-      <b-form-group id="exampleInputGroup2"
-                    label="Nome da Obra:"
-                    label-for="exampleInput2">
-        <b-form-input id="exampleInput2"
-                      type="text"
-                      v-model="form.name"
-                      required
-                      placeholder="Nome da Obra">
-        </b-form-input>
-      </b-form-group>
+  <b-card title="Card Title"
+          img-src="http://www.atitudessustentaveis.com.br/wp-content/uploads/2008/11/300x211xpredios-sustentaveis-300x211.jpg.pagespeed.ic.5gd8Ieqqqs.jpg"
+          img-alt="Image"
+          img-top
+          tag="article"
+          style="max-width: 20rem;"
+          class="mb-2">
+    <p class="card-text">
+      Some quick example text to build on the card title and make up the bulk of the card's content.
+    </p>
+    <b-button href="#" variant="primary">Go somewhere</b-button>
+  </b-card>
+
+  <b-card title="Card Title"
+          img-src="http://www.karpat.adv.br/wp-content/uploads/2016/11/fachadas-de-predios-3.jpg"
+          img-alt="Image"
+          img-top
+          tag="article"
+          style="max-width: 20rem;"
+          class="mb-2">
+    <p class="card-text">
+      Some quick example text to build on the card title and make up the bulk of the card's content.
+    </p>
+    <b-button href="#" variant="primary">Go somewhere</b-button>
+  </b-card>
+
+  <b-card title="Card Title"
+          img-src="https://casaeconstrucao.org/wp-content/uploads/2016/09/fachadas-de-predios-comerciais-de-luxo-300x217.jpg"
+          img-alt="Image"
+          img-top
+          tag="article"
+          style="max-width: 20rem;"
+          class="mb-2">
+    <p class="card-text">
+      Some quick example text to build on the card title and make up the bulk of the card's content.
+    </p>
+    <b-button href="#" variant="primary">Go somewhere</b-button>
+  </b-card>
+
+  </b-card-group>
+
+  <b-card-group deck>
+      <b-card title="Card Title"
+          img-src="https://2.bp.blogspot.com/-Q7WZDQx4j7o/VeUO3tVlWHI/AAAAAAAAAUI/XYd9dStlZEc/s1600/predio-inteiro-2.jpg"
+          img-alt="Image"
+          img-top
+          tag="article"
+          style="max-width: 20rem;"
+          class="mb-2">
+    <p class="card-text">
+      Some quick example text to build on the card title and make up the bulk of the card's content.
+    </p>
+    <b-button href="#" variant="primary">Go somewhere</b-button>
+  </b-card>
+
+  <b-card title="Card Title"
+          img-src="http://www.atitudessustentaveis.com.br/wp-content/uploads/2008/11/300x211xpredios-sustentaveis-300x211.jpg.pagespeed.ic.5gd8Ieqqqs.jpg"
+          img-alt="Image"
+          img-top
+          tag="article"
+          style="max-width: 20rem;"
+          class="mb-2">
+    <p class="card-text">
+      Some quick example text to build on the card title and make up the bulk of the card's content.
+    </p>
+    <b-button href="#" variant="primary">Go somewhere</b-button>
+  </b-card>
+
+  <b-card title="Card Title"
+          img-src="http://www.karpat.adv.br/wp-content/uploads/2016/11/fachadas-de-predios-3.jpg"
+          img-alt="Image"
+          img-top
+          tag="article"
+          style="max-width: 20rem;"
+          class="mb-2">
+    <p class="card-text">
+      Some quick example text to build on the card title and make up the bulk of the card's content.
+    </p>
+    <b-button href="#" variant="primary">Go somewhere</b-button>
+  </b-card>
+
+  <b-card title="Card Title"
+          img-src="https://casaeconstrucao.org/wp-content/uploads/2016/09/fachadas-de-predios-comerciais-de-luxo-300x217.jpg"
+          img-alt="Image"
+          img-top
+          tag="article"
+          style="max-width: 20rem;"
+          class="mb-2">
+    <p class="card-text">
+      Some quick example text to build on the card title and make up the bulk of the card's content.
+    </p>
+    <b-button href="#" variant="primary">Go somewhere</b-button>
+  </b-card>
+
+  </b-card-group>
 
 
-         <b-form-group id="exampleInputGroup6"
-                    label="Numero CREA:"
-                    label-for="exampleInput6">
-        <b-form-input id="exampleInput6"
-                      type="number"
-                      v-model="form.crea"
-                      required
-                      placeholder="CREA">
-        </b-form-input>
-      </b-form-group>
-
-   <b-form-group label="A obra possuirá Piscina?">
-      <b-form-radio-group v-model="selected"
-                          :options="options"
-                          name="radioInline">
-      </b-form-radio-group>
-    </b-form-group>
-    
 
 
-      <b-button type="submit" variant="primary">Submit</b-button>
-      <b-button type="reset" variant="danger">Reset</b-button>
-    </b-form>
-
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
- 
-
-   </div>
+     </div>
+     
 </template>
 
 <script>
 export default {
-  name: 'cadastroObra',
+  name: 'user',
   data () {
-
     return {
-      form: {
-        name_obra: '',
-        crea:'',
-        checked: []
-      },
-        cargos: [
-        { text: 'Select One', value: null },
-        'Engenheiro', 'Tecnico'
-      ],
-      show: true,
-      selected: '',
-      options: [
-        { text: 'Nao', value: 'Nao' },
-        { text: 'Sim', value: 'Sim' }
-      ]
+     
     }
-    
-
   }
 }
 </script>
@@ -168,6 +213,7 @@ li {
 a {
   color: #42b983;
 }
+
 .bg-primary {
   background-color: #17a2b8 !important;
 }

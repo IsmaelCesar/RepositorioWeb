@@ -1,42 +1,24 @@
 <template>
   <div class="login">
-    <b-navbar toggleable="md" type="dark" variant="info">
+
+   <b-navbar toggleable="md" type="dark" variant="info" class="bg-gradient">
+
+  <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
+
+  <b-navbar-brand href="#/">iObras</b-navbar-brand>
 
   <b-collapse is-nav id="nav_collapse">
 
 
-     <b-navbar-nav>
-        <b-nav-item href="#"></b-nav-item>
-         <b-nav-item href="#"></b-nav-item>
-         <b-nav-item href="#"></b-nav-item>
-         <b-nav-item href="#"></b-nav-item>
-      <b-nav-item href="#/">Home</b-nav-item>
-       <b-nav-item href="#"></b-nav-item>
-        <b-nav-item href="#"></b-nav-item>
-        <b-nav-item href="#"></b-nav-item>
-         <b-nav-item href="#"></b-nav-item>
-         <b-nav-item href="#"></b-nav-item>
-         <b-nav-item href="#"></b-nav-item>
-      <b-nav-item href="#">Obras</b-nav-item>
-       <b-nav-item href="#"></b-nav-item>
-        <b-nav-item href="#"></b-nav-item>
-        <b-nav-item href="#"></b-nav-item>
-         <b-nav-item href="#"></b-nav-item>
-         <b-nav-item href="#"></b-nav-item>
-         <b-nav-item href="#"></b-nav-item>
-       <b-nav-item href="#">Quem Somos</b-nav-item>
-        <b-nav-item href="#"></b-nav-item>
-         <b-nav-item href="#"></b-nav-item>
-         <b-nav-item href="#"></b-nav-item>
-         <b-nav-item href="#"></b-nav-item>
-         <b-nav-item href="#"></b-nav-item>
-         <b-nav-item href="#"></b-nav-item>
-        <b-nav-item href="#">Contate-nos</b-nav-item>
+    <!-- Right aligned nav items -->
+    <b-navbar-nav class="ml-auto">
+       <b-nav-item href="#/login">Login</b-nav-item>
+      <b-nav-item href="#/cadastro">Cadastre-se</b-nav-item>
     </b-navbar-nav>
 
   </b-collapse>
+</b-navbar>
 
-</b-navbar>   
 <div class="py-5">
     <div class="container">
       <div class="row">
