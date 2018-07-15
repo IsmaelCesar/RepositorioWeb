@@ -56,12 +56,22 @@ export default {
   name: 'Login',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Welcome to Your Vue.js App',
+      form:{
+        email:'',
+        senha:''
+      }
     }
   },
   methods:{
     onClickLogin(){
-      alert("Clicou no login")
+      
+      Vue.$http.get('/usuarios?email='+this.form.email).then(response =>{
+
+      },response=>{
+
+      })
+
        window.location.href ="#/user"
       
     },
