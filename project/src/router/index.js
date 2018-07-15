@@ -4,6 +4,7 @@ import Home from '@/components/Home'
 import Login from '@/components/Login'
 import Cadastro from '@/components/Cadastro'
 import Cadastro_Obra from '@/components/Cadastro_Obra'
+import RedefinirSenha from '@/components/RedefinirSenha'
 
 Vue.use(Router)
 
@@ -30,7 +31,11 @@ export default new Router({
       path: '/cadastroObra',
       name: 'Cadastro_Obra',
       component: Cadastro_Obra
-
+    },
+    {
+      path:'/redefinirSenha',
+      name:'RedefinirSenha',
+      component:RedefinirSenha
     }
   ]
 })
