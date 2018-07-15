@@ -1,5 +1,5 @@
 <template>
-  <div class="cadastroObra">
+  <div class="atualizaObra">
    
   <nav class="navbar navbar-expand-md navbar-dark bg-secondary my-3" >
     <div class="container">
@@ -27,17 +27,17 @@
     <b-navbar toggleable="md" type="dark" variant="info">
   <b-collapse is-nav id="nav_collapse">
      <b-navbar-nav>
+      
          <b-nav-item href="#"></b-nav-item>
       <b-nav-item-dropdown text="Cadastrar" right>
         <b-dropdown-item href="#/cadastroObra">Obra</b-dropdown-item>
         <b-dropdown-item href="#/cadastroEdificio">Edificaçao</b-dropdown-item>
         <b-dropdown-item href="#/cadastroAndar">Andar</b-dropdown-item>
-    
       </b-nav-item-dropdown>
          <b-nav-item href="#"></b-nav-item>
          <b-nav-item href="#"></b-nav-item>
      <b-nav-item-dropdown text="Atualizar" right>
-     <b-dropdown-item href="#/atualizaObra">Obra</b-dropdown-item>
+        <b-dropdown-item href="#/atualizaObra">Obra</b-dropdown-item>
         <b-dropdown-item href="#/atualizaEdificio">Edificaçao</b-dropdown-item>
         <b-dropdown-item href="#/atualizaAndar">Andar</b-dropdown-item>
       </b-nav-item-dropdown>
@@ -68,19 +68,18 @@
 <div class="card text-white p-5 bg-primary">
   <div class="card-body" >
     <b-form @submit="onSubmit" @reset="onReset">
-    <fieldset><h2>Cadastro Obra</h2></fieldset>
+    <fieldset><h2>Atualizar</h2></fieldset>
     <br>
     
 
-      <b-form-group id="exampleInputGroup2"
-                    label="Nome da Obra:"
-                    label-for="exampleInput2">
-        <b-form-input id="exampleInput2"
-                      type="text"
-                      v-model="form.name"
+     <b-form-group id="exampleInputGroup1"
+                    label="Obra:"
+                    label-for="exampleInput1">
+        <b-form-select id="exampleInput1"
+                      :options="obras"
                       required
-                      placeholder="Nome da Obra">
-        </b-form-input>
+                      v-model="form.obra">
+        </b-form-select>
       </b-form-group>
 
 
@@ -121,22 +120,27 @@
 
 <script>
 export default {
-  name: 'cadastroObra',
+  name: 'atualizaObra',
   data () {
 
     return {
       form: {
         name_obra: '',
         crea:'',
-        checked: []
+        user:'Engenheiro',
+        checked: [],
+        obra:null,
       },
         cargos: [
         { text: 'Select One', value: null },
         'Engenheiro', 'Tecnico'
       ],
+      obras: [
+        { text: 'Select One', value: null },
+        'obra1', 'obra2'
+      ],
       show: true,
       selected: '',
-      user:'Engenheiro',
       options: [
         { text: 'Nao', value: 'Nao' },
         { text: 'Sim', value: 'Sim' }
