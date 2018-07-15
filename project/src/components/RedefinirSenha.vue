@@ -1,44 +1,6 @@
 <template>
   <div class="login">
-  <!--   
-  <b-navbar toggleable="md" type="dark" variant="info">  
-    <b-collapse is-nav id="nav_collapse">
-
-
-     <b-navbar-nav>
-        <b-nav-item href="#"></b-nav-item>
-         <b-nav-item href="#"></b-nav-item>
-         <b-nav-item href="#"></b-nav-item>
-         <b-nav-item href="#"></b-nav-item>
-      <b-nav-item href="#/">Home</b-nav-item>
-       <b-nav-item href="#"></b-nav-item>
-        <b-nav-item href="#"></b-nav-item>
-        <b-nav-item href="#"></b-nav-item>
-         <b-nav-item href="#"></b-nav-item>
-         <b-nav-item href="#"></b-nav-item>
-         <b-nav-item href="#"></b-nav-item>
-      <b-nav-item href="#">Obras</b-nav-item>
-       <b-nav-item href="#"></b-nav-item>
-        <b-nav-item href="#"></b-nav-item>
-        <b-nav-item href="#"></b-nav-item>
-         <b-nav-item href="#"></b-nav-item>
-         <b-nav-item href="#"></b-nav-item>
-         <b-nav-item href="#"></b-nav-item>
-       <b-nav-item href="#">Quem Somos</b-nav-item>
-        <b-nav-item href="#"></b-nav-item>
-         <b-nav-item href="#"></b-nav-item>
-         <b-nav-item href="#"></b-nav-item>
-         <b-nav-item href="#"></b-nav-item>
-         <b-nav-item href="#"></b-nav-item>
-         <b-nav-item href="#"></b-nav-item>
-        <b-nav-item href="#">Contate-nos</b-nav-item>
-    </b-navbar-nav>
-
-    </b-collapse>
-  </b-navbar>   
--->
-
-<div class="py-5">
+ <div class="py-5">
   <div class="container">
     <div class="row">
       <div class="col-md-3"> </div>
