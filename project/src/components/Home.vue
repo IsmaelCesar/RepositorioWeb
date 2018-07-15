@@ -85,8 +85,6 @@
         text="Trabalhe desenvolvendo as ferramentas necessárias para auxiliar os profissionais de construção"
         img-src="https://picsum.photos/1024/480?image=1054">
       </b-carousel-slide>
-     
-      </b-carousel-slide>
     </b-carousel>
         </div>
       </div>
