@@ -2,10 +2,12 @@
     "usuarios":[
         {
             "email":"fulanodetal@email.com",
+            "id_pessoa":1,
             "senha":"123"
         },
         {
             "email":"cicranodecoisa@email.com",
+            "id_pessoa":1,
             "senha":"321"
         }
     ],
