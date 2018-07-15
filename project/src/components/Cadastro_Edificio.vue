@@ -1,5 +1,5 @@
 <template>
-  <div class="cadastroObra">
+  <div class="cadastroEdificio">
    
   <nav class="navbar navbar-expand-md navbar-dark bg-secondary my-3" >
     <div class="container">
@@ -70,40 +70,199 @@
 <div class="card text-white p-5 bg-primary">
   <div class="card-body" >
     <b-form @submit="onSubmit" @reset="onReset">
-    <fieldset><h2>Cadastro</h2></fieldset>
+    <fieldset><h2>Cadastro Edificação </h2></fieldset>
     <br>
-    
+     <br>
+
+     <b-form-group id="exampleInputGroup1"
+                    label="Obra:"
+                    label-for="exampleInput1">
+        <b-form-select id="exampleInput1"
+                      :options="obras"
+                      required
+                      v-model="form.obra">
+        </b-form-select>
+      </b-form-group>
 
       <b-form-group id="exampleInputGroup2"
-                    label="Nome da Obra:"
+                    label="Nome da Edificação:"
                     label-for="exampleInput2">
         <b-form-input id="exampleInput2"
                       type="text"
                       v-model="form.name"
                       required
-                      placeholder="Nome da Obra">
+                      placeholder="Nome da Edificação">
         </b-form-input>
       </b-form-group>
 
+ <b-form-group id="exampleInputGroup3"
+                    label="Status:"
+                    label-for="exampleInput3">
+        <b-form-select id="exampleInput3"
+                      :options="Status"
+                      required
+                      v-model="form.status">
+        </b-form-select>
+      </b-form-group>
 
-         <b-form-group id="exampleInputGroup6"
-                    label="Numero CREA:"
+      <b-form-group id="exampleInputGroup4"
+                    label="Tipo da Fundação:"
+                    label-for="exampleInput4">
+        <b-form-input id="exampleInput4"
+                      type="text"
+                      v-model="form.fundacao"
+                      required
+                      placeholder="Tipo da Edificação">
+        </b-form-input>
+      </b-form-group>
+
+      <b-form-group id="exampleInputGroup5"
+                    label="Status da Fundação:"
+                    label-for="exampleInput5">
+        <b-form-select id="exampleInput5"
+                      :options="StatusFund"
+                      required
+                      v-model="form.statusFund">
+        </b-form-select>
+      </b-form-group>
+
+
+    <b-form-group id="exampleInputGroup6"
+                    label="Empresa Responsável:"
                     label-for="exampleInput6">
         <b-form-input id="exampleInput6"
-                      type="number"
-                      v-model="form.crea"
+                      type="text"
+                      v-model="form.empresa"
                       required
-                      placeholder="CREA">
+                      placeholder="Digite o nome da Empresa">
         </b-form-input>
       </b-form-group>
 
-   <b-form-group label="A obra possuirá Piscina?">
-      <b-form-radio-group v-model="selected"
-                          :options="options"
-                          name="radioInline">
-      </b-form-radio-group>
-    </b-form-group>
-    
+ <br>
+     <fieldset><h4>Alvenaria </h4></fieldset>
+     <br>
+
+         <b-form-group id="exampleInputGroup7"
+                    label="ALvenaria (m²):"
+                    label-for="exampleInput7">
+        <b-form-input id="exampleInput7"
+                      type="number"
+                      v-model="form.alvenaria"
+                      required
+                      placeholder="1500">
+        </b-form-input>
+      </b-form-group>
+
+       <b-form-group id="exampleInputGroup8"
+                    label="Vigas(un):"
+                    label-for="exampleInput8">
+        <b-form-input id="exampleInput8"
+                      type="number"
+                      v-model="form.vigas"
+                      required
+                      placeholder="10">
+        </b-form-input>
+      </b-form-group>
+
+     <b-form-group id="exampleInputGroup9"
+                    label="Pilares (un):"
+                    label-for="exampleInput9">
+        <b-form-input id="exampleInput9"
+                      type="number"
+                      v-model="form.pilares"
+                      required
+                      placeholder="5">
+        </b-form-input>
+      </b-form-group>
+ <br>
+   <fieldset><h4>Eletríca </h4></fieldset>
+   <br>
+
+         <b-form-group id="exampleInputGroup10"
+                    label="Tubulações Eletrícas (m):"
+                    label-for="exampleInput10">
+        <b-form-input id="exampleInput10"
+                      type="number"
+                      v-model="form.TubEletrica"
+                      required
+                      placeholder="1000">
+        </b-form-input>
+      </b-form-group>
+
+       <b-form-group id="exampleInputGroup11"
+                    label="Pontos Eletricos (un):"
+                    label-for="exampleInput11">
+        <b-form-input id="exampleInput11"
+                      type="number"
+                      v-model="form.PontEletrica"
+                      required
+                      placeholder="7000">
+        </b-form-input>
+      </b-form-group>
+
+ <br>
+  <fieldset><h4>Hidraulica</h4></fieldset>
+ <br>
+
+         <b-form-group id="exampleInputGroup12"
+                    label="Tubulações Hidraulicas (m):"
+                    label-for="exampleInput12">
+        <b-form-input id="exampleInput12"
+                      type="number"
+                      v-model="form.TubHidra"
+                      required
+                      placeholder="200">
+        </b-form-input>
+      </b-form-group>
+
+       <b-form-group id="exampleInputGroup13"
+                    label="Pontos Hidraulicos (un):"
+                    label-for="exampleInput13">
+        <b-form-input id="exampleInput13"
+                      type="number"
+                      v-model="form.PontHidra"
+                      required
+                      placeholder="400">
+        </b-form-input>
+      </b-form-group>
+
+
+ <br>
+      <fieldset><h4>Revestimento </h4></fieldset>
+ <br>
+         <b-form-group id="exampleInputGroup14"
+                    label="Piso (m²):"
+                    label-for="exampleInput14">
+        <b-form-input id="exampleInput14"
+                      type="number"
+                      v-model="form.piso"
+                      required
+                      placeholder="1000">
+        </b-form-input>
+      </b-form-group>
+
+       <b-form-group id="exampleInputGroup15"
+                    label="Pintura (m²):"
+                    label-for="exampleInput15">
+        <b-form-input id="exampleInput15"
+                      type="number"
+                      v-model="form.pintura"
+                      required
+                      placeholder="3000">
+        </b-form-input>
+      </b-form-group>
+
+     <b-form-group id="exampleInputGroup16"
+                    label="Esquadria (un):"
+                    label-for="exampleInput16">
+        <b-form-input id="exampleInput16"
+                      type="number"
+                      v-model="form.esquadria"
+                      required
+                      placeholder="180">
+        </b-form-input>
+      </b-form-group>
+
 
 
       <b-button type="submit" variant="primary">Submit</b-button>
@@ -123,25 +282,48 @@
 
 <script>
 export default {
-  name: 'cadastroObra',
+  name: 'cadastroEdificio',
   data () {
 
     return {
       form: {
         name_obra: '',
         crea:'',
+        fundacao:'',
+        obra: null,
+        status: null,
+        statusFund: null,
+        empresa:'',
+        alvenaria:'',
+        vigas:'',
+        pilares:'',
+        esquadria:'',
+        pintura:'',
+        piso:'',
+        TubEletrica:'',
+        PontEletrica:'',
+        TubHidra:'',
+        PontHidra:'',
         checked: []
       },
-        cargos: [
+        obras: [
         { text: 'Select One', value: null },
-        'Engenheiro', 'Tecnico'
+        'obra1', 'obra2'
       ],
       show: true,
       selected: '',
       options: [
         { text: 'Nao', value: 'Nao' },
         { text: 'Sim', value: 'Sim' }
-      ]
+      ],
+      Status: [
+        { text: 'Select One', value: null },
+        'ativo', 'desativada'
+      ],
+       StatusFund: [
+        { text: 'Select One', value: null },
+        'Irá iniciar','Em andamento', 'Concluida'
+      ],
     }
     
 

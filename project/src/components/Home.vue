@@ -1,6 +1,24 @@
 <template>
   <div class="hello">
-    <b-navbar toggleable="md" type="dark" variant="info">
+
+     <b-navbar toggleable="md" type="dark" variant="info" class="bg-gradient2">
+
+  <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
+
+  <b-navbar-brand href="#/">iObras</b-navbar-brand>
+
+  <b-collapse is-nav id="nav_collapse">
+
+
+    <!-- Right aligned nav items -->
+    <b-navbar-nav class="ml-auto">
+       <b-nav-item href="#/login">Login</b-nav-item>
+      <b-nav-item href="#/cadastro">Cadastre-se</b-nav-item>
+    </b-navbar-nav>
+
+  </b-collapse>
+</b-navbar>
+    <b-navbar toggleable="md" type="dark" variant="info" class="bg-gradient2">
 
   <b-collapse is-nav id="nav_collapse">
 
@@ -39,7 +57,7 @@
 </b-navbar>
 
 
-     <div class="py-5 text-center bg-gradient2 " id="obra"  >
+      <div class=" py-5 text-center " id="obra" style="background-image: url('https://www.aarquiteta.com.br/blog/wp-content/uploads/2017/02/planta-baixa-o-que-e-para-que-serve.png');background-position:center center;background-size:cover; " >
     <div class="container py-5">
       <div class="row">
         <div class="col-md-12">
@@ -81,7 +99,7 @@
 
 
       <b-carousel-slide 
-        caption="Tabalhe conosto"
+        caption="Tabalhe conosco"
         text="Trabalhe desenvolvendo as ferramentas necessárias para auxiliar os profissionais de construção"
         img-src="https://picsum.photos/1024/480?image=1054">
       </b-carousel-slide>
@@ -91,7 +109,7 @@
     </div>
   </div>
 
-<div class="py-5 text-center"  id="quemsomos" style="background-image: url('https://mmarketing.net.br/wp-content/uploads/2018/04/predio2.jpg');background-position:center center;background-size:cover;  opacity: 0.6; ">
+<div class="py-5 text-center swing "  id="quemsomos" style="background-image: url('https://mmarketing.net.br/wp-content/uploads/2018/04/predio2.jpg');background-position:center center;background-size:cover;  opacity: 0.6; ">
      <div class="container py-5">
       <div class="row">
         <div class="col-md-12">
@@ -119,7 +137,7 @@
     </div>
   </div>
 
-<div id="contato" class="py-5 text-center bg-gradient" >
+<div id="contato" class="py-5 text-center bg-gradient swing " >
     <div class="container py-5">
       <div class="row">
         <div class="col-md-12">
@@ -136,6 +154,7 @@
                   <label for="email">E-mail</label>
                   <b-input id="email" v-model="form.email" type="email" required placeholder="seu email aqui para resposta"/>                
                   <br>
+                  <label>Descrição</label>
                   <b-form-textarea v-model="form.texto" rows="6" max-rows="10" required placeholder="seu texto aqui">
                   </b-form-textarea>   
                   <br>
@@ -197,15 +216,6 @@ a {
   color: #42b983;
 }
 
-.bg-gradient {
-  overflow: hidden;
-   background: linear-gradient(#80bfff, #b3b3ff);
-}
-
-.bg-gradient2 {
-  overflow: hidden;
-   background: linear-gradient( #70d9e9,#17a2b8);
-}
 
 .filter-light {
   overflow: hidden;
@@ -237,7 +247,85 @@ a {
     transition-property: width;
     transition-duration: 5s;
 }
+.bg-gradient {
+  overflow: hidden;
+   background: linear-gradient(#80bfff, #93dfdf);
+}
+.bg-gradient2 {
+  overflow: hidden;
+   background: linear-gradient( #70d9e9,#17a2b8);
+}
+.fade
+{
+        opacity:0.5;
+}
+.fade:hover
+{
+        opacity:1;
+}
+.grow:hover
+{
+        -webkit-transform: scale(1.3);
+        -ms-transform: scale(1.3);
+        transform: scale(1.3);
+}
 
+.swing:hover
+{
+        -webkit-animation: swing 1s ease;
+        animation: swing 1s ease;
+        -webkit-animation-iteration-count: 1;
+    
+    }
+    
+    .threed:hover
+{
+        box-shadow:
+                1px 1px #53a7ea,
+                2px 2px #53a7ea,
+                3px 3px #53a7ea;
+        -webkit-transform: translateX(-4px);
+        transform: translateX(-4px);
+}
+
+@-webkit-keyframes swing
+{
+    15%
+    {
+        -webkit-transform: translateX(5px);
+        transform: translateX(5px);
+    }
+    30%
+    {
+        -webkit-transform: translateX(-5px);
+       transform: translateX(-5px);
+    } 
+    50%
+    {
+        -webkit-transform: translateX(3px);
+        transform: translateX(3px);
+    }
+    65%
+    {
+        -webkit-transform: translateX(-3px);
+        transform: translateX(-3px);
+    }
+    80%
+    {
+        -webkit-transform: translateX(2px);
+        transform: translateX(2px);
+    }
+    100%
+    {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+}
+
+.circle:hover
+{
+        border-radius:50%;
+}
 
 
 

@@ -30,7 +30,7 @@
       
          <b-nav-item href="#"></b-nav-item>
       <b-nav-item-dropdown text="Cadastrar" right>
-        <b-dropdown-item href="#">Obra</b-dropdown-item>
+        <b-dropdown-item href="#/cadastroObra">Obra</b-dropdown-item>
         <b-dropdown-item href="#">Edificaçao</b-dropdown-item>
         <b-dropdown-item href="#">Andar</b-dropdown-item>
         <b-dropdown-item href="#">Apartamento</b-dropdown-item>
@@ -114,7 +114,7 @@ export default {
   name: 'Eng',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+     
     }
   }
 }
