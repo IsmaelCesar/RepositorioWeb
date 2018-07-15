@@ -1,5 +1,11 @@
 <template>
-  <div class="login">
+<div class="login">
+
+  <b-navbar toggleable="md" type="dark" variant="info" class="bg-gradient">
+    <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
+    <b-navbar-brand href="#/">iObras</b-navbar-brand>  
+  </b-navbar>
+
  <div class="py-5">
   <div class="container">
     <div class="row">
@@ -31,7 +37,7 @@
   </div>
 </div>
 
-  </div>
+</div>
 </template>
 
 <script>
