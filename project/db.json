@@ -2,10 +2,12 @@
     "usuarios":[
         {
             "email":"fulanodetal@email.com",
+            "id_pessoa":1,
             "senha":"123"
         },
         {
             "email":"cicranodecoisa@email.com",
+            "id_pessoa":1,
             "senha":"321"
         }
     ],
@@ -35,6 +37,7 @@
             "nome_obra":"Obra 1",
             "thubnail_obra":"https://picsum.photos/200/300?image=1058",
             "descricao_obra":"Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "is_finished":false,
             "edficios_obra":[1,2]
         },
         {
@@ -42,6 +45,7 @@
             "nome_obra":"Obra 2",
             "thubnail_obra":"https://picsum.photos/200/300?image=1048",
             "descricao_obra":"Ut at pharetra turpis, non dapibus erat.",
+            "is_finished":false,
             "edficios_obra":[3,4]
         },
         {
@@ -49,6 +53,7 @@
             "nome_obra":"Obra 3",
             "thubnail_obra":"https://picsum.photos/200/300?image=1076",
             "descricao_obra":"Phasellus et ante scelerisque, condimentum lectus eu, pellentesque dui.",
+            "is_finished":false,
             "edficios_obra":[5,6]
         },
         {
@@ -56,6 +61,7 @@
             "nome_obra":"Obra 4",
             "thubnail_obra":"https://picsum.photos/200/300?image=972",
             "descricao_obra":"Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+            "is_finished":false,
             "edficios_obra":[7,8]
         },
         {
@@ -63,6 +69,7 @@
             "nome_obra":"Obra 5",
             "thubnail_obra":"https://picsum.photos/200/300?image=965",
             "descricao_obra":"Ut dignissim arcu vitae lorem venenatis fermentum.",
+            "is_finished":false,
             "edficios_obra":[10,11]
         },
         {
@@ -70,6 +77,7 @@
             "nome_obra":"Obra 6",
             "thubnail_obra":"https://picsum.photos/200/300?image=953",
             "descricao_obra":"Suspendisse vitae elementum erat, at pellentesque nunc.",
+            "is_finished":false,
             "edficios_obra":[12,13]
         }
     ],
@@ -77,66 +85,1238 @@
         {
             "id_edf":1,
             "nome_edf":"dignissim",
-            "andares_edf":[1,2]
+            "dados_edf":{
+                "alvenaria":12,
+                "alvenaria_max":12,
+
+                "eletrica":18,
+                "eletrica_max":18,
+
+                "hidraulica":12,
+                "hidraulica_max":15,
+
+                "revestimento":16,
+                "revestimento_max":2
+            },
+            "andares_edf":[1,2]            
         },
         {
             "id_edf":2,
             "nome_edf":"tincidunt",
+            "dados_edf":{
+                "alvenaria":12,
+                "alvenaria_max":12,
+
+                "eletrica":18,
+                "eletrica_max":18,
+
+                "hidraulica":12,
+                "hidraulica_max":15,
+
+                "revestimento":16,
+                "revestimento_max":2
+            },
             "andares_edf":[3,4]
         },
         {
             "id_edf":3,
             "nome_edf":"nulla",
+            "dados_edf":{
+                "alvenaria":12,
+                "alvenaria_max":12,
+
+                "eletrica":18,
+                "eletrica_max":18,
+
+                "hidraulica":12,
+                "hidraulica_max":15,
+
+                "revestimento":16,
+                "revestimento_max":2
+            },
             "andares_edf":[5,6]
         },
         {
             "id_edf":4,
             "nome_edf":"volutpat",
+            "dados_edf":{
+                "alvenaria":12,
+                "alvenaria_max":12,
+
+                "eletrica":18,
+                "eletrica_max":18,
+
+                "hidraulica":12,
+                "hidraulica_max":15,
+
+                "revestimento":16,
+                "revestimento_max":2
+            },
             "andares_edf":[7,8]
         },
         {
             "id_edf":5,
             "nome_edf":"sodales",
+            "dados_edf":{
+                "alvenaria":12,
+                "alvenaria_max":12,
+
+                "eletrica":18,
+                "eletrica_max":18,
+
+                "hidraulica":12,
+                "hidraulica_max":15,
+
+                "revestimento":16,
+                "revestimento_max":2
+            },
             "andares_edf":[9,10]
         },
         {
             "id_edf":6,
             "nome_edf":"sem",
+            "dados_edf":{
+                "alvenaria":12,
+                "alvenaria_max":12,
+
+                "eletrica":18,
+                "eletrica_max":18,
+
+                "hidraulica":12,
+                "hidraulica_max":15,
+
+                "revestimento":16,
+                "revestimento_max":2
+            },
             "andares_edf":[11,12]
         },
         {
             "id_edf":7,
             "nome_edf":"lobortis",
+            "dados_edf":{
+                "alvenaria":12,
+                "alvenaria_max":12,
+
+                "eletrica":18,
+                "eletrica_max":18,
+
+                "hidraulica":12,
+                "hidraulica_max":15,
+
+                "revestimento":16,
+                "revestimento_max":2
+            },
             "andares_edf":[13,14]
         },
         {
             "id_edf":8,
             "nome_edf":"eleifend",
+            "dados_edf":{
+                "alvenaria":12,
+                "alvenaria_max":12,
+
+                "eletrica":18,
+                "eletrica_max":18,
+
+                "hidraulica":12,
+                "hidraulica_max":15,
+
+                "revestimento":16,
+                "revestimento_max":2
+            },
             "andares_edf":[15,16]
         },
         {
             "id_edf":9,
             "nome_edf":"mollis",
+            "dados_edf":{
+                "alvenaria":12,
+                "alvenaria_max":12,
+
+                "eletrica":18,
+                "eletrica_max":18,
+
+                "hidraulica":12,
+                "hidraulica_max":15,
+
+                "revestimento":16,
+                "revestimento_max":2
+            },
             "andares_edf":[17,18]
         },
         {
             "id_edf":10,
             "nome_edf":"ultrices",
+            "dados_edf":{
+                "alvenaria":12,
+                "alvenaria_max":12,
+
+                "eletrica":18,
+                "eletrica_max":18,
+
+                "hidraulica":12,
+                "hidraulica_max":15,
+
+                "revestimento":16,
+                "revestimento_max":2
+            },
             "andares_edf":[19,20]
         },
         {
             "id_edf":11,
+            "nome_edf":"Ultimate EDF",
+            "dados_edf":{
+                "alvenaria":12,
+                "alvenaria_max":12,
+
+                "eletrica":18,
+                "eletrica_max":18,
+
+                "hidraulica":12,
+                "hidraulica_max":15,
+
+                "revestimento":16,
+                "revestimento_max":2
+            },
             "andares_edf":[21,22]
         },
         {
             "id_edf":12,
             "nome_edf":"velit",
+            "dados_edf":{
+                "alvenaria":12,
+                "alvenaria_max":12,
+                
+                "eletrica":18,
+                "eletrica_max":18,
+
+                "hidraulica":12,
+                "hidraulica_max":15,
+
+                "revestimento":16,
+                "revestimento_max":2
+            },
             "andares_edf":[23,24]
         },
         {
             "id_edf":13,
             "nome_edf":"cubilia",
+            "dados_edf":{
+                "alvenaria":12,
+                "alvenaria_max":12,
+
+                "eletrica":18,
+                "eletrica_max":18,
+
+                "hidraulica":12,
+                "hidraulica_max":15,
+
+                "revestimento":16,
+                "revestimento_max":2
+            },
             "andares_edf":[25,26]
+        }
+    ],
+    "andares":[
+        {
+            "id_andar":1,
+            "alvenaria":{
+                "pilares":6,
+                "pilares_max":6,
+                
+                "vigas":4,
+                "vigas_max":4,
+
+                "alvenaria":15,
+                "alvenaria_max":19
+            },
+
+            "eletrica":{
+                "tubulacoes_eletricas":9,
+                "tubulacoes_eletricas_max":9,
+
+                "pontos_eletricos":9,
+                "pontos_eletricos_max":9
+            },
+
+            "hidraulica":{
+                "tubulacoes_hidraulicas":9,
+                "tubulacoes_hidraulicas_max":15,
+
+                "pontos_hidraulicos":70,
+                "pontos_eletricos_max":100
+            },
+
+            "revestimento":{
+                "piso":500,
+                "piso_max":250,
+
+                "pintura":100,
+                "pintura_max":50,
+
+                "esquadrias":50,
+                "esquadrias_max":15
+            }
+        },
+        {
+            "id_andar":2,
+            "alvenaria":{
+                "pilares":6,
+                "pilares_max":6,
+                
+                "vigas":4,
+                "vigas_max":4,
+
+                "alvenaria":15,
+                "alvenaria_max":19
+            },
+
+            "eletrica":{
+                "tubulacoes_eletricas":9,
+                "tubulacoes_eletricas_max":9,
+
+                "pontos_eletricos":9,
+                "pontos_eletricos_max":9
+            },
+
+            "hidraulica":{
+                "tubulacoes_hidraulicas":9,
+                "tubulacoes_hidraulicas_max":15,
+
+                "pontos_hidraulicos":70,
+                "pontos_eletricos_max":100
+            },
+
+            "revestimento":{
+                "piso":500,
+                "piso_max":250,
+
+                "pintura":100,
+                "pintura_max":50,
+
+                "esquadrias":50,
+                "esquadrias_max":15
+            }
+        },
+        {
+            "id_andar":3,
+            "alvenaria":{
+                "pilares":6,
+                "pilares_max":6,
+                
+                "vigas":4,
+                "vigas_max":4,
+
+                "alvenaria":15,
+                "alvenaria_max":19
+            },
+
+            "eletrica":{
+                "tubulacoes_eletricas":9,
+                "tubulacoes_eletricas_max":9,
+
+                "pontos_eletricos":9,
+                "pontos_eletricos_max":9
+            },
+
+            "hidraulica":{
+                "tubulacoes_hidraulicas":9,
+                "tubulacoes_hidraulicas_max":15,
+
+                "pontos_hidraulicos":70,
+                "pontos_eletricos_max":100
+            },
+
+            "revestimento":{
+                "piso":500,
+                "piso_max":250,
+
+                "pintura":100,
+                "pintura_max":50,
+
+                "esquadrias":50,
+                "esquadrias_max":15
+            }
+        },
+        {
+            "id_andar":4,
+            "alvenaria":{
+                "pilares":6,
+                "pilares_max":6,
+                
+                "vigas":4,
+                "vigas_max":4,
+
+                "alvenaria":15,
+                "alvenaria_max":19
+            },
+
+            "eletrica":{
+                "tubulacoes_eletricas":9,
+                "tubulacoes_eletricas_max":9,
+
+                "pontos_eletricos":9,
+                "pontos_eletricos_max":9
+            },
+
+            "hidraulica":{
+                "tubulacoes_hidraulicas":9,
+                "tubulacoes_hidraulicas_max":15,
+
+                "pontos_hidraulicos":70,
+                "pontos_eletricos_max":100
+            },
+
+            "revestimento":{
+                "piso":500,
+                "piso_max":250,
+
+                "pintura":100,
+                "pintura_max":50,
+
+                "esquadrias":50,
+                "esquadrias_max":15
+            }
+        },
+        {
+            "id_andar":6,
+            "alvenaria":{
+                "pilares":6,
+                "pilares_max":6,
+                
+                "vigas":4,
+                "vigas_max":4,
+
+                "alvenaria":15,
+                "alvenaria_max":19
+            },
+
+            "eletrica":{
+                "tubulacoes_eletricas":9,
+                "tubulacoes_eletricas_max":9,
+
+                "pontos_eletricos":9,
+                "pontos_eletricos_max":9
+            },
+
+            "hidraulica":{
+                "tubulacoes_hidraulicas":9,
+                "tubulacoes_hidraulicas_max":15,
+
+                "pontos_hidraulicos":70,
+                "pontos_eletricos_max":100
+            },
+
+            "revestimento":{
+                "piso":500,
+                "piso_max":250,
+
+                "pintura":100,
+                "pintura_max":50,
+
+                "esquadrias":50,
+                "esquadrias_max":15
+            }
+        },
+        {
+            "id_andar":7,
+            "alvenaria":{
+                "pilares":6,
+                "pilares_max":6,
+                
+                "vigas":4,
+                "vigas_max":4,
+
+                "alvenaria":15,
+                "alvenaria_max":19
+            },
+
+            "eletrica":{
+                "tubulacoes_eletricas":9,
+                "tubulacoes_eletricas_max":9,
+
+                "pontos_eletricos":9,
+                "pontos_eletricos_max":9
+            },
+
+            "hidraulica":{
+                "tubulacoes_hidraulicas":9,
+                "tubulacoes_hidraulicas_max":15,
+
+                "pontos_hidraulicos":70,
+                "pontos_eletricos_max":100
+            },
+
+            "revestimento":{
+                "piso":500,
+                "piso_max":250,
+
+                "pintura":100,
+                "pintura_max":50,
+
+                "esquadrias":50,
+                "esquadrias_max":15
+            }
+        },
+        {
+            "id_andar":8,
+            "alvenaria":{
+                "pilares":6,
+                "pilares_max":6,
+                
+                "vigas":4,
+                "vigas_max":4,
+
+                "alvenaria":15,
+                "alvenaria_max":19
+            },
+
+            "eletrica":{
+                "tubulacoes_eletricas":9,
+                "tubulacoes_eletricas_max":9,
+
+                "pontos_eletricos":9,
+                "pontos_eletricos_max":9
+            },
+
+            "hidraulica":{
+                "tubulacoes_hidraulicas":9,
+                "tubulacoes_hidraulicas_max":15,
+
+                "pontos_hidraulicos":70,
+                "pontos_eletricos_max":100
+            },
+
+            "revestimento":{
+                "piso":500,
+                "piso_max":250,
+
+                "pintura":100,
+                "pintura_max":50,
+
+                "esquadrias":50,
+                "esquadrias_max":15
+            }
+        },
+        {
+            "id_andar":9,
+            "alvenaria":{
+                "pilares":6,
+                "pilares_max":6,
+                
+                "vigas":4,
+                "vigas_max":4,
+
+                "alvenaria":15,
+                "alvenaria_max":19
+            },
+
+            "eletrica":{
+                "tubulacoes_eletricas":9,
+                "tubulacoes_eletricas_max":9,
+
+                "pontos_eletricos":9,
+                "pontos_eletricos_max":9
+            },
+
+            "hidraulica":{
+                "tubulacoes_hidraulicas":9,
+                "tubulacoes_hidraulicas_max":15,
+
+                "pontos_hidraulicos":70,
+                "pontos_eletricos_max":100
+            },
+
+            "revestimento":{
+                "piso":500,
+                "piso_max":250,
+
+                "pintura":100,
+                "pintura_max":50,
+
+                "esquadrias":50,
+                "esquadrias_max":15
+            }
+        },
+        {
+            "id_andar":10,
+            "alvenaria":{
+                "pilares":6,
+                "pilares_max":6,
+                
+                "vigas":4,
+                "vigas_max":4,
+
+                "alvenaria":15,
+                "alvenaria_max":19
+            },
+
+            "eletrica":{
+                "tubulacoes_eletricas":9,
+                "tubulacoes_eletricas_max":9,
+
+                "pontos_eletricos":9,
+                "pontos_eletricos_max":9
+            },
+
+            "hidraulica":{
+                "tubulacoes_hidraulicas":9,
+                "tubulacoes_hidraulicas_max":15,
+
+                "pontos_hidraulicos":70,
+                "pontos_eletricos_max":100
+            },
+
+            "revestimento":{
+                "piso":500,
+                "piso_max":250,
+
+                "pintura":100,
+                "pintura_max":50,
+
+                "esquadrias":50,
+                "esquadrias_max":15
+            }
+        },
+        {
+            "id_andar":11,
+            "alvenaria":{
+                "pilares":6,
+                "pilares_max":6,
+                
+                "vigas":4,
+                "vigas_max":4,
+
+                "alvenaria":15,
+                "alvenaria_max":19
+            },
+
+            "eletrica":{
+                "tubulacoes_eletricas":9,
+                "tubulacoes_eletricas_max":9,
+
+                "pontos_eletricos":9,
+                "pontos_eletricos_max":9
+            },
+
+            "hidraulica":{
+                "tubulacoes_hidraulicas":9,
+                "tubulacoes_hidraulicas_max":15,
+
+                "pontos_hidraulicos":70,
+                "pontos_eletricos_max":100
+            },
+
+            "revestimento":{
+                "piso":500,
+                "piso_max":250,
+
+                "pintura":100,
+                "pintura_max":50,
+
+                "esquadrias":50,
+                "esquadrias_max":15
+            }
+        },
+        {
+            "id_andar":12,
+            "alvenaria":{
+                "pilares":6,
+                "pilares_max":6,
+                
+                "vigas":4,
+                "vigas_max":4,
+
+                "alvenaria":15,
+                "alvenaria_max":19
+            },
+
+            "eletrica":{
+                "tubulacoes_eletricas":9,
+                "tubulacoes_eletricas_max":9,
+
+                "pontos_eletricos":9,
+                "pontos_eletricos_max":9
+            },
+
+            "hidraulica":{
+                "tubulacoes_hidraulicas":9,
+                "tubulacoes_hidraulicas_max":15,
+
+                "pontos_hidraulicos":70,
+                "pontos_eletricos_max":100
+            },
+
+            "revestimento":{
+                "piso":500,
+                "piso_max":250,
+
+                "pintura":100,
+                "pintura_max":50,
+
+                "esquadrias":50,
+                "esquadrias_max":15
+            }
+        },
+        {
+            "id_andar":13,
+            "alvenaria":{
+                "pilares":6,
+                "pilares_max":6,
+                
+                "vigas":4,
+                "vigas_max":4,
+
+                "alvenaria":15,
+                "alvenaria_max":19
+            },
+
+            "eletrica":{
+                "tubulacoes_eletricas":9,
+                "tubulacoes_eletricas_max":9,
+
+                "pontos_eletricos":9,
+                "pontos_eletricos_max":9
+            },
+
+            "hidraulica":{
+                "tubulacoes_hidraulicas":9,
+                "tubulacoes_hidraulicas_max":15,
+
+                "pontos_hidraulicos":70,
+                "pontos_eletricos_max":100
+            },
+
+            "revestimento":{
+                "piso":500,
+                "piso_max":250,
+
+                "pintura":100,
+                "pintura_max":50,
+
+                "esquadrias":50,
+                "esquadrias_max":15
+            }
+        },
+        {
+            "id_andar":14,
+            "alvenaria":{
+                "pilares":6,
+                "pilares_max":6,
+                
+                "vigas":4,
+                "vigas_max":4,
+
+                "alvenaria":15,
+                "alvenaria_max":19
+            },
+
+            "eletrica":{
+                "tubulacoes_eletricas":9,
+                "tubulacoes_eletricas_max":9,
+
+                "pontos_eletricos":9,
+                "pontos_eletricos_max":9
+            },
+
+            "hidraulica":{
+                "tubulacoes_hidraulicas":9,
+                "tubulacoes_hidraulicas_max":15,
+
+                "pontos_hidraulicos":70,
+                "pontos_eletricos_max":100
+            },
+
+            "revestimento":{
+                "piso":500,
+                "piso_max":250,
+
+                "pintura":100,
+                "pintura_max":50,
+
+                "esquadrias":50,
+                "esquadrias_max":15
+            }
+        },
+        {
+            "id_andar":15,
+            "alvenaria":{
+                "pilares":6,
+                "pilares_max":6,
+                
+                "vigas":4,
+                "vigas_max":4,
+
+                "alvenaria":15,
+                "alvenaria_max":19
+            },
+
+            "eletrica":{
+                "tubulacoes_eletricas":9,
+                "tubulacoes_eletricas_max":9,
+
+                "pontos_eletricos":9,
+                "pontos_eletricos_max":9
+            },
+
+            "hidraulica":{
+                "tubulacoes_hidraulicas":9,
+                "tubulacoes_hidraulicas_max":15,
+
+                "pontos_hidraulicos":70,
+                "pontos_eletricos_max":100
+            },
+
+            "revestimento":{
+                "piso":500,
+                "piso_max":250,
+
+                "pintura":100,
+                "pintura_max":50,
+
+                "esquadrias":50,
+                "esquadrias_max":15
+            }
+        },
+        {
+            "id_andar":16,
+            "alvenaria":{
+                "pilares":6,
+                "pilares_max":6,
+                
+                "vigas":4,
+                "vigas_max":4,
+
+                "alvenaria":15,
+                "alvenaria_max":19
+            },
+
+            "eletrica":{
+                "tubulacoes_eletricas":9,
+                "tubulacoes_eletricas_max":9,
+
+                "pontos_eletricos":9,
+                "pontos_eletricos_max":9
+            },
+
+            "hidraulica":{
+                "tubulacoes_hidraulicas":9,
+                "tubulacoes_hidraulicas_max":15,
+
+                "pontos_hidraulicos":70,
+                "pontos_eletricos_max":100
+            },
+
+            "revestimento":{
+                "piso":500,
+                "piso_max":250,
+
+                "pintura":100,
+                "pintura_max":50,
+
+                "esquadrias":50,
+                "esquadrias_max":15
+            }
+        },
+        {
+            "id_andar":17,
+            "alvenaria":{
+                "pilares":6,
+                "pilares_max":6,
+                
+                "vigas":4,
+                "vigas_max":4,
+
+                "alvenaria":15,
+                "alvenaria_max":19
+            },
+
+            "eletrica":{
+                "tubulacoes_eletricas":9,
+                "tubulacoes_eletricas_max":9,
+
+                "pontos_eletricos":9,
+                "pontos_eletricos_max":9
+            },
+
+            "hidraulica":{
+                "tubulacoes_hidraulicas":9,
+                "tubulacoes_hidraulicas_max":15,
+
+                "pontos_hidraulicos":70,
+                "pontos_eletricos_max":100
+            },
+
+            "revestimento":{
+                "piso":500,
+                "piso_max":250,
+
+                "pintura":100,
+                "pintura_max":50,
+
+                "esquadrias":50,
+                "esquadrias_max":15
+            }
+        },
+        {
+            "id_andar":18,
+            "alvenaria":{
+                "pilares":6,
+                "pilares_max":6,
+                
+                "vigas":4,
+                "vigas_max":4,
+
+                "alvenaria":15,
+                "alvenaria_max":19
+            },
+
+            "eletrica":{
+                "tubulacoes_eletricas":9,
+                "tubulacoes_eletricas_max":9,
+
+                "pontos_eletricos":9,
+                "pontos_eletricos_max":9
+            },
+
+            "hidraulica":{
+                "tubulacoes_hidraulicas":9,
+                "tubulacoes_hidraulicas_max":15,
+
+                "pontos_hidraulicos":70,
+                "pontos_eletricos_max":100
+            },
+
+            "revestimento":{
+                "piso":500,
+                "piso_max":250,
+
+                "pintura":100,
+                "pintura_max":50,
+
+                "esquadrias":50,
+                "esquadrias_max":15
+            }
+        },
+        {
+            "id_andar":19,
+            "alvenaria":{
+                "pilares":6,
+                "pilares_max":6,
+                
+                "vigas":4,
+                "vigas_max":4,
+
+                "alvenaria":15,
+                "alvenaria_max":19
+            },
+
+            "eletrica":{
+                "tubulacoes_eletricas":9,
+                "tubulacoes_eletricas_max":9,
+
+                "pontos_eletricos":9,
+                "pontos_eletricos_max":9
+            },
+
+            "hidraulica":{
+                "tubulacoes_hidraulicas":9,
+                "tubulacoes_hidraulicas_max":15,
+
+                "pontos_hidraulicos":70,
+                "pontos_eletricos_max":100
+            },
+
+            "revestimento":{
+                "piso":500,
+                "piso_max":250,
+
+                "pintura":100,
+                "pintura_max":50,
+
+                "esquadrias":50,
+                "esquadrias_max":15
+            }
+        },
+        {
+            "id_andar":20,
+            "alvenaria":{
+                "pilares":6,
+                "pilares_max":6,
+                
+                "vigas":4,
+                "vigas_max":4,
+
+                "alvenaria":15,
+                "alvenaria_max":19
+            },
+
+            "eletrica":{
+                "tubulacoes_eletricas":9,
+                "tubulacoes_eletricas_max":9,
+
+                "pontos_eletricos":9,
+                "pontos_eletricos_max":9
+            },
+
+            "hidraulica":{
+                "tubulacoes_hidraulicas":9,
+                "tubulacoes_hidraulicas_max":15,
+
+                "pontos_hidraulicos":70,
+                "pontos_eletricos_max":100
+            },
+
+            "revestimento":{
+                "piso":500,
+                "piso_max":250,
+
+                "pintura":100,
+                "pintura_max":50,
+
+                "esquadrias":50,
+                "esquadrias_max":15
+            }
+        },
+        {
+            "id_andar":21,
+            "alvenaria":{
+                "pilares":6,
+                "pilares_max":6,
+                
+                "vigas":4,
+                "vigas_max":4,
+
+                "alvenaria":15,
+                "alvenaria_max":19
+            },
+
+            "eletrica":{
+                "tubulacoes_eletricas":9,
+                "tubulacoes_eletricas_max":9,
+
+                "pontos_eletricos":9,
+                "pontos_eletricos_max":9
+            },
+
+            "hidraulica":{
+                "tubulacoes_hidraulicas":9,
+                "tubulacoes_hidraulicas_max":15,
+
+                "pontos_hidraulicos":70,
+                "pontos_eletricos_max":100
+            },
+
+            "revestimento":{
+                "piso":500,
+                "piso_max":250,
+
+                "pintura":100,
+                "pintura_max":50,
+
+                "esquadrias":50,
+                "esquadrias_max":15
+            }
+        },
+        {
+            "id_andar":22,
+            "alvenaria":{
+                "pilares":6,
+                "pilares_max":6,
+                
+                "vigas":4,
+                "vigas_max":4,
+
+                "alvenaria":15,
+                "alvenaria_max":19
+            },
+
+            "eletrica":{
+                "tubulacoes_eletricas":9,
+                "tubulacoes_eletricas_max":9,
+
+                "pontos_eletricos":9,
+                "pontos_eletricos_max":9
+            },
+
+            "hidraulica":{
+                "tubulacoes_hidraulicas":9,
+                "tubulacoes_hidraulicas_max":15,
+
+                "pontos_hidraulicos":70,
+                "pontos_eletricos_max":100
+            },
+
+            "revestimento":{
+                "piso":500,
+                "piso_max":250,
+
+                "pintura":100,
+                "pintura_max":50,
+
+                "esquadrias":50,
+                "esquadrias_max":15
+            }
+        },
+        {
+            "id_andar":23,
+            "alvenaria":{
+                "pilares":6,
+                "pilares_max":6,
+                
+                "vigas":4,
+                "vigas_max":4,
+
+                "alvenaria":15,
+                "alvenaria_max":19
+            },
+
+            "eletrica":{
+                "tubulacoes_eletricas":9,
+                "tubulacoes_eletricas_max":9,
+
+                "pontos_eletricos":9,
+                "pontos_eletricos_max":9
+            },
+
+            "hidraulica":{
+                "tubulacoes_hidraulicas":9,
+                "tubulacoes_hidraulicas_max":15,
+
+                "pontos_hidraulicos":70,
+                "pontos_eletricos_max":100
+            },
+
+            "revestimento":{
+                "piso":500,
+                "piso_max":250,
+
+                "pintura":100,
+                "pintura_max":50,
+
+                "esquadrias":50,
+                "esquadrias_max":15
+            }
+        },
+        {
+            "id_andar":24,
+            "alvenaria":{
+                "pilares":6,
+                "pilares_max":6,
+                
+                "vigas":4,
+                "vigas_max":4,
+
+                "alvenaria":15,
+                "alvenaria_max":19
+            },
+
+            "eletrica":{
+                "tubulacoes_eletricas":9,
+                "tubulacoes_eletricas_max":9,
+
+                "pontos_eletricos":9,
+                "pontos_eletricos_max":9
+            },
+
+            "hidraulica":{
+                "tubulacoes_hidraulicas":9,
+                "tubulacoes_hidraulicas_max":15,
+
+                "pontos_hidraulicos":70,
+                "pontos_eletricos_max":100
+            },
+
+            "revestimento":{
+                "piso":500,
+                "piso_max":250,
+
+                "pintura":100,
+                "pintura_max":50,
+
+                "esquadrias":50,
+                "esquadrias_max":15
+            }
+        },
+        {
+            "id_andar":25,
+            "alvenaria":{
+                "pilares":6,
+                "pilares_max":6,
+                
+                "vigas":4,
+                "vigas_max":4,
+
+                "alvenaria":15,
+                "alvenaria_max":19
+            },
+
+            "eletrica":{
+                "tubulacoes_eletricas":9,
+                "tubulacoes_eletricas_max":9,
+
+                "pontos_eletricos":9,
+                "pontos_eletricos_max":9
+            },
+
+            "hidraulica":{
+                "tubulacoes_hidraulicas":9,
+                "tubulacoes_hidraulicas_max":15,
+
+                "pontos_hidraulicos":70,
+                "pontos_eletricos_max":100
+            },
+
+            "revestimento":{
+                "piso":500,
+                "piso_max":250,
+
+                "pintura":100,
+                "pintura_max":50,
+
+                "esquadrias":50,
+                "esquadrias_max":15
+            }
+        },
+        {
+            "id_andar":26,
+            "alvenaria":{
+                "pilares":6,
+                "pilares_max":6,
+                
+                "vigas":4,
+                "vigas_max":4,
+
+                "alvenaria":15,
+                "alvenaria_max":19
+            },
+
+            "eletrica":{
+                "tubulacoes_eletricas":9,
+                "tubulacoes_eletricas_max":9,
+
+                "pontos_eletricos":9,
+                "pontos_eletricos_max":9
+            },
+
+            "hidraulica":{
+                "tubulacoes_hidraulicas":9,
+                "tubulacoes_hidraulicas_max":15,
+
+                "pontos_hidraulicos":70,
+                "pontos_eletricos_max":100
+            },
+
+            "revestimento":{
+                "piso":500,
+                "piso_max":250,
+
+                "pintura":100,
+                "pintura_max":50,
+
+                "esquadrias":50,
+                "esquadrias_max":15
+            }
         }
     ]
 }

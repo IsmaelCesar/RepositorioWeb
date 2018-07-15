@@ -27,7 +27,7 @@
           <div class="card text-white p-5 bg-primary">
           <div class="card-body" >
             <h1 class="mb-4">Entrar</h1>
-            <form action="https://formspree.io/YOUREMAILHERE">
+            <form><!--Campo action será implementado a posteriori-->
               <div class="form-group">
                 <label for="email">Login</label>
                 <input id="email" type="email" class="form-control" placeholder="Enter Login">
@@ -36,7 +36,7 @@
                 <label for="senha">Senha</label>
                 <input id="senha" type="password" class="form-control" placeholder="Senha">
               </div>
-                <button type="submit" class="btn btn-primary">Login</button>
+                <button type="submit" @click="onClickLogin" class="btn btn-primary">Login</button>
                 <button type="button" href="#/cadastro" class="btn btn-danger">Cadastre-se</button>
                 <br><br>
                 <a href="#/redefinirSenha">Esqueci minha senha</a>
@@ -57,6 +57,11 @@ export default {
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'
+    }
+  },
+  methods:{
+    onClickLogin(){
+      alert("Clicou no login")
     }
   }
 }
