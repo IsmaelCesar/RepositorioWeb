@@ -6,6 +6,12 @@ import Cadastro from '@/components/Cadastro'
 import Cadastro_Obra from '@/components/Cadastro_Obra'
 import RedefinirSenha from '@/components/RedefinirSenha'
 import User from '@/components/User'
+import Cadastro_Andar from '@/components/Cadastro_Andar'
+import Cadastro_Edificio from '@/components/Cadastro_Edificio'
+import Atualiza_Andar from '@/components/Atualiza_Andar'
+import Atualiza_Edificio from '@/components/Atualiza_Edificio'
+import Atualiza_Obra from '@/components/Atualiza_Obra'
+
 
 Vue.use(Router)
 
@@ -42,6 +48,35 @@ export default new Router({
       path:'/user',
       name:'User',
       component:User
-    }
+    },
+     {
+      path: '/cadastroAndar',
+      name: 'Cadastro_Andar',
+      component: Cadastro_Andar
+    },
+    ,
+     {
+      path: '/cadastroEdificio',
+      name: 'Cadastro_Edificio',
+      component: Cadastro_Edificio
+    },
+    ,
+     {
+      path: '/atualizaObra',
+      name: 'Atualiza_Obra',
+      component: Atualiza_Obra
+    },
+    ,
+     {
+      path: '/atualizaAndar',
+      name: 'Atualiza_Andar',
+      component: Atualiza_Andar
+    },
+    ,
+     {
+      path: '/atualizaEdificio',
+      name: 'Atualiza_Edificio',
+      component: Atualiza_Edificio
+    },
   ]
 })
