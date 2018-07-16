@@ -23,6 +23,15 @@
   <div class="container">
     <div class="row">
       <div class="col-md-3"> </div>
+      <!--Alerta a ser inserido-->
+      <b-alert
+      variant="danger"
+      dismissible
+      :show="isDismissed"
+      @dismissed="isDismissed = false"
+      >
+      {{msg}}
+      </b-alert>
         <div class="col-md-6">
           <div class="card text-white p-5 bg-primary">
           <div class="card-body" >
@@ -30,11 +39,11 @@
             <form><!--Campo action será implementado a posteriori-->
               <div class="form-group">
                 <label for="email">Login</label>
-                <input id="email" type="email" class="form-control" placeholder="Enter Login">
+                <input id="email" v-model="form.email" type="email" class="form-control" placeholder="Enter Login">
               </div>
               <div class="form-group">
                 <label for="senha">Senha</label>
-                <input id="senha" type="password" class="form-control" placeholder="Senha">
+                <input id="senha" v-model="form.senha" type="password" class="form-control" placeholder="Senha">
               </div>
               <button type="submit" @click="onClickLogin" href="#/user" class="btn btn-primary">Login</button>
               <button type="button" @click="onCarregarCadastro" class="btn btn-danger">Cadastre-se</button>
@@ -57,6 +66,7 @@ export default {
   data () {
     return {
       msg: 'Welcome to Your Vue.js App',
+      isDismissed:false,
       form:{
         email:'',
         senha:''
@@ -65,15 +75,33 @@ export default {
   },
   methods:{
     onClickLogin(){
-      
-      Vue.$http.get('/usuarios?email='+this.form.email).then(response =>{
-
-      },response=>{
-
-      })
-
-       window.location.href ="#/user"
-      
+      if(this.form.email != '' && this.form.email != ''){
+        this.$http.get('http://localhost:3000/usuarios?email='+this.form.email).then(response =>{
+            debugger
+            var resposta;
+            resposta = response.body[0]
+            if(resposta){
+              if(this.form.senha == resposta.senha){
+                window.location.href ="#/user"
+              }
+              else{
+                this.msg = "Senha incorreta!"
+                this.isDismissed = true
+              }
+            } 
+            else{
+              this.msg = "Email incorreto!"
+              this.isDismissed = true
+            }            
+        },response=>{
+            this.msg = "Erro ao carregar dados"
+            this.isDismissed = true
+        })
+      }
+      else{
+        this.msg = "Por favor, preencha todos os campos."
+        this.isDismissed = true
+      }      
     },
     onCarregarCadastro(){
       window.location.href ="#/cadastro"
