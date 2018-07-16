@@ -11,6 +11,9 @@ import Cadastro_Edificio from '@/components/Cadastro_Edificio'
 import Atualiza_Andar from '@/components/Atualiza_Andar'
 import Atualiza_Edificio from '@/components/Atualiza_Edificio'
 import Atualiza_Obra from '@/components/Atualiza_Obra'
+import Consulta from '@/components/Consulta'
+import Remover from '@/components/Remover'
+import SelectConsulta from '@/components/SelectConsulta'
 
 Vue.use(Router)
 
@@ -77,5 +80,20 @@ export default new Router({
       name: 'Atualiza_Edificio',
       component: Atualiza_Edificio
     },
+    {
+      path: '/consulta',
+      name: 'Consulta',
+      component: Consulta
+    },
+    {
+      path: '/remover',
+      name: 'Remover',
+      component: Remover
+    },
+    {
+      path: '/select',
+      name: 'SelectConsulta',
+      component: SelectConsulta
+    }
   ]
 })

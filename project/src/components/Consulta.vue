@@ -1,6 +1,6 @@
 <template>
-  <div class="atualizaAndar">
-   
+  <div class="consulta">
+
   <nav class="navbar navbar-expand-md navbar-dark bg-secondary my-3" >
     <div class="container">
       <a class="navbar-brand" href="#">
@@ -59,246 +59,134 @@
       
     </b-navbar-nav>
 
+
   </b-collapse>
 
 </b-navbar>
-
-<div class="py-5">
+     
+<br>
 <div class="container">
       <div class="row">
-  <!--div class="col-md-1"> </div-->
-        <div class="col-md-12">
-<div class="card text-white p-5 bg-primary">
-  <div class="card-body" >
-    <b-form @submit="onSubmit" @reset="onReset">
-    <fieldset><h2>Atualizar Andar </h2></fieldset>
-    <br>
-     <br>
+<div class="col-md-6">
+  <b-card-group deck
+                  class="mb-3">
+   <b-card img-src="https://picsum.photos/1024/480?image=1031"
+                img-alt="Card image"
+                img-top>
+            <p class="card-text">
+               
+            </p>
+        </b-card>
+ </b-card-group>
+  </div>
+  <div class="col-md-6">
 
-     <b-form-group id="exampleInputGroup1"
-                    label="Edificação:"
-                    label-for="exampleInput1">
-        <b-form-select id="exampleInput1"
-                      :options="edificios"
-                      required
-                      v-model="form.edificio">
-        </b-form-select>
-      </b-form-group>
+  <h4>Obra: {{obra}}</h4> 
+   <h4>Nome da Edificacao:{{edificacao}} </h4> 
+    <h4>Tipo da Fundaçao: {{Tfundacao}}</h4> 
+     <h4>Status da Fundaçao: {{statusF}}</h4> 
+      <h4>Empresa Responsável:{{empresa}}</h4> 
+      </div>
+</div>
+ </div>
 
-       <b-form-group id="exampleInputGroup4"
-                    label="Andar:"
-                    label-for="exampleInput4"
-                      description="Digite o andar atual se quiser cadastrar um andar por vez.">
-        <b-form-select id="exampleInput4"
-                      :options="andares"
-                      required
-                      v-model="form.andar">
-        </b-form-select>
-      </b-form-group>
-      
- <br>
-     <fieldset><h4>Alvenaria </h4></fieldset>
-     <br>
 
-         <b-form-group id="exampleInputGroup7"
-                    label="ALvenaria (m²):"
-                    label-for="exampleInput7">
-        <b-form-input id="exampleInput7"
-                      type="number"
-                      v-model="form.alvenaria"
-                      required
-                      placeholder="1500">
-        </b-form-input>
-      </b-form-group>
-
-       <b-form-group id="exampleInputGroup8"
-                    label="Vigas(un):"
-                    label-for="exampleInput8">
-        <b-form-input id="exampleInput8"
-                      type="number"
-                      v-model="form.vigas"
-                      required
-                      placeholder="10">
-        </b-form-input>
-      </b-form-group>
-
-     <b-form-group id="exampleInputGroup9"
-                    label="Pilares (un):"
-                    label-for="exampleInput9">
-        <b-form-input id="exampleInput9"
-                      type="number"
-                      v-model="form.pilares"
-                      required
-                      placeholder="5">
-        </b-form-input>
-      </b-form-group>
- <br>
-   <fieldset><h4>Eletríca </h4></fieldset>
+<div class="col-md-3">
+ </div>
+ <div class="container">
+      <div class="row">
+  <div class="col-md-9">
+      <br>
+      <h4>Alvenaria </h4>
+       <br>
+   <h5>Alvenaria (m²)</h5>
+    <b-progress :value="valueAlv" :max="maxAlv" :precision="2" show-value class="mb-3"></b-progress>
+    <h5>Vigas(un)</h5>
+    <b-progress :value="valueVg" :max="maxVg" :precision="2" show-value class="mb-3"></b-progress>
+   <h5>Pilares (un)</h5>
+    <b-progress :value="valueP" :max="maxP" :precision="2" show-value class="mb-3"></b-progress>
+  <br>
+  <h4>Eletríca </h4>
    <br>
-
-         <b-form-group id="exampleInputGroup10"
-                    label="Tubulações Eletrícas (m):"
-                    label-for="exampleInput10">
-        <b-form-input id="exampleInput10"
-                      type="number"
-                      v-model="form.TubEletrica"
-                      required
-                      placeholder="1000">
-        </b-form-input>
-      </b-form-group>
-
-       <b-form-group id="exampleInputGroup11"
-                    label="Pontos Eletricos (un):"
-                    label-for="exampleInput11">
-        <b-form-input id="exampleInput11"
-                      type="number"
-                      v-model="form.PontEletrica"
-                      required
-                      placeholder="7000">
-        </b-form-input>
-      </b-form-group>
-
- <br>
-  <fieldset><h4>Hidraulica</h4></fieldset>
- <br>
-
-         <b-form-group id="exampleInputGroup12"
-                    label="Tubulações Hidraulicas (m):"
-                    label-for="exampleInput12">
-        <b-form-input id="exampleInput12"
-                      type="number"
-                      v-model="form.TubHidra"
-                      required
-                      placeholder="200">
-        </b-form-input>
-      </b-form-group>
-
-       <b-form-group id="exampleInputGroup13"
-                    label="Pontos Hidraulicos (un):"
-                    label-for="exampleInput13">
-        <b-form-input id="exampleInput13"
-                      type="number"
-                      v-model="form.PontHidra"
-                      required
-                      placeholder="400">
-        </b-form-input>
-      </b-form-group>
-
-
- <br>
-      <fieldset><h4>Revestimento </h4></fieldset>
- <br>
-         <b-form-group id="exampleInputGroup14"
-                    label="Piso (m²):"
-                    label-for="exampleInput14">
-        <b-form-input id="exampleInput14"
-                      type="number"
-                      v-model="form.piso"
-                      required
-                      placeholder="1000">
-        </b-form-input>
-      </b-form-group>
-
-       <b-form-group id="exampleInputGroup15"
-                    label="Pintura (m²):"
-                    label-for="exampleInput15">
-        <b-form-input id="exampleInput15"
-                      type="number"
-                      v-model="form.pintura"
-                      required
-                      placeholder="3000">
-        </b-form-input>
-      </b-form-group>
-
-     <b-form-group id="exampleInputGroup16"
-                    label="Esquadria (un):"
-                    label-for="exampleInput16">
-        <b-form-input id="exampleInput16"
-                      type="number"
-                      v-model="form.esquadria"
-                      required
-                      placeholder="180">
-        </b-form-input>
-      </b-form-group>
-
-
-
-      <b-button type="submit" variant="primary">Submit</b-button>
-      <b-button type="reset" variant="danger">Reset</b-button>
-    </b-form>
-
+<h5>Tubulações Eletrícas (m)</h5>
+    <b-progress :value="valueTEl" :max="maxTEl" :precision="2" show-value class="mb-3"></b-progress>
+  <h5>Pontos Eletricos (un)</h5>
+   
+   <b-progress :value="valuePEl" :max="maxPEl" :precision="2" show-value class="mb-3"></b-progress>
+  <br>
+  <h4>Hidraulica</h4>
+   <br>
+  <h5>Tubulações Hidraulicas (m)</h5>
+    <b-progress :value="valueTEh" :max="maxTEh" :precision="2" show-value class="mb-3"></b-progress>
+  <h5>Pontos Hidraulicos (un)</h5>
+    <b-progress :value="valuePEh" :max="maxPEh" :precision="2" show-value class="mb-3"></b-progress>
+  <br>
+  <h4>Revestimento </h4>
+   <br>
+  <h5>Piso (m²)</h5>
+    <b-progress :value="valuePs" :max="maxPs" :precision="2" show-value class="mb-3"></b-progress>
+  <h5>Pintura (m²)</h5>
+    <b-progress :value="valuePt" :max="maxPt" :precision="2" show-value class="mb-3"></b-progress>
+  <h5>Esquadria (un)</h5>
+    <b-progress :value="valueEsq" :max="maxEsq" :precision="2" show-value class="mb-3"></b-progress>
+  
 </div>
-</div>
-</div>
-</div>
-</div>
-</div>
+ </div>
+  </div>
  
+       
+  
+    
 
-   </div>
+     </div>
+     
 </template>
 
 <script>
 export default {
-  name: 'atualizaAndar',
+  name: 'consulta',
   data () {
-
     return {
-      form: {
-        name_obra: '',
-        crea:'',
-        fundacao:'',
-        edificio: null,
-        quantAndar:'',
-        user:'',
-         quantApart:'',
-         AtualAndar:'',
-        alvenaria:'',
-        vigas:'',
-        pilares:'',
-        esquadria:'',
-        pintura:'',
-        piso:'',
-        TubEletrica:'',
-        PontEletrica:'',
-        TubHidra:'',
-        PontHidra:'',
-        andar:'',
-        checked: []
-      },
-        edificios: [
-        { text: 'Select One', value: null },
-        'edificacao1', 'edificacao2'
-      ],
-        andares: [
-        { text: 'Select One', value: null },
-        '1', '2','3','4','5'
-      ],
-      show: true,
-      selected: '',
-      options: [
-        { text: 'Nao', value: 'Nao' },
-        { text: 'Sim', value: 'Sim' }
-      ],
-      Status: [
-        { text: 'Select One', value: null },
-        'ativo', 'desativada'
-      ],
-       StatusFund: [
-        { text: 'Select One', value: null },
-        'Irá iniciar','Em andamento', 'Concluida'
-      ],
-    }
-    
+     user:'Engenheiro',
+     obra:'',
+     edificacao:'',
+      Tfundacao:'',
+      statusF:'',
+      empresa:'',
+      maxAlv: 50,
+      valueAlv: 33.33,
+      maxVg:60,
+      valueVg:30,
+      maxP:100,
+      valueP:20,
+      maxPEl:150,
+      valuePEl:50,
+      maxTEl:200,
+      valueTEl:100,
+       maxPEh:150,
+      valuePEh:50,
+      maxTEh:200,
+      valueTEh:100,
+      maxPs:400,
+      valuePs:200,
+      maxPt:380,
+      valuePt:200,
+      maxEsq:360,
+      valueEsq:20
 
+      
+    }
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1, h2 {
-  font-weight: normal;
+h1, h2, h3,h4, h5 {
+  font-weight: bold;
+  color:#17a2b8;
+  text-align: left;
+  
 }
 
 ul {
@@ -314,6 +202,7 @@ li {
 a {
   color: #42b983;
 }
+
 .bg-primary {
   background-color: #17a2b8 !important;
 }
@@ -328,4 +217,6 @@ b{
 .my-3 {
   margin-top: 0rem !important;
 }
+
+
 </style>

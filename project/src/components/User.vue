@@ -31,7 +31,7 @@
          <b-nav-item href="#"></b-nav-item>
       <b-nav-item-dropdown text="Cadastrar" right>
         <b-dropdown-item href="#/cadastroObra">Obra</b-dropdown-item>
-        <b-dropdown-item href="#cadastroEdificio">Edificaçao</b-dropdown-item>
+        <b-dropdown-item href="#/cadastroEdificio">Edificaçao</b-dropdown-item>
         <b-dropdown-item href="#/cadastroAndar">Andar</b-dropdown-item>
       </b-nav-item-dropdown>
          <b-nav-item href="#"></b-nav-item>
@@ -43,17 +43,20 @@
       </b-nav-item-dropdown>
          <b-nav-item href="#"></b-nav-item>
          <b-nav-item href="#"></b-nav-item>
-       <b-nav-item href="#">Consultar</b-nav-item>
+       <b-nav-item href="#/select">Consultar</b-nav-item>
          <b-nav-item href="#"></b-nav-item>
           <b-nav-item href="#"></b-nav-item>
-        <b-nav-item href="#">Remover</b-nav-item>
+        <b-nav-item href="#/remover">Remover</b-nav-item>
          <b-nav-item href="#"></b-nav-item>
           <b-nav-item href="#"></b-nav-item>
-          <b-nav-item href="#">Relatorio</b-nav-item>
-           <b-nav-item href="#"></b-nav-item>
-            <b-nav-item href="#"></b-nav-item>
            <b-nav-item href="#">Pendencias</b-nav-item>
             <b-nav-item href="#"></b-nav-item>
+
+            <b-nav-form>
+        <b-form-input size="sm" class="mr-sm-2" type="text" placeholder="Search"/>
+        <b-button size="sm" class="my-2 my-sm-0" type="submit">Search</b-button>
+      </b-nav-form>
+      
     </b-navbar-nav>
 
   </b-collapse>
