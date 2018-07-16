@@ -1,5 +1,5 @@
 <template>
-  <div class="user">
+<div class="user">
 
   <nav class="navbar navbar-expand-md navbar-dark bg-secondary my-3" >
     <div class="container">
@@ -173,21 +173,30 @@
   </b-card>
 
   </b-card-group>
-
-
-
-
-     </div>
-     
+</div>
 </template>
 
 <script>
+import { EventBus } from '../main.js'
+
 export default {
   name: 'user',
   data () {
     return {
      user:'Engenheiro',
+     user_info:null,
     }
+  },
+  created(){
+    debugger
+    this.user_info = 'teste'
+    EventBus.$on('emitDadosPessoa',(data)=>{
+      debugger
+      this.user_info = data
+      if(!this.user_info){
+        console.log('Dados não propagaram')
+      }
+    })
   }
 }
 </script>

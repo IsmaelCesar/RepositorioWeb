@@ -1,6 +1,5 @@
 <template>
   <div class="login">
-
    <b-navbar toggleable="md" type="dark" variant="info" class="bg-gradient">
 
   <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
@@ -23,16 +22,16 @@
   <div class="container">
     <div class="row">
       <div class="col-md-3"> </div>
-      <!--Alerta a ser inserido-->
-      <b-alert
-      variant="danger"
-      dismissible
-      :show="isDismissed"
-      @dismissed="isDismissed = false"
-      >
-      {{msg}}
-      </b-alert>
         <div class="col-md-6">
+          <!--Alerta a ser inserido-->
+          <b-alert
+          variant="danger"
+          dismissible
+          :show="isDismissed"
+          @dismissed="isDismissed = false"
+          >
+          {{msg}}
+          </b-alert>
           <div class="card text-white p-5 bg-primary">
           <div class="card-body" >
             <h1 class="mb-4">Entrar</h1>
@@ -61,6 +60,8 @@
 </template>
 
 <script>
+import { EventBus } from '../main.js'
+
 export default {
   name: 'Login',
   data () {
@@ -68,8 +69,8 @@ export default {
       msg: 'Welcome to Your Vue.js App',
       isDismissed:false,
       form:{
-        email:'',
-        senha:''
+        email:'fulanodetal@email.com',
+        senha:'123'
       }
     }
   },
@@ -77,12 +78,12 @@ export default {
     onClickLogin(){
       if(this.form.email != '' && this.form.email != ''){
         this.$http.get('http://localhost:3000/usuarios?email='+this.form.email).then(response =>{
-            debugger
             var resposta;
             resposta = response.body[0]
             if(resposta){
               if(this.form.senha == resposta.senha){
-                window.location.href ="#/user"
+                //Emite o evento
+                this.onLoginNoSite(resposta.id_pessoa)
               }
               else{
                 this.msg = "Senha incorreta!"
@@ -105,6 +106,19 @@ export default {
     },
     onCarregarCadastro(){
       window.location.href ="#/cadastro"
+    },
+    onLoginNoSite(idPessoa){
+      if(idPessoa){
+        this.$http.get('http://localhost:3000/pessoas?id='+idPessoa).then(response =>{
+          var dados_pessoa
+          dados_pessoa = response.body[0]
+          EventBus.$emit('emitDadosPessoa',dados_pessoa)
+          window.location.href="#/user"
+        }, response => {  
+          this.msg = "Erro ao carregar dados."
+          this.isDismissed = true
+        })
+      }     
     }
   }
 }
