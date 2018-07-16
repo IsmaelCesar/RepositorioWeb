@@ -111,11 +111,12 @@ export default {
       if(idPessoa){
         var data
         data = this.$http.get('http://localhost:3000/pessoas?id='+idPessoa).then(response =>{
-              var dados_pessoa
+          var dados_pessoa
           dados_pessoa = response.body[0]
+          //Emite evento para os outros componente utilizarem
           EventBus.$emit('emitDadosPessoa',dados_pessoa)
-          return dados_pessoa
-          //window.location.href="#/user"
+          //Retorna dados para que seja verificado se os valores retornados não foram nulos
+          return dados_pessoa          
         }, response => {  
           this.msg = "Erro ao carregar dados."
           this.isDismissed = true
