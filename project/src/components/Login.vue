@@ -115,7 +115,7 @@ export default {
           dados_pessoa = response.body[0]
           //Emite evento para os outros componente utilizarem
           EventBus.$emit('emitDadosPessoa',dados_pessoa)
-          //Retorna dados para que seja verificado se os valores retornados não foram nulos
+          //Retorna dados para que seja verificado se os valores retornados não foram nulosig
           return dados_pessoa          
         }, response => {  
           this.msg = "Erro ao carregar dados."
