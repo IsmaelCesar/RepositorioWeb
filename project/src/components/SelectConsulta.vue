@@ -1,6 +1,6 @@
 <template>
-  <div class="user">
-
+  <div class="selectC">
+   
   <nav class="navbar navbar-expand-md navbar-dark bg-secondary my-3" >
     <div class="container">
       <a class="navbar-brand" href="#">
@@ -59,138 +59,98 @@
       
     </b-navbar-nav>
 
+
   </b-collapse>
 
 </b-navbar>
-     
-<br>
 
-       
-  
-    <b-card-group deck>
-      <b-card title="Card Title"
-          img-src="https://2.bp.blogspot.com/-Q7WZDQx4j7o/VeUO3tVlWHI/AAAAAAAAAUI/XYd9dStlZEc/s1600/predio-inteiro-2.jpg"
-          img-alt="Image"
-          img-top
-          tag="article"
-          style="max-width: 20rem;"
-          class="mb-2">
-    <p class="card-text">
-      Some quick example text to build on the card title and make up the bulk of the card's content.
-    </p>
-    <b-button href="#" variant="primary">Go somewhere</b-button>
-  </b-card>
+<div class="py-5">
+<div class="container">
+      <div class="row">
+  <!--div class="col-md-1"> </div-->
+        <div class="col-md-12">
+<div class="card text-white p-5 bg-primary">
+  <div class="card-body" >
+    <b-form @submit="onSubmit" @reset="onReset">
+    <fieldset><h2>Consultar </h2></fieldset>
+    <br>
+    
 
-  <b-card title="Card Title"
-          img-src="http://www.atitudessustentaveis.com.br/wp-content/uploads/2008/11/300x211xpredios-sustentaveis-300x211.jpg.pagespeed.ic.5gd8Ieqqqs.jpg"
-          img-alt="Image"
-          img-top
-          tag="article"
-          style="max-width: 20rem;"
-          class="mb-2">
-    <p class="card-text">
-      Some quick example text to build on the card title and make up the bulk of the card's content.
-    </p>
-    <b-button href="#" variant="primary">Go somewhere</b-button>
-  </b-card>
+       <b-form-group id="exampleInputGroup1"
+                    label="Obra:"
+                    label-for="exampleInput1">
+        <b-form-select id="exampleInput1"
+                      :options="obras"
+                      required
+                      v-model="form.obra">
+        </b-form-select>
+      </b-form-group>
 
-  <b-card title="Card Title"
-          img-src="http://www.karpat.adv.br/wp-content/uploads/2016/11/fachadas-de-predios-3.jpg"
-          img-alt="Image"
-          img-top
-          tag="article"
-          style="max-width: 20rem;"
-          class="mb-2">
-    <p class="card-text">
-      Some quick example text to build on the card title and make up the bulk of the card's content.
-    </p>
-    <b-button href="#" variant="primary">Go somewhere</b-button>
-  </b-card>
+       <b-form-group id="exampleInputGroup2"
+                    label="Edificação:"
+                    label-for="exampleInput2">
+        <b-form-select id="exampleInput2"
+                      :options="Edificacao"
+                      required
+                      v-model="form.edif">
+        </b-form-select>
+      </b-form-group>
 
-  <b-card title="Card Title"
-          img-src="https://casaeconstrucao.org/wp-content/uploads/2016/09/fachadas-de-predios-comerciais-de-luxo-300x217.jpg"
-          img-alt="Image"
-          img-top
-          tag="article"
-          style="max-width: 20rem;"
-          class="mb-2">
-    <p class="card-text">
-      Some quick example text to build on the card title and make up the bulk of the card's content.
-    </p>
-    <b-button href="#" variant="primary">Go somewhere</b-button>
-  </b-card>
+        <b-form-group id="exampleInputGroup4"
+                    label="Andar:"
+                    label-for="exampleInput4"
+                      description="">
+        <b-form-select id="exampleInput4"
+                      :options="andares"
+                      required
+                      v-model="form.andar">
+        </b-form-select>
+      </b-form-group>
 
-  </b-card-group>
+      <b-button  variant="primary">Consultar</b-button>
+    </b-form>
 
-  <b-card-group deck>
-      <b-card title="Card Title"
-          img-src="https://2.bp.blogspot.com/-Q7WZDQx4j7o/VeUO3tVlWHI/AAAAAAAAAUI/XYd9dStlZEc/s1600/predio-inteiro-2.jpg"
-          img-alt="Image"
-          img-top
-          tag="article"
-          style="max-width: 20rem;"
-          class="mb-2">
-    <p class="card-text">
-      Some quick example text to build on the card title and make up the bulk of the card's content.
-    </p>
-    <b-button href="#" variant="primary">Go somewhere</b-button>
-  </b-card>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+ 
 
-  <b-card title="Card Title"
-          img-src="http://www.atitudessustentaveis.com.br/wp-content/uploads/2008/11/300x211xpredios-sustentaveis-300x211.jpg.pagespeed.ic.5gd8Ieqqqs.jpg"
-          img-alt="Image"
-          img-top
-          tag="article"
-          style="max-width: 20rem;"
-          class="mb-2">
-    <p class="card-text">
-      Some quick example text to build on the card title and make up the bulk of the card's content.
-    </p>
-    <b-button href="#" variant="primary">Go somewhere</b-button>
-  </b-card>
-
-  <b-card title="Card Title"
-          img-src="http://www.karpat.adv.br/wp-content/uploads/2016/11/fachadas-de-predios-3.jpg"
-          img-alt="Image"
-          img-top
-          tag="article"
-          style="max-width: 20rem;"
-          class="mb-2">
-    <p class="card-text">
-      Some quick example text to build on the card title and make up the bulk of the card's content.
-    </p>
-    <b-button href="#" variant="primary">Go somewhere</b-button>
-  </b-card>
-
-  <b-card title="Card Title"
-          img-src="https://casaeconstrucao.org/wp-content/uploads/2016/09/fachadas-de-predios-comerciais-de-luxo-300x217.jpg"
-          img-alt="Image"
-          img-top
-          tag="article"
-          style="max-width: 20rem;"
-          class="mb-2">
-    <p class="card-text">
-      Some quick example text to build on the card title and make up the bulk of the card's content.
-    </p>
-    <b-button href="#" variant="primary">Go somewhere</b-button>
-  </b-card>
-
-  </b-card-group>
-
-
-
-
-     </div>
-     
+   </div>
 </template>
 
 <script>
 export default {
-  name: 'user',
+  name: 'selectC',
   data () {
+
     return {
-     user:'Engenheiro',
+      form: {
+        name_obra: '',
+        crea:'',
+        checked: []
+      }, Edificacao: [
+        { text: 'Select One', value: null },
+        'edif1', 'edifi2'
+      ],
+     edif:null,
+      obra: null,
+      selected: '',
+      user:'Engenheiro',
+      obras: [
+        { text: 'Select One', value: null },
+        'obra1', 'obra2'
+      ],
+      andares: [
+        { text: 'Select One', value: null },
+        '1', '2','3','4','5'
+      ],
+      andar:null
     }
+    
+
   }
 }
 </script>
@@ -214,7 +174,6 @@ li {
 a {
   color: #42b983;
 }
-
 .bg-primary {
   background-color: #17a2b8 !important;
 }

@@ -1,5 +1,5 @@
 <template>
-  <div class="user">
+  <div class="consulta">
 
   <nav class="navbar navbar-expand-md navbar-dark bg-secondary my-3" >
     <div class="container">
@@ -26,7 +26,7 @@
 
     <b-navbar toggleable="md" type="dark" variant="info">
   <b-collapse is-nav id="nav_collapse">
-     <b-navbar-nav>
+      <b-navbar-nav>
       
          <b-nav-item href="#"></b-nav-item>
       <b-nav-item-dropdown text="Cadastrar" right>
@@ -59,126 +59,84 @@
       
     </b-navbar-nav>
 
+
   </b-collapse>
 
 </b-navbar>
      
 <br>
+<div class="container">
+      <div class="row">
+<div class="col-md-6">
+  <b-card-group deck
+                  class="mb-3">
+   <b-card img-src="https://picsum.photos/1024/480?image=1031"
+                img-alt="Card image"
+                img-top>
+            <p class="card-text">
+               
+            </p>
+        </b-card>
+ </b-card-group>
+  </div>
+  <div class="col-md-6">
 
+  <h4>Obra: {{obra}}</h4> 
+   <h4>Nome da Edificacao:{{edificacao}} </h4> 
+    <h4>Tipo da Fundaçao: {{Tfundacao}}</h4> 
+     <h4>Status da Fundaçao: {{statusF}}</h4> 
+      <h4>Empresa Responsável:{{empresa}}</h4> 
+      </div>
+</div>
+ </div>
+
+
+<div class="col-md-3">
+ </div>
+ <div class="container">
+      <div class="row">
+  <div class="col-md-9">
+      <br>
+      <h4>Alvenaria </h4>
+       <br>
+   <h5>Alvenaria (m²)</h5>
+    <b-progress :value="valueAlv" :max="maxAlv" :precision="2" show-value class="mb-3"></b-progress>
+    <h5>Vigas(un)</h5>
+    <b-progress :value="valueVg" :max="maxVg" :precision="2" show-value class="mb-3"></b-progress>
+   <h5>Pilares (un)</h5>
+    <b-progress :value="valueP" :max="maxP" :precision="2" show-value class="mb-3"></b-progress>
+  <br>
+  <h4>Eletríca </h4>
+   <br>
+<h5>Tubulações Eletrícas (m)</h5>
+    <b-progress :value="valueTEl" :max="maxTEl" :precision="2" show-value class="mb-3"></b-progress>
+  <h5>Pontos Eletricos (un)</h5>
+   
+   <b-progress :value="valuePEl" :max="maxPEl" :precision="2" show-value class="mb-3"></b-progress>
+  <br>
+  <h4>Hidraulica</h4>
+   <br>
+  <h5>Tubulações Hidraulicas (m)</h5>
+    <b-progress :value="valueTEh" :max="maxTEh" :precision="2" show-value class="mb-3"></b-progress>
+  <h5>Pontos Hidraulicos (un)</h5>
+    <b-progress :value="valuePEh" :max="maxPEh" :precision="2" show-value class="mb-3"></b-progress>
+  <br>
+  <h4>Revestimento </h4>
+   <br>
+  <h5>Piso (m²)</h5>
+    <b-progress :value="valuePs" :max="maxPs" :precision="2" show-value class="mb-3"></b-progress>
+  <h5>Pintura (m²)</h5>
+    <b-progress :value="valuePt" :max="maxPt" :precision="2" show-value class="mb-3"></b-progress>
+  <h5>Esquadria (un)</h5>
+    <b-progress :value="valueEsq" :max="maxEsq" :precision="2" show-value class="mb-3"></b-progress>
+  
+</div>
+ </div>
+  </div>
+ 
        
   
-    <b-card-group deck>
-      <b-card title="Card Title"
-          img-src="https://2.bp.blogspot.com/-Q7WZDQx4j7o/VeUO3tVlWHI/AAAAAAAAAUI/XYd9dStlZEc/s1600/predio-inteiro-2.jpg"
-          img-alt="Image"
-          img-top
-          tag="article"
-          style="max-width: 20rem;"
-          class="mb-2">
-    <p class="card-text">
-      Some quick example text to build on the card title and make up the bulk of the card's content.
-    </p>
-    <b-button href="#" variant="primary">Go somewhere</b-button>
-  </b-card>
-
-  <b-card title="Card Title"
-          img-src="http://www.atitudessustentaveis.com.br/wp-content/uploads/2008/11/300x211xpredios-sustentaveis-300x211.jpg.pagespeed.ic.5gd8Ieqqqs.jpg"
-          img-alt="Image"
-          img-top
-          tag="article"
-          style="max-width: 20rem;"
-          class="mb-2">
-    <p class="card-text">
-      Some quick example text to build on the card title and make up the bulk of the card's content.
-    </p>
-    <b-button href="#" variant="primary">Go somewhere</b-button>
-  </b-card>
-
-  <b-card title="Card Title"
-          img-src="http://www.karpat.adv.br/wp-content/uploads/2016/11/fachadas-de-predios-3.jpg"
-          img-alt="Image"
-          img-top
-          tag="article"
-          style="max-width: 20rem;"
-          class="mb-2">
-    <p class="card-text">
-      Some quick example text to build on the card title and make up the bulk of the card's content.
-    </p>
-    <b-button href="#" variant="primary">Go somewhere</b-button>
-  </b-card>
-
-  <b-card title="Card Title"
-          img-src="https://casaeconstrucao.org/wp-content/uploads/2016/09/fachadas-de-predios-comerciais-de-luxo-300x217.jpg"
-          img-alt="Image"
-          img-top
-          tag="article"
-          style="max-width: 20rem;"
-          class="mb-2">
-    <p class="card-text">
-      Some quick example text to build on the card title and make up the bulk of the card's content.
-    </p>
-    <b-button href="#" variant="primary">Go somewhere</b-button>
-  </b-card>
-
-  </b-card-group>
-
-  <b-card-group deck>
-      <b-card title="Card Title"
-          img-src="https://2.bp.blogspot.com/-Q7WZDQx4j7o/VeUO3tVlWHI/AAAAAAAAAUI/XYd9dStlZEc/s1600/predio-inteiro-2.jpg"
-          img-alt="Image"
-          img-top
-          tag="article"
-          style="max-width: 20rem;"
-          class="mb-2">
-    <p class="card-text">
-      Some quick example text to build on the card title and make up the bulk of the card's content.
-    </p>
-    <b-button href="#" variant="primary">Go somewhere</b-button>
-  </b-card>
-
-  <b-card title="Card Title"
-          img-src="http://www.atitudessustentaveis.com.br/wp-content/uploads/2008/11/300x211xpredios-sustentaveis-300x211.jpg.pagespeed.ic.5gd8Ieqqqs.jpg"
-          img-alt="Image"
-          img-top
-          tag="article"
-          style="max-width: 20rem;"
-          class="mb-2">
-    <p class="card-text">
-      Some quick example text to build on the card title and make up the bulk of the card's content.
-    </p>
-    <b-button href="#" variant="primary">Go somewhere</b-button>
-  </b-card>
-
-  <b-card title="Card Title"
-          img-src="http://www.karpat.adv.br/wp-content/uploads/2016/11/fachadas-de-predios-3.jpg"
-          img-alt="Image"
-          img-top
-          tag="article"
-          style="max-width: 20rem;"
-          class="mb-2">
-    <p class="card-text">
-      Some quick example text to build on the card title and make up the bulk of the card's content.
-    </p>
-    <b-button href="#" variant="primary">Go somewhere</b-button>
-  </b-card>
-
-  <b-card title="Card Title"
-          img-src="https://casaeconstrucao.org/wp-content/uploads/2016/09/fachadas-de-predios-comerciais-de-luxo-300x217.jpg"
-          img-alt="Image"
-          img-top
-          tag="article"
-          style="max-width: 20rem;"
-          class="mb-2">
-    <p class="card-text">
-      Some quick example text to build on the card title and make up the bulk of the card's content.
-    </p>
-    <b-button href="#" variant="primary">Go somewhere</b-button>
-  </b-card>
-
-  </b-card-group>
-
-
-
+    
 
      </div>
      
@@ -186,10 +144,37 @@
 
 <script>
 export default {
-  name: 'user',
+  name: 'consulta',
   data () {
     return {
      user:'Engenheiro',
+     obra:'',
+     edificacao:'',
+      Tfundacao:'',
+      statusF:'',
+      empresa:'',
+      maxAlv: 50,
+      valueAlv: 33.33,
+      maxVg:60,
+      valueVg:30,
+      maxP:100,
+      valueP:20,
+      maxPEl:150,
+      valuePEl:50,
+      maxTEl:200,
+      valueTEl:100,
+       maxPEh:150,
+      valuePEh:50,
+      maxTEh:200,
+      valueTEh:100,
+      maxPs:400,
+      valuePs:200,
+      maxPt:380,
+      valuePt:200,
+      maxEsq:360,
+      valueEsq:20
+
+      
     }
   }
 }
@@ -197,8 +182,11 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1, h2 {
-  font-weight: normal;
+h1, h2, h3,h4, h5 {
+  font-weight: bold;
+  color:#17a2b8;
+  text-align: left;
+  
 }
 
 ul {
@@ -229,4 +217,6 @@ b{
 .my-3 {
   margin-top: 0rem !important;
 }
+
+
 </style>
