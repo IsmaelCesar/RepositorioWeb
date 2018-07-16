@@ -84,6 +84,7 @@ export default {
               if(this.form.senha == resposta.senha){
                 //Emite o evento
                 this.onLoginNoSite(resposta.id_pessoa)
+                this.$router.push('user')
               }
               else{
                 this.msg = "Senha incorreta!"
@@ -108,22 +109,16 @@ export default {
       window.location.href ="#/cadastro"
     },
     onLoginNoSite(idPessoa){
-      if(idPessoa){
-        var data
-        data = this.$http.get('http://localhost:3000/pessoas?id='+idPessoa).then(response =>{
+      if(idPessoa){        
+        this.$http.get('http://localhost:3000/pessoas?id='+idPessoa).then(response =>{
           var dados_pessoa
           dados_pessoa = response.body[0]
           //Emite evento para os outros componente utilizarem
-          EventBus.$emit('emitDadosPessoa',dados_pessoa)
-          //Retorna dados para que seja verificado se os valores retornados não foram nulosig
-          return dados_pessoa          
+          EventBus.$emit('emitDadosPessoa',dados_pessoa)   
         }, response => {  
           this.msg = "Erro ao carregar dados."
           this.isDismissed = true
         })
-        if(data){
-          this.$router.push('user')
-        }
       }     
     }
   }
@@ -154,8 +149,6 @@ a {
 a:hover{
   text-decoration: underline;
 }
-
-
 
 .bg-primary{
   background-color: #17a2b8 !important;
