@@ -12,7 +12,6 @@ import Atualiza_Andar from '@/components/Atualiza_Andar'
 import Atualiza_Edificio from '@/components/Atualiza_Edificio'
 import Atualiza_Obra from '@/components/Atualiza_Obra'
 
-
 Vue.use(Router)
 
 export default new Router({
