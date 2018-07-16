@@ -1,25 +1,26 @@
 <template>
     <div class="card_obra">
-            <b-card 
-            :title="nome"
-            :img-src="thumnail"
-            img-alt="Image"
-            img-top
-            tag="article"
-            style="max-width: 20rem;"
-            class="mb-2">
-        <p class="card-text">
-            {{descricao}}
-        </p>
-        <b-button @click="onDetalharObra" variant="primary">Detalhar</b-button>
+        <b-card 
+        :title="nome"
+        :img-src="thumbnail"
+        img-alt="Image"
+        img-top
+        tag="article"
+        style="max-width: 20rem;"
+        class="mb-2">
+            <p class="card-text">
+                {{descricao != null ? descricao : 'default'}}
+            </p>
+            <b-button @click="onDetalharObra" variant="primary">Detalhar</b-button>
+        </b-card>
     </div>  
 </template>
 
 <script>
 
 export default {
-    name:'card_obra',
-    props:['nome','thumnail','descricao'],
+    name:'cardObra',
+    props:['nome','thumbnail','descricao'],
     data(){
         return{
             msg:'Card Obra'
@@ -30,7 +31,6 @@ export default {
             alert("Detalhar Obra")
         }
     }
-
 }
 </script>
 

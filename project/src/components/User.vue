@@ -46,7 +46,7 @@
        <b-nav-item href="#/select">Consultar</b-nav-item>
          <b-nav-item href="#"></b-nav-item>
           <b-nav-item href="#"></b-nav-item>
-        <b-nav-item href="#/remover" v-if="!is_engenheiro">Remover</b-nav-item>
+        <b-nav-item href="#/remover" v-if="is_engenheiro">Remover</b-nav-item>
          <b-nav-item href="#"></b-nav-item>
           <b-nav-item href="#"></b-nav-item>
            <b-nav-item href="#">Pendencias</b-nav-item>
@@ -65,125 +65,21 @@
      
 <br>
   
-    <b-card-group v-if="user_props.user_obras.lenght == 0" deck>
-      <!--
-      <b-card title="Card Title"
-          img-src="https://2.bp.blogspot.com/-Q7WZDQx4j7o/VeUO3tVlWHI/AAAAAAAAAUI/XYd9dStlZEc/s1600/predio-inteiro-2.jpg"
-          img-alt="Image"
-          img-top
-          tag="article"
-          style="max-width: 20rem;"
-          class="mb-2">
-    <p class="card-text">
-      Some quick example text to build on the card title and make up the bulk of the card's content.
-    </p>
-    <b-button href="#" variant="primary">Go somewhere</b-button>
-    -->
-  </b-card>
-<!--
-  <b-card title="Card Title"
-          img-src="http://www.atitudessustentaveis.com.br/wp-content/uploads/2008/11/300x211xpredios-sustentaveis-300x211.jpg.pagespeed.ic.5gd8Ieqqqs.jpg"
-          img-alt="Image"
-          img-top
-          tag="article"
-          style="max-width: 20rem;"
-          class="mb-2">
-    <p class="card-text">
-      Some quick example text to build on the card title and make up the bulk of the card's content.
-    </p>
-    <b-button href="#" variant="primary">Go somewhere</b-button>
-  </b-card>
-
-  <b-card title="Card Title"
-          img-src="http://www.karpat.adv.br/wp-content/uploads/2016/11/fachadas-de-predios-3.jpg"
-          img-alt="Image"
-          img-top
-          tag="article"
-          style="max-width: 20rem;"
-          class="mb-2">
-    <p class="card-text">
-      Some quick example text to build on the card title and make up the bulk of the card's content.
-    </p>
-    <b-button href="#" variant="primary">Go somewhere</b-button>
-  </b-card>
-
-  <b-card title="Card Title"
-          img-src="https://casaeconstrucao.org/wp-content/uploads/2016/09/fachadas-de-predios-comerciais-de-luxo-300x217.jpg"
-          img-alt="Image"
-          img-top
-          tag="article"
-          style="max-width: 20rem;"
-          class="mb-2">
-    <p class="card-text">
-      Some quick example text to build on the card title and make up the bulk of the card's content.
-    </p>
-    <b-button href="#" variant="primary">Go somewhere</b-button>
-  </b-card>
-
-  </b-card-group>
-
-  <b-card-group deck>
-      <b-card title="Card Title"
-          img-src="https://2.bp.blogspot.com/-Q7WZDQx4j7o/VeUO3tVlWHI/AAAAAAAAAUI/XYd9dStlZEc/s1600/predio-inteiro-2.jpg"
-          img-alt="Image"
-          img-top
-          tag="article"
-          style="max-width: 20rem;"
-          class="mb-2">
-    <p class="card-text">
-      Some quick example text to build on the card title and make up the bulk of the card's content.
-    </p>
-    <b-button href="#" variant="primary">Go somewhere</b-button>
-  </b-card>
-
-  <b-card title="Card Title"
-          img-src="http://www.atitudessustentaveis.com.br/wp-content/uploads/2008/11/300x211xpredios-sustentaveis-300x211.jpg.pagespeed.ic.5gd8Ieqqqs.jpg"
-          img-alt="Image"
-          img-top
-          tag="article"
-          style="max-width: 20rem;"
-          class="mb-2">
-    <p class="card-text">
-      Some quick example text to build on the card title and make up the bulk of the card's content.
-    </p>
-    <b-button href="#" variant="primary">Go somewhere</b-button>
-  </b-card>
-
-  <b-card title="Card Title"
-          img-src="http://www.karpat.adv.br/wp-content/uploads/2016/11/fachadas-de-predios-3.jpg"
-          img-alt="Image"
-          img-top
-          tag="article"
-          style="max-width: 20rem;"
-          class="mb-2">
-    <p class="card-text">
-      Some quick example text to build on the card title and make up the bulk of the card's content.
-    </p>
-    <b-button href="#" variant="primary">Go somewhere</b-button>
-  </b-card>
-
-  <b-card title="Card Title"
-          img-src="https://casaeconstrucao.org/wp-content/uploads/2016/09/fachadas-de-predios-comerciais-de-luxo-300x217.jpg"
-          img-alt="Image"
-          img-top
-          tag="article"
-          style="max-width: 20rem;"
-          class="mb-2">
-    <p class="card-text">
-      Some quick example text to build on the card title and make up the bulk of the card's content.
-    </p>
-    <b-button href="#" variant="primary">Go somewhere</b-button>
-  </b-card>
--->
+  <b-card-group v-if="user_props.user_obras.lenght != 0" deck>
+    <cardObra nome="teste" thumbnail="https://picsum.photos/200/300?image=1058" descricao="Teste"></cardObra>    
   </b-card-group>
 </div>
 </template>
 
 <script>
 import { EventBus } from '../main'
+import CardObra from './CardObra.vue'
 
 export default {
   name: 'user',
+  components:{
+    'cardObra':CardObra
+  },
   data () {
     return {
      user:'Engenheiro',
@@ -206,9 +102,8 @@ export default {
       this.is_engenheiro = this.user_props.user_info.is_engenheiro
         if(this.user_props.user_info.obras.length != 0){         
             this.$http.get('http://localhost:3000/obras?id_pessoa='+this.user_props.user_info.id).then(resp =>{
-              debugger
               var dadosRetornados
-              dadosRetornados = resp.body[0]          
+              dadosRetornados = resp.body         
               this.user_props.user_obras = dadosRetornados
             },
             resp=>{
