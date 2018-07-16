@@ -75,7 +75,7 @@
             "thubnail_obra":"https://picsum.photos/200/300?image=965",
             "descricao_obra":"Ut dignissim arcu vitae lorem venenatis fermentum.",
             "is_finished":false,
-            "edficios_obra":[10,11]
+            "edficios_obra":[9,10]
         },
         {
             "id_obra":6,
@@ -84,12 +84,13 @@
             "thubnail_obra":"https://picsum.photos/200/300?image=953",
             "descricao_obra":"Suspendisse vitae elementum erat, at pellentesque nunc.",
             "is_finished":false,
-            "edficios_obra":[12,13]
+            "edficios_obra":[11,12]
         }
     ],
     "edficios":[
         {
             "id_edf":1,
+            "id_obra":1,
             "nome_edf":"dignissim",
             "dados_edf":{
                 "alvenaria":12,
@@ -108,6 +109,7 @@
         },
         {
             "id_edf":2,
+            "id_obra":1,
             "nome_edf":"tincidunt",
             "dados_edf":{
                 "alvenaria":12,
@@ -126,6 +128,7 @@
         },
         {
             "id_edf":3,
+            "id_obra":2,
             "nome_edf":"nulla",
             "dados_edf":{
                 "alvenaria":12,
@@ -144,6 +147,7 @@
         },
         {
             "id_edf":4,
+            "id_obra":2,
             "nome_edf":"volutpat",
             "dados_edf":{
                 "alvenaria":12,
@@ -162,6 +166,7 @@
         },
         {
             "id_edf":5,
+            "id_obra":3,
             "nome_edf":"sodales",
             "dados_edf":{
                 "alvenaria":12,
@@ -180,6 +185,7 @@
         },
         {
             "id_edf":6,
+            "id_obra":3,
             "nome_edf":"sem",
             "dados_edf":{
                 "alvenaria":12,
@@ -198,6 +204,7 @@
         },
         {
             "id_edf":7,
+            "id_obra":4,
             "nome_edf":"lobortis",
             "dados_edf":{
                 "alvenaria":12,
@@ -216,6 +223,7 @@
         },
         {
             "id_edf":8,
+            "id_obra":4,
             "nome_edf":"eleifend",
             "dados_edf":{
                 "alvenaria":12,
@@ -234,6 +242,7 @@
         },
         {
             "id_edf":9,
+            "id_obra":5,
             "nome_edf":"mollis",
             "dados_edf":{
                 "alvenaria":12,
@@ -252,6 +261,7 @@
         },
         {
             "id_edf":10,
+            "id_obra":5,
             "nome_edf":"ultrices",
             "dados_edf":{
                 "alvenaria":12,
@@ -270,6 +280,7 @@
         },
         {
             "id_edf":11,
+            "id_obra":6,
             "nome_edf":"Ultimate EDF",
             "dados_edf":{
                 "alvenaria":12,
@@ -288,6 +299,7 @@
         },
         {
             "id_edf":12,
+            "id_obra":6,
             "nome_edf":"velit",
             "dados_edf":{
                 "alvenaria":12,
@@ -303,24 +315,6 @@
                 "revestimento_max":2
             },
             "andares_edf":[23,24]
-        },
-        {
-            "id_edf":13,
-            "nome_edf":"cubilia",
-            "dados_edf":{
-                "alvenaria":12,
-                "alvenaria_max":12,
-
-                "eletrica":18,
-                "eletrica_max":18,
-
-                "hidraulica":12,
-                "hidraulica_max":15,
-
-                "revestimento":16,
-                "revestimento_max":2
-            },
-            "andares_edf":[25,26]
         }
     ],
     "andares":[
