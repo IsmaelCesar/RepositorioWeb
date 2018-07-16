@@ -180,7 +180,7 @@
 </template>
 
 <script>
-import { EventBus } from '../main.js'
+import { EventBus } from '../main'
 
 export default {
   name: 'user',
@@ -190,15 +190,9 @@ export default {
      user_info:null,
     }
   },
-  created(){
-    debugger
-    this.user_info = 'teste'
+  created(){    
     EventBus.$on('emitDadosPessoa',(data)=>{
-      debugger
       this.user_info = data
-      if(!this.user_info){
-        console.log('Dados não propagaram')
-      }
     })
   }
 }

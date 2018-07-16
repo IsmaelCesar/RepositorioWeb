@@ -109,15 +109,20 @@ export default {
     },
     onLoginNoSite(idPessoa){
       if(idPessoa){
-        this.$http.get('http://localhost:3000/pessoas?id='+idPessoa).then(response =>{
-          var dados_pessoa
+        var data
+        data = this.$http.get('http://localhost:3000/pessoas?id='+idPessoa).then(response =>{
+              var dados_pessoa
           dados_pessoa = response.body[0]
           EventBus.$emit('emitDadosPessoa',dados_pessoa)
-          window.location.href="#/user"
+          return dados_pessoa
+          //window.location.href="#/user"
         }, response => {  
           this.msg = "Erro ao carregar dados."
           this.isDismissed = true
         })
+        if(data){
+          this.$router.push('user')
+        }
       }     
     }
   }
