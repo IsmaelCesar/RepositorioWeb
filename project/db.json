@@ -7,7 +7,7 @@
         },
         {
             "email":"cicranodecoisa@email.com",
-            "id_pessoa":1,
+            "id_pessoa":2,
             "senha":"321"
         }
     ],
@@ -34,6 +34,7 @@
     "obras":[
         {
             "id_obra":1,
+            "id_pessoa":1,
             "nome_obra":"Obra 1",
             "thubnail_obra":"https://picsum.photos/200/300?image=1058",
             "descricao_obra":"Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
@@ -42,6 +43,7 @@
         },
         {
             "id_obra":2,
+            "id_pessoa":1,
             "nome_obra":"Obra 2",
             "thubnail_obra":"https://picsum.photos/200/300?image=1048",
             "descricao_obra":"Ut at pharetra turpis, non dapibus erat.",
@@ -50,6 +52,7 @@
         },
         {
             "id_obra":3,
+            "id_pessoa":1,
             "nome_obra":"Obra 3",
             "thubnail_obra":"https://picsum.photos/200/300?image=1076",
             "descricao_obra":"Phasellus et ante scelerisque, condimentum lectus eu, pellentesque dui.",
@@ -58,6 +61,7 @@
         },
         {
             "id_obra":4,
+            "id_pessoa":2,
             "nome_obra":"Obra 4",
             "thubnail_obra":"https://picsum.photos/200/300?image=972",
             "descricao_obra":"Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
@@ -66,6 +70,7 @@
         },
         {
             "id_obra":5,
+            "id_pessoa":2,
             "nome_obra":"Obra 5",
             "thubnail_obra":"https://picsum.photos/200/300?image=965",
             "descricao_obra":"Ut dignissim arcu vitae lorem venenatis fermentum.",
@@ -74,6 +79,7 @@
         },
         {
             "id_obra":6,
+            "id_pessoa":2,
             "nome_obra":"Obra 6",
             "thubnail_obra":"https://picsum.photos/200/300?image=953",
             "descricao_obra":"Suspendisse vitae elementum erat, at pellentesque nunc.",
