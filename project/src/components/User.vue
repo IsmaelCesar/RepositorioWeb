@@ -80,12 +80,18 @@ import Cadastro_Edificio from '@/components/Cadastro_Edificio'
 import Atualiza_Andar from '@/components/Atualiza_Andar'
 import Atualiza_Edificio from '@/components/Atualiza_Edificio'
 import Atualiza_Obra from '@/components/Atualiza_Obra'
-import Consulta from '@/components/Consulta'
+//import Consulta from '@/components/Consulta'
 
 export default {
   name: 'user',
   components:{
-    'cardObra':CardObra
+    'cardObra':CardObra,
+    'cadastro-obra':Cadastro_Obra,
+    'cadastro-andar':Cadastro_Andar,
+    'cadastro-edificio':Cadastro_Edificio,
+    'atualiza-obra':Atualiza_Obra,
+    'atualiza-andar':Atualiza_Andar,
+    'Atualiza-edificio':Atualiza_Edificio
   },
   data () {
     return {
