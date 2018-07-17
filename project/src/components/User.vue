@@ -66,7 +66,7 @@
 <br>
   
   <b-card-group v-if="user_props.user_obras.lenght != 0" deck>
-    <cardObra nome="teste" thumbnail="https://picsum.photos/200/300?image=1058" descricao="Teste"></cardObra>    
+    <component :is="componente_atual" nome="teste" thumbnail="https://picsum.photos/200/300?image=1058" descricao="Teste"></cardObra>    
   </b-card-group>
 </div>
 </template>
@@ -74,6 +74,13 @@
 <script>
 import { EventBus } from '../main'
 import CardObra from './CardObra.vue'
+import Cadastro_Obra from '@/components/Cadastro_Obra'
+import Cadastro_Andar from '@/components/Cadastro_Andar'
+import Cadastro_Edificio from '@/components/Cadastro_Edificio'
+import Atualiza_Andar from '@/components/Atualiza_Andar'
+import Atualiza_Edificio from '@/components/Atualiza_Edificio'
+import Atualiza_Obra from '@/components/Atualiza_Obra'
+import Consulta from '@/components/Consulta'
 
 export default {
   name: 'user',
@@ -84,6 +91,8 @@ export default {
     return {
      user:'Engenheiro',
      is_engenheiro: false,
+     //Atributo auxiliar para navegar entre os componentes
+     componente_atual:'cardObra',
      //Propriedades obtidas de requisições http
      user_props:{
       user_info:null,

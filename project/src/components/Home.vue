@@ -180,7 +180,9 @@ export default {
         nome:'',
         email:'',
         texto:''
-      }
+      },
+      slide:0,
+      sliding:null
     }
   },
   methods:{
@@ -191,6 +193,12 @@ export default {
       this.form.nome = ''
       this.form.email = ''
       this.form.texto = ''
+    },
+    onSlideStart(slide){
+      this.sliding = true
+    },
+    onSlideEnd(slide){
+      this.sliding = false
     }
 }
 }
