@@ -142,7 +142,6 @@
       <div class="row">
         <div class="col-md-12">
           <h2 class="display-1">Contate-nos</h2>
-         
         <hr>
         <div class="_txt_campo_home position-relative ">
             <b-form @submit="onsubmit" method="POST" class="inline">
@@ -155,6 +154,7 @@
                   <b-input id="email" v-model="form.email" type="email" required placeholder="seu email aqui para resposta"/>                
                   <br>
                   <label>Descrição</label>
+
                   <b-form-textarea v-model="form.texto" rows="6" max-rows="10" required placeholder="seu texto aqui">
                   </b-form-textarea>   
                   <br>
@@ -167,7 +167,6 @@
       </div>
     </div>
   </div>
-
   </div>
 </template>
 
@@ -223,8 +222,6 @@ li {
 a {
   color: #42b983;
 }
-
-
 .filter-light {
   overflow: hidden;
   position: relative;
@@ -334,7 +331,4 @@ a {
 {
         border-radius:50%;
 }
-
-
-
 </style>
