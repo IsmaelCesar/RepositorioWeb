@@ -49,16 +49,9 @@
         <b-dropdown-item @click="swapToAtualizarAndar">Andar</b-dropdown-item>
       </b-nav-item-dropdown>
          <b-nav-item href="#"></b-nav-item>
-         <b-nav-item href="#"></b-nav-item>
-       <b-nav-item href="#/select">Consultar</b-nav-item>
-         <b-nav-item href="#"></b-nav-item>
-          <b-nav-item href="#"></b-nav-item>
-        <b-nav-item href="#/remover" v-if="is_engenheiro">Remover</b-nav-item>
-         <b-nav-item href="#"></b-nav-item>
           <b-nav-item href="#"></b-nav-item>
            <b-nav-item href="#">Pendencias</b-nav-item>
             <b-nav-item href="#"></b-nav-item>
-
             <b-nav-form>
         <b-form-input size="sm" class="mr-sm-2" type="text" placeholder="Search"/>
         <b-button size="sm" class="my-2 my-sm-0" type="submit">Search</b-button>
@@ -72,11 +65,11 @@
      
 <br>
   
-  <b-card-group v-if="user_props.user_obras.lenght != 0" deck>
+  
     <b-container>
       <component :is="componente_atual" ></component>    
     </b-container>  
-  </b-card-group>
+  
 </div>
 </template>
 

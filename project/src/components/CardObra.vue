@@ -1,19 +1,23 @@
 <template>
     <div class="card_obra">
-        <b-card 
-        v-if="teste != null"
-        :title="teste.nome_obra"
-        :img-src="teste.thubnail_obra"
-        img-alt="Image"
-        img-top
-        tag="article"
-        style="max-width: 20rem;"
-        class="mb-2">
-            <p class="card-text">
-                {{teste != null ? teste.descricao_obra : 'default'}}
-            </p>
-            <b-button @click="onDetalharObra" variant="primary">Detalhar</b-button>
-        </b-card>
+        <b-card-group v-if="array_obra != null" deck>
+            <div class="lista_obras" v-for="obra in array_obra" :key="obra.id">
+                <b-card 
+                v-if="obra != null"
+                :title="obra.nome_obra"
+                :img-src="obra.thubnail_obra"
+                img-alt="Image"
+                img-top
+                tag="article"
+                style="max-width: 20rem;"
+                class="mb-2">
+                    <p class="card-text">
+                        {{obra != null ? obra.descricao_obra : 'default'}}
+                    </p>
+                    <b-button @click="onDetalharObra" variant="primary">Detalhar</b-button>
+                </b-card>
+            </div>
+        </b-card-group>    
     </div>  
 </template>
 
