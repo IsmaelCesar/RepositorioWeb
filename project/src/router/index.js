@@ -5,8 +5,6 @@ import Login from '@/components/Login'
 import Cadastro from '@/components/Cadastro'
 import RedefinirSenha from '@/components/RedefinirSenha'
 import User from '@/components/User'
-import Remover from '@/components/Remover'
-import SelectConsulta from '@/components/SelectConsulta'
 
 Vue.use(Router)
 
@@ -38,16 +36,6 @@ export default new Router({
       path:'/user',
       name:'User',
       component:User
-    },
-    {
-      path: '/remover',
-      name: 'Remover',
-      component: Remover
-    },
-    {
-      path: '/select',
-      name: 'SelectConsulta',
-      component: SelectConsulta
     }
   ]
 })
