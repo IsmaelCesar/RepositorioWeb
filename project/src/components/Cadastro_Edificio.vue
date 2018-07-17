@@ -289,7 +289,8 @@ export default {
 
     return {
       form: {
-        name_obra: '',
+        edficios:[],
+        name: '',
         crea:'',
         fundacao:'',
         obra: null,
@@ -330,6 +331,38 @@ export default {
     }
     
 
+  },
+  methods:{
+     onSubmit() {
+      this.$http.get('http://localhost:3000/edficios').then(response => {
+      this.form.edficios = response.body
+    }, response => {
+      // error callback
+    })
+var quant= this.form.edficios.length;
+    
+  
+    this.$http.post('http://localhost:3000/edficios',{
+      id:quant,
+      nome_obra: this.form.obra,
+      nome_edf: this.form.name,
+        dados_edf: {
+        alvenaria:0,
+        alvenaria_max: this.form.alvenaria_max,
+        eletrica: 0,
+        eletrica_max: this.form.TubEletrica,
+        hidraulica: 0,
+        hidraulica_max: this.form.TubHidra,
+        revestimento: 0,
+        revestimento_max: this.form.pintura}
+     
+      }).then(response => {
+      post.save();
+    }, response => {
+      // error callback
+    })
+
+}
   }
 }
 </script>

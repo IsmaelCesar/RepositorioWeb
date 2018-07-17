@@ -99,6 +99,10 @@
         </b-form-input>
       </b-form-group>
 
+      <label>Imagem</label>
+       <b-form-file v-model="file" :state="Boolean(file)" placeholder="Escolha uma foto..."></b-form-file>
+     <div class="mt-3">Selected file: {{file && file.name}}</div>
+     
    <b-form-group label="A obra possuirá Piscina?">
       <b-form-radio-group v-model="selected"
                           :options="options"
@@ -130,15 +134,11 @@ export default {
 
     return {
       form: {
-        name_obra: '',
+        name: '',
         crea:'',
-        checked: []
+        obras: [],
+        file:null
       },
-        cargos: [
-        { text: 'Select One', value: null },
-        'Engenheiro', 'Tecnico'
-      ],
-      show: true,
       selected: '',
       user:'Engenheiro',
       options: [
@@ -148,6 +148,33 @@ export default {
     }
     
 
+  },
+  methods:{
+     onSubmit() {
+      this.$http.get('http://localhost:3000/obras').then(response => {
+      this.form.obras = response.body
+    }, response => {
+      // error callback
+    })
+var quant= this.form.obras.length;
+    
+  
+    this.$http.post('http://localhost:3000/obras',{
+      id:quant,
+      num_crea: this.form.crea,
+        nome_obra: this.form.name,
+        thubnail_obra: this.form.file,
+        descricao_obra: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        is_finished: false,
+        piscina:this.selected
+     
+      }).then(response => {
+      post.save();
+    }, response => {
+      // error callback
+    })
+
+}
   }
 }
 </script>

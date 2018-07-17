@@ -78,7 +78,7 @@
                     label-for="exampleInput5">
         <b-form-select id="exampleInput5"
                       :options="cargos"
-                      required
+                        required
                       v-model="form.cargo">
         </b-form-select>
       </b-form-group>
@@ -116,9 +116,10 @@
         </b-form-input>
       </b-form-group>
 
-      <b-button type="submit" variant="primary">Submit</b-button>
+      <b-button type="submit"  variant="primary">Submit</b-button>
       <b-button type="reset" variant="danger">Reset</b-button>
     </b-form>
+    <b-alert variant="success" show>Success Alert</b-alert>
 
 </div>
 </div>
@@ -144,14 +145,56 @@ export default {
         crea:'',
         senha:'',
         confsenha:'',
-        checked: []
+        pessoas:[]
       },
+      show:false,
         cargos: [
         { text: 'Select One', value: null },
-        'Engenheiro', 'Tecnico'
+        { text: 'Engenheiro', value: true },
+        { text: 'Tecnico', value: false },
+    
       ],
       show: true
     }
+  },
+  methods:{
+   onSubmit() {
+      this.$http.get('http://localhost:3000/pessoas').then(response => {
+      this.form.pessoas = response.body
+    }, response => {
+      // error callback
+    })
+var quant= this.form.pessoas.length;
+    
+  
+    this.$http.post('http://localhost:3000/pessoas',{id:quant,
+     nome:this.form.name,
+      endereco:this.form.endereco,
+      telefone: this.form.telefone,
+      email:this.form.email ,
+      is_engenheiro: this.form.cargo,
+      num_crea: this.form.crea
+      }).then(response => {
+      post.save();
+    }, response => {
+      // error callback
+    })
+     this.$http.post('http://localhost:3000/usuarios',{
+      email:this.form.email ,
+      id:quant,
+      senha:this.form.senha
+      }).then(response => {
+      post.save();
+    }, response => {
+      // error callback
+    })
+    
+
+    
+    
+}
+
+    
   }
 }
 </script>
