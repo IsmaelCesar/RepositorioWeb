@@ -3,11 +3,8 @@ import Router from 'vue-router'
 import Home from '@/components/Home'
 import Login from '@/components/Login'
 import Cadastro from '@/components/Cadastro'
-import BoostrapVue from 'bootstrap-vue'
-import 'bootstrap/dist/css/bootstrap.css'
-import 'bootstrap-vue/dist/bootstrap-vue.css'
-import JQuery from   'jquery'
-import JQueryCycle from 'jquery-cycle'
+import RedefinirSenha from '@/components/RedefinirSenha'
+import User from '@/components/User'
 
 Vue.use(Router)
 Vue.use(BoostrapVue)
@@ -32,6 +29,16 @@ export default new Router({
       name: 'Cadastro',
       component: Cadastro
 
+    },
+    {
+      path:'/redefinirSenha',
+      name:'RedefinirSenha',
+      component:RedefinirSenha
+    },
+    {
+      path:'/user',
+      name:'User',
+      component:User
     }
   ]
 })

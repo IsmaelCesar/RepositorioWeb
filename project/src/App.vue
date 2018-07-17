@@ -1,23 +1,6 @@
 <template>
-  <div id="app" fluid>
-      <b-navbar toggleable="md" type="dark" variant="info">
-        <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
-        <b-navbar-brand href="#/" class="ml-5">iObras</b-navbar-brand>
-      </b-navbar>
-    <main>
-      <router-view></router-view>
-    </main>  
-    <footer>
-      <b-card header-tag="header"> 
-        <h5 slot="header">iObras</h5>
-        <p slot="card-text" >
-          <p>Alunos:</p>
-          Viviane Araujo <br>
-          Ismael Cesar 
-        </p>
-      </b-card>
-    </footer>
-
+  <div id="app">
+    <router-view></router-view>
   </div>
 </template>
 
@@ -35,7 +18,9 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 6px;
-  background-image: url("https://st2.depositphotos.com/3319333/7991/v/950/depositphotos_79918192-stock-illustration-architectural-linear-sketch-multistory-apartment.jpg");
-  background-attachment: fixed;
+}
+.bg-gradient {
+  overflow: hidden;
+background: linear-gradient( #70d9e9,#17a2b8);
 }
 </style>

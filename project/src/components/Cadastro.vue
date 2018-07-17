@@ -1,41 +1,21 @@
 <template>
   <div class="cadastro">
-    <b-navbar toggleable="md" type="dark" variant="info">
+   <b-navbar toggleable="md" type="dark" variant="info" class="bg-gradient">
+
+  <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
+
+  <b-navbar-brand href="#/">iObras</b-navbar-brand>
 
   <b-collapse is-nav id="nav_collapse">
 
 
-     <b-navbar-nav>
-        <b-nav-item href="#"></b-nav-item>
-         <b-nav-item href="#"></b-nav-item>
-         <b-nav-item href="#"></b-nav-item>
-         <b-nav-item href="#"></b-nav-item>
-      <b-nav-item href="#/">Home</b-nav-item>
-       <b-nav-item href="#"></b-nav-item>
-        <b-nav-item href="#"></b-nav-item>
-        <b-nav-item href="#"></b-nav-item>
-         <b-nav-item href="#"></b-nav-item>
-         <b-nav-item href="#"></b-nav-item>
-         <b-nav-item href="#"></b-nav-item>
-      <b-nav-item href="#">Obras</b-nav-item>
-       <b-nav-item href="#"></b-nav-item>
-        <b-nav-item href="#"></b-nav-item>
-        <b-nav-item href="#"></b-nav-item>
-         <b-nav-item href="#"></b-nav-item>
-         <b-nav-item href="#"></b-nav-item>
-         <b-nav-item href="#"></b-nav-item>
-       <b-nav-item href="#">Quem Somos</b-nav-item>
-        <b-nav-item href="#"></b-nav-item>
-         <b-nav-item href="#"></b-nav-item>
-         <b-nav-item href="#"></b-nav-item>
-         <b-nav-item href="#"></b-nav-item>
-         <b-nav-item href="#"></b-nav-item>
-         <b-nav-item href="#"></b-nav-item>
-        <b-nav-item href="#">Contate-nos</b-nav-item>
+    <!-- Right aligned nav items -->
+    <b-navbar-nav class="ml-auto">
+       <b-nav-item href="#/login">Login</b-nav-item>
+      <b-nav-item href="#/cadastro">Cadastre-se</b-nav-item>
     </b-navbar-nav>
 
   </b-collapse>
-
 </b-navbar>
 
 <div class="py-5">
@@ -98,7 +78,7 @@
                     label-for="exampleInput5">
         <b-form-select id="exampleInput5"
                       :options="cargos"
-                      required
+                        required
                       v-model="form.cargo">
         </b-form-select>
       </b-form-group>
@@ -136,9 +116,10 @@
         </b-form-input>
       </b-form-group>
 
-      <b-button type="submit" variant="primary">Submit</b-button>
+      <b-button type="submit"  variant="primary">Submit</b-button>
       <b-button type="reset" variant="danger">Reset</b-button>
     </b-form>
+    <b-alert variant="success" show>Success Alert</b-alert>
 
 </div>
 </div>
@@ -164,14 +145,56 @@ export default {
         crea:'',
         senha:'',
         confsenha:'',
-        checked: []
+        pessoas:[]
       },
+      show:false,
         cargos: [
         { text: 'Select One', value: null },
-        'Engenheiro', 'Tecnico'
+        { text: 'Engenheiro', value: true },
+        { text: 'Tecnico', value: false },
+    
       ],
       show: true
     }
+  },
+  methods:{
+   onSubmit() {
+      this.$http.get('http://localhost:3000/pessoas').then(response => {
+      this.form.pessoas = response.body
+    }, response => {
+      // error callback
+    })
+var quant= this.form.pessoas.length;
+    
+  
+    this.$http.post('http://localhost:3000/pessoas',{id:quant,
+     nome:this.form.name,
+      endereco:this.form.endereco,
+      telefone: this.form.telefone,
+      email:this.form.email ,
+      is_engenheiro: this.form.cargo,
+      num_crea: this.form.crea
+      }).then(response => {
+      post.save();
+    }, response => {
+      // error callback
+    })
+     this.$http.post('http://localhost:3000/usuarios',{
+      email:this.form.email ,
+      id:quant,
+      senha:this.form.senha
+      }).then(response => {
+      post.save();
+    }, response => {
+      // error callback
+    })
+    
+
+    
+    
+}
+
+    
   }
 }
 </script>
@@ -197,5 +220,8 @@ a {
 }
 .bg-primary{
   background-color: #17a2b8 !important;
+}
+.cadastro{
+   background-image: url("https://st2.depositphotos.com/3319333/7991/v/950/depositphotos_79918192-stock-illustration-architectural-linear-sketch-multistory-apartment.jpg");
 }
 </style>
