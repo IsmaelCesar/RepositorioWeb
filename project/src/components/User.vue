@@ -3,8 +3,8 @@
 
   <nav class="navbar navbar-expand-md navbar-dark bg-secondary my-3" >
     <div class="container">
-      <a class="navbar-brand" href="#/user">
-        <b>iObra</b>
+      <a class="navbar-brand" @click="swapToListaObras">
+        <a class="_brand_obra">iObra</a>
       </a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSecondarySupportedContent" aria-controls="navbar2SupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -30,16 +30,16 @@
       
          <b-nav-item href="#"></b-nav-item>
       <b-nav-item-dropdown text="Cadastrar" right>
-        <b-dropdown-item href="#/cadastroObra">Obra</b-dropdown-item>
-        <b-dropdown-item href="#/cadastroEdificio">Edificaçao</b-dropdown-item>
-        <b-dropdown-item href="#/cadastroAndar">Andar</b-dropdown-item>
+        <b-dropdown-item @click="swapToCadastrarObra">Obra</b-dropdown-item>
+        <b-dropdown-item @click="swapToCadastrarEdificio">Edificaçao</b-dropdown-item>
+        <b-dropdown-item @click="swapToCadastrarAndar">Andar</b-dropdown-item>
       </b-nav-item-dropdown>
          <b-nav-item href="#"></b-nav-item>
          <b-nav-item href="#"></b-nav-item>
      <b-nav-item-dropdown text="Atualizar" right>
-        <b-dropdown-item href="#/atualizaObra">Obra</b-dropdown-item>
-        <b-dropdown-item href="#/atualizaEdificio">Edificaçao</b-dropdown-item>
-        <b-dropdown-item href="#/atualizaAndar">Andar</b-dropdown-item>
+        <b-dropdown-item @click="swapToAtualizarObra">Obra</b-dropdown-item>
+        <b-dropdown-item @click="swapToAtualizarEdificio">Edificaçao</b-dropdown-item>
+        <b-dropdown-item @click="swapToAtualizarAndar">Andar</b-dropdown-item>
       </b-nav-item-dropdown>
          <b-nav-item href="#"></b-nav-item>
          <b-nav-item href="#"></b-nav-item>
@@ -66,7 +66,9 @@
 <br>
   
   <b-card-group v-if="user_props.user_obras.lenght != 0" deck>
-    <component :is="componente_atual" nome="teste" thumbnail="https://picsum.photos/200/300?image=1058" descricao="Teste"></cardObra>    
+    <b-container>
+      <component :is="componente_atual" ></component>    
+    </b-container>  
   </b-card-group>
 </div>
 </template>
@@ -91,7 +93,7 @@ export default {
     'cadastro-edificio':Cadastro_Edificio,
     'atualiza-obra':Atualiza_Obra,
     'atualiza-andar':Atualiza_Andar,
-    'Atualiza-edificio':Atualiza_Edificio
+    'atualiza-edificio':Atualiza_Edificio
   },
   data () {
     return {
@@ -105,6 +107,37 @@ export default {
       user_obras:[]
      }
     }
+  },
+  methods:{
+    onCarregarCardObra(){
+      EventBus.$emit("emitArrayObras",this.user_props.user_obras)
+    },
+    //Eventos para alternar entre componentes
+    swapToListaObras(){
+      this.componente_atual = 'cardObra'
+      this.onCarregarCardObra()
+    },
+    //Componentes de cadastro
+    swapToCadastrarObra(){
+      this.componente_atual = 'cadastro-obra'
+    },
+    swapToCadastrarEdificio(){
+      this.componente_atual = 'cadastro-edificio'
+    },
+    swapToCadastrarAndar(){
+      this.componente_atual = 'cadastro-andar'
+    },
+    //Componentes de atualização
+    swapToAtualizarObra(){
+      this.componente_atual = 'atualiza-obra'
+    },
+    swapToAtualizarEdificio(){
+      this.componente_atual = 'atualiza-edificio'
+    },
+    swapToAtualizarAndar(){
+      this.componente_atual = 'atualiza-andar'
+    }
+
   },
   beforeCreate(){    
     EventBus.$on('emitDadosPessoa',(data)=>{
@@ -120,6 +153,7 @@ export default {
               var dadosRetornados
               dadosRetornados = resp.body         
               this.user_props.user_obras = dadosRetornados
+              this.onCarregarCardObra()
             },
             resp=>{
               alert('Erro ao pegar os dados da obra')  
@@ -149,6 +183,17 @@ li {
 
 a {
   color: #42b983;
+}
+
+a._brand_obra{
+  color:white;
+  text-decoration: none;
+}
+
+a._brand_obra:hover{
+  color:white;
+  text-decoration: underline;
+  cursor:pointer;
 }
 
 .bg-primary {

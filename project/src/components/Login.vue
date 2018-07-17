@@ -80,11 +80,11 @@ export default {
         this.$http.get('http://localhost:3000/usuarios?email='+this.form.email).then(response =>{
             var resposta;
             resposta = response.body[0]
+            debugger
             if(resposta){
               if(this.form.senha == resposta.senha){
                 //Emite o evento
-                this.onLoginNoSite(resposta.id_pessoa)
-                this.$router.push('user')
+                this.onLoginNoSite(resposta.id)
               }
               else{
                 this.msg = "Senha incorreta!"
@@ -119,7 +119,12 @@ export default {
           this.msg = "Erro ao carregar dados."
           this.isDismissed = true
         })
-      }     
+        this.$router.push('user')
+      } 
+      else{
+        this.msg = "Erro ao propagar o ID"
+        this.isDismissed = true
+      }    
     }
   }
 }
