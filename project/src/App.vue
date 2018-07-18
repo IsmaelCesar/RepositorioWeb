@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: 'app'
+  name: 'app' 
 }
 </script>
 
@@ -18,7 +18,6 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 6px;
- 
 }
 .bg-gradient {
   overflow: hidden;
