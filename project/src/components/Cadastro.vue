@@ -173,24 +173,13 @@ var quant= this.form.pessoas.length;
       telefone: this.form.telefone,
       email:this.form.email ,
       is_engenheiro: this.form.cargo,
-      num_crea: this.form.crea
+      num_crea: this.form.crea,
+       senha:this.form.senha
       }).then(response => {
       post.save();
     }, response => {
       // error callback
-    })
-     this.$http.post('http://localhost:3000/usuarios',{
-      email:this.form.email ,
-      id:quant,
-      senha:this.form.senha
-      }).then(response => {
-      post.save();
-    }, response => {
-      // error callback
-    })
-    
-
-    
+    })   
     
 }
 

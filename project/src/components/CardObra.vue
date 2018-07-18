@@ -15,6 +15,7 @@
                         {{obra != null ? obra.descricao_obra : 'default'}}
                     </p>
                     <b-button @click="onDetalharObra" variant="primary">Detalhar</b-button>
+                    <b-button @click="onDeletarObra(obra.id)" variant="danger">Remover</b-button>
                 </b-card>
             </div>
         </b-card-group>    
@@ -30,12 +31,22 @@ export default {
     data(){
         return{
             array_obra:[],
-            teste:null
+            teste:null,
+            edf:[]
         }
     },
     methods:{
         onDetalharObra(){
             alert("Detalhar Obra")
+        },
+         onDeletarObra(x){
+            alert("Tem certeza que quer remover esta Obra?")
+            this.$http.delete('http://localhost:3000/obras/'+ x).then(response => {
+             window.location.reload();
+    }, response => {
+      alert("nao foi possivel remover")
+    })   
+
         }
     },
     created(){

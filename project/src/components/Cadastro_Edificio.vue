@@ -282,15 +282,34 @@ var quant= this.form.edficios.length;
       id:quant,
       nome_obra: this.form.obra,
       nome_edf: this.form.name,
-        dados_edf: {
-        alvenaria:0,
-        alvenaria_max: this.form.alvenaria_max,
-        eletrica: 0,
-        eletrica_max: this.form.TubEletrica,
-        hidraulica: 0,
-        hidraulica_max: this.form.TubHidra,
-        revestimento: 0,
-        revestimento_max: this.form.pintura}
+         alvenaria: {
+            pilares: 0,
+            pilares_max:this.form.pilares,
+            vigas: 0,
+            vigas_max: this.form.vigas,
+            alvenaria: 0,
+            alvenaria_max: this.form.alvenaria
+          },
+          eletrica: {
+            tubulacoes_eletricas: 0,
+            tubulacoes_eletricas_max: this.form.TubEletrica,
+            pontos_eletricos: 0,
+            pontos_eletricos_max:this.form.PontEletrica 
+          },
+          hidraulica: {
+            tubulacoes_hidraulicas: 0,
+            tubulacoes_hidraulicas_max: this.form.TubHidra,
+            pontos_hidraulicos: 0,
+            pontos_eletricos_max: this.form.PontEletrica
+          },
+          revestimento: {
+            piso: 0,
+            piso_max: this.form.piso,
+            pintura: 0,
+            pintura_max: this.form.pintura ,
+            esquadrias: 0,
+            esquadrias_max: this.form.esquadria
+          }
      
       }).then(response => {
       post.save();
@@ -336,5 +355,7 @@ b{
 .my-3 {
   margin-top: 0rem !important;
 }
-
+.cadastroEdificio{
+   background-image: url("https://st2.depositphotos.com/3319333/7991/v/950/depositphotos_79918192-stock-illustration-architectural-linear-sketch-multistory-apartment.jpg");
+}
 </style>
