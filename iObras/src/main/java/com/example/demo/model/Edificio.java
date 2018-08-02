@@ -25,6 +25,90 @@ public class Edificio {
 	
 	
 	
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public String getTipoFundacao() {
+		return tipoFundacao;
+	}
+
+	public void setTipoFundacao(String tipoFundacao) {
+		this.tipoFundacao = tipoFundacao;
+	}
+
+	public String getStatusFundacao() {
+		return statusFundacao;
+	}
+
+	public void setStatusFundacao(String statusFundacao) {
+		this.statusFundacao = statusFundacao;
+	}
+
+	public String getEmpresaFundaao() {
+		return empresaFundaao;
+	}
+
+	public void setEmpresaFundaao(String empresaFundaao) {
+		this.empresaFundaao = empresaFundaao;
+	}
+
+	public Alvenaria getAlvenaria() {
+		return alvenaria;
+	}
+
+	public void setAlvenaria(Alvenaria alvenaria) {
+		this.alvenaria = alvenaria;
+	}
+
+	public Hidraulica getHidraulica() {
+		return hidraulica;
+	}
+
+	public void setHidraulica(Hidraulica hidraulica) {
+		this.hidraulica = hidraulica;
+	}
+
+	public Eletrica getEletrica() {
+		return eletrica;
+	}
+
+	public void setEletrica(Eletrica eletrica) {
+		this.eletrica = eletrica;
+	}
+
+	public Revestimento getRevestimento() {
+		return revestimento;
+	}
+
+	public void setRevestimento(Revestimento revestimento) {
+		this.revestimento = revestimento;
+	}
+
+
+
+	public Obras getObra() {
+		return obra;
+	}
+
+	public void setObra(Obras obra) {
+		this.obra = obra;
+	}
+
+
+
 	@JsonIgnore
 	@ManyToOne(fetch=FetchType.LAZY)
 	public Alvenaria alvenaria;
@@ -41,5 +125,9 @@ public class Edificio {
 	@JsonIgnore
 	@ManyToOne(fetch=FetchType.LAZY)
 	public Revestimento revestimento;
+	
+	@JsonIgnore
+	@ManyToOne(fetch=FetchType.LAZY)
+	public Obras obra;
 	
 }
