@@ -52,7 +52,11 @@ public class UserController {
 		
 	}
 	
-	
+	@GetMapping(path = "/{id}")
+	public List<Obras> ListaObras(@PathVariable("id") Long id) {
+		return userRepo.getOne(id).getObras();
+		
+	}
 	
 
 }

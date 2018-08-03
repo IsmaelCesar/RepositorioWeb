@@ -42,6 +42,11 @@ public class ObraController {
 		return obraRepo.findAll();
 	}
 	
+	@GetMapping(path = "/{id}")
+	public List<Edificio> listaEd ( @PathVariable("id") Long id){
+		return obraRepo.getOne(id).getEdf();
+	}
+	
 	@PostMapping
 	public Obras salvar(@RequestBody Obras obra) {
 		return obraRepo.save(obra);
@@ -79,10 +84,11 @@ public class ObraController {
 	}
 	
 	@PostMapping(path = "/{id}/ed")
-	public Edificio postEdf(@PathVariable("id") Long id, @RequestBody Edificio edf){
+	public Long postEdf(@PathVariable("id") Long id, @RequestBody Edificio edf){
 		Obras obra= obraRepo.getOne(id);
 		edf.setObra(obra);
-		return edfRepo.save(edf);
+		edfRepo.save(edf);
+		return edf.getId();
 		
 	}
 

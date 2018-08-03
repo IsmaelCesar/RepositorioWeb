@@ -1,11 +1,15 @@
 package com.example.demo.model;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -107,7 +111,16 @@ public class Edificio {
 		this.obra = obra;
 	}
 
+	@OneToMany(cascade = CascadeType.ALL, mappedBy="Edificio")
+	public List<Andar> andar;
 
+	public List<Andar> getAndar() {
+		return andar;
+	}
+
+	public void setAndar(List<Andar> andar) {
+		this.andar = andar;
+	}
 
 	@JsonIgnore
 	@ManyToOne(fetch=FetchType.LAZY)

@@ -28,4 +28,63 @@ public class Eletrica {
 	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="Edificio")
 	public List<Edificio> edificio;
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public int getPontosEletricosTotal() {
+		return pontosEletricosTotal;
+	}
+
+	public void setPontosEletricosTotal(int pontosEletricosTotal) {
+		this.pontosEletricosTotal = pontosEletricosTotal;
+	}
+
+	public int getPontosEletricosParcial() {
+		return pontosEletricosParcial;
+	}
+
+	public void setPontosEletricosParcial(int pontosEletricosParcial) {
+		this.pontosEletricosParcial = pontosEletricosParcial;
+	}
+
+	public double getTubulacoesTotal() {
+		return tubulacoesTotal;
+	}
+
+	public void setTubulacoesTotal(double tubulacoesTotal) {
+		this.tubulacoesTotal = tubulacoesTotal;
+	}
+
+	public double getTubulacoesParcial() {
+		return tubulacoesParcial;
+	}
+
+	public void setTubulacoesParcial(double tubulacoesParcial) {
+		this.tubulacoesParcial = tubulacoesParcial;
+	}
+
+	public List<Andar> getAndar() {
+		return andar;
+	}
+
+	public void setAndar(List<Andar> andar) {
+		this.andar = andar;
+	}
+
+	public List<Edificio> getEdificio() {
+		return edificio;
+	}
+
+	public void setEdificio(List<Edificio> edificio) {
+		this.edificio = edificio;
+	}
+	
+	
+	
 }
