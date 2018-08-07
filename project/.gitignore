@@ -11,8 +11,8 @@ selenium-debug.log
 #.mvn/
 #.settings/
 #target/
-#.project
-#.classpath
+.project
+.classpath
 
 # Editor directories and files
 .idea
