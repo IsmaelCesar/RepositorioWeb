@@ -23,6 +23,7 @@ public class User {
 	private String senha;
 	private String endereco;
 	private String telefone;
+	private String numCrea;
 	private String confSenha;
 	private String numero_crea;
 	private boolean engenheiro;
