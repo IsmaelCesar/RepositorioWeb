@@ -136,6 +136,7 @@ export default {
   data () {
 
     return {
+      messagem: "",
       form: {
         email: '',
         name: '',
@@ -158,34 +159,32 @@ export default {
     }
   },
   methods:{
+
    onSubmit() {
-      this.$http.get('http://localhost:3000/pessoas').then(response => {
-      this.form.pessoas = response.body
-    }, response => {
-      // error callback
-    })
-var quant= this.form.pessoas.length;
-    
   
-    this.$http.post('http://localhost:3000/pessoas',{id:quant,
-     nome:this.form.name,
+      
+    this.$http.post('http://localhost:5000/user',{
+     name:this.form.name,
+     email:this.form.email ,
+      senha:this.form.senha,
       endereco:this.form.endereco,
       telefone: this.form.telefone,
-      email:this.form.email ,
-      is_engenheiro: this.form.cargo,
-      num_crea: this.form.crea,
-       senha:this.form.senha
+      numCrea: this.form.crea,
+      confSenha: this.form.confsenha,
+      engenheiro: this.form.cargo
+      
       }).then(response => {
-      post.save();
+       // this.messagem=response.body,
+       post.save();
     }, response => {
       // error callback
-    })   
-    
-}
+    }) 
+  } 
+
+  } 
 
     
   }
-}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

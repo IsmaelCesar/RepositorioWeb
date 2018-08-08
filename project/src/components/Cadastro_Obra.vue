@@ -87,25 +87,19 @@ export default {
   },
   methods:{
      onSubmit() {
-      this.$http.get('http://localhost:3000/obras').then(response => {
-      this.form.obras = response.body
-    }, response => {
-      // error callback
-    })
-var quant= this.form.obras.length;
     
   
-    this.$http.post('http://localhost:3000/obras',{
-      id:quant,
-      num_crea: this.form.crea,
-        nome_obra: this.form.name,
-        thubnail_obra: this.form.file,
-        descricao_obra: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        is_finished: false,
-        piscina:this.selected
+    this.$http.post('http://localhost:5000/user/1/obra',{
      
+        nome: this.form.name,
+         status: false,
+        piscina:this.selected,
+        imagem: this.form.file,
+        numeroCrea: this.form.crea,
+        descricao_obra: " "
+       
       }).then(response => {
-      post.save();
+    //  post.save();
     }, response => {
       // error callback
     })
