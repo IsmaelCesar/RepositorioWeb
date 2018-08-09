@@ -76,7 +76,7 @@ export default {
         file:null
       },
       selected: '',
-      user:'Engenheiro',
+      user:'',
       options: [
         { text: 'Nao', value: 'Nao' },
         { text: 'Sim', value: 'Sim' }
@@ -89,7 +89,7 @@ export default {
      onSubmit() {
     
   
-    this.$http.post('http://localhost:5000/user/1/obra',{
+    this.$http.put('http://localhost:5000/user/1/obra',{
      
         nome: this.form.name,
          status: false,
@@ -99,7 +99,8 @@ export default {
         descricao_obra: " "
        
       }).then(response => {
-    //  post.save();
+    
+
     }, response => {
       // error callback
     })

@@ -23,6 +23,7 @@ public class Edificio {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String nome;
+	private String status;
 	private String tipoFundacao;
 	private String statusFundacao;
 	private String empresaFundaao;

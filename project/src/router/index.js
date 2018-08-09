@@ -6,6 +6,8 @@ import Cadastro from '@/components/Cadastro'
 import Cadastro_Obra from '@/components/Cadastro_Obra'
 import RedefinirSenha from '@/components/RedefinirSenha'
 import User from '@/components/User'
+import teste from '@/components/teste'
+
 
 
 Vue.use(Router)
@@ -44,6 +46,11 @@ export default new Router({
       name: 'CadastroObra',
       component: Cadastro_Obra
 
+    },
+    {
+      path: '/teste',
+      name: 'Teste',
+      component: teste
     }
   ]
 })

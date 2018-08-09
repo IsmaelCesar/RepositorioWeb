@@ -57,6 +57,32 @@ public class AndarController {
 		return andarRepo.findById(id);
 	}
 	
+	@GetMapping(path = "/{id}/alvenaria")
+	public Alvenaria getAlvenaria ( @PathVariable("id") Long id){
+		
+		return  andarRepo.getOne(id).getAlvenaria();
+		
+	}
+	
+	@GetMapping(path = "/{id}/eletrica")
+	public Eletrica getEletrica ( @PathVariable("id") Long id){
+		
+		return  andarRepo.getOne(id).getEletrica();
+		
+	}
+	@GetMapping(path = "/{id}/hidraulica")
+	public Hidraulica gethidraulica ( @PathVariable("id") Long id){
+		
+		return  andarRepo.getOne(id).getHidraulica();
+		
+	}
+	@GetMapping(path = "/{id}/revestimento")
+	public Revestimento getRevestimento ( @PathVariable("id") Long id){
+		
+		return  andarRepo.getOne(id).getRevestimento();
+		
+	}
+	
 	
 	@PostMapping(path = "/{id}/alvenaria")
 	public Alvenaria postAlve(@PathVariable("id") Long id, @RequestBody Alvenaria alvenaria){

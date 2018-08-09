@@ -118,8 +118,9 @@
 
       <b-button type="submit"  variant="primary">Submit</b-button>
       <b-button type="reset" variant="danger">Reset</b-button>
+    
     </b-form>
-    <b-alert variant="success" show>Success Alert</b-alert>
+  
 
 </div>
 </div>
@@ -136,7 +137,7 @@ export default {
   data () {
 
     return {
-      messagem: "",
+      mensagem: "",
       form: {
         email: '',
         name: '',
@@ -148,14 +149,14 @@ export default {
         confsenha:'',
         pessoas:[]
       },
-      show:false,
+      show:true,
+      res:true,
         cargos: [
         { text: 'Select One', value: null },
         { text: 'Engenheiro', value: true },
         { text: 'Tecnico', value: false },
     
-      ],
-      show: true
+      ]
     }
   },
   methods:{
@@ -174,10 +175,13 @@ export default {
       engenheiro: this.form.cargo
       
       }).then(response => {
-       // this.messagem=response.body,
-       post.save();
+                 
+       this.mensagem ="Cadastrado com Sucesso"
+             
+      // post.save();
     }, response => {
       // error callback
+      this.mensagem="errooo";
     }) 
   } 
 

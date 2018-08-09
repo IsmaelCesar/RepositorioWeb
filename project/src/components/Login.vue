@@ -77,10 +77,10 @@ export default {
   methods:{
     onClickLogin(){
       if(this.form.email != '' && this.form.email != ''){
-        this.$http.get('http://localhost:3000/usuarios?email='+this.form.email).then(response =>{
+        this.$http.get('http://localhost:5000/user?email='+this.form.email).then(response =>{
             var resposta;
             resposta = response.body[0]
-            debugger
+           // debugger
             if(resposta){
               if(this.form.senha == resposta.senha){
                 //Emite o evento
@@ -110,7 +110,7 @@ export default {
     },
     onLoginNoSite(idPessoa){
       if(idPessoa){        
-        this.$http.get('http://localhost:3000/pessoas?id='+idPessoa).then(response =>{
+        this.$http.get('http://localhost:5000/user?id='+idPessoa).then(response =>{
           var dados_pessoa
           dados_pessoa = response.body[0]
           //Emite evento para os outros componente utilizarem

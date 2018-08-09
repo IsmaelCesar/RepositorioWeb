@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Example;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,6 +22,7 @@ import com.example.demo.model.Eletrica;
 import com.example.demo.model.Hidraulica;
 import com.example.demo.model.Obra;
 import com.example.demo.model.Revestimento;
+import com.example.demo.model.User;
 import com.example.demo.repository.AlvenariaRepository;
 import com.example.demo.repository.AndarRepository;
 import com.example.demo.repository.EdificioRepository;
@@ -59,6 +61,31 @@ public class EdificioController {
 	@GetMapping(path = "/{id}")
 	public Optional<Edificio> Edf ( @PathVariable("id") Long id){
 		return edfRepo.findById(id);
+	}
+	@GetMapping(path = "/{id}/alvenaria")
+	public Alvenaria getAlvenaria ( @PathVariable("id") Long id){
+		
+		return  edfRepo.getOne(id).getAlvenaria();
+		
+	}
+	
+	@GetMapping(path = "/{id}/eletrica")
+	public Eletrica getEletrica ( @PathVariable("id") Long id){
+		
+		return  edfRepo.getOne(id).getEletrica();
+		
+	}
+	@GetMapping(path = "/{id}/hidraulica")
+	public Hidraulica gethidraulica ( @PathVariable("id") Long id){
+		
+		return  edfRepo.getOne(id).getHidraulica();
+		
+	}
+	@GetMapping(path = "/{id}/revestimento")
+	public Revestimento getRevestimento ( @PathVariable("id") Long id){
+		
+		return  edfRepo.getOne(id).getRevestimento();
+		
 	}
 	
 	@GetMapping(path = "/{id}/listaAndar")
