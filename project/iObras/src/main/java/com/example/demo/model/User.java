@@ -25,6 +25,7 @@ public class User {
 	private String telefone;
 	private String numCrea;
 	private String confSenha;
+	private String numero_crea;
 	private boolean engenheiro;
 	
 	
