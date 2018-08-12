@@ -1,21 +1,19 @@
 <template>
-    <div class="card_obra">
-        <b-card-group v-if="array_obra != null" deck>
-            <div class="lista_obras" v-for="obra in array_obra" :key="obra.id">
+    <div class="listar_edificios">
+        <b-card-group v-if="array_edificio != null" deck>
+            <div class="lista_obras" v-for="edf in array_edificio" :key="edf.id">
                 <b-card 
-                v-if="obra != null"
-                :title="obra.nome_obra"
-                :img-src="obra.thubnail_obra"
-                img-alt="Image"
-                img-top
+                v-if="edf != null"
+                :title="edf.nome_obra"
                 tag="article"
                 style="max-width: 20rem;"
                 class="mb-2">
                     <p class="card-text">
-                        {{obra != null ? obra.descricao_obra : 'default'}}
+                        {{edf != null ? (edf.tipoFundacao+'\n'+
+                                        'empresa da funação'+edf.empresaFundaao) : 'default'}}
                     </p>
-                    <b-button @click="onDetalharObra" variant="primary">Detalhar</b-button>
-                    <b-button @click="onDeletarObra(obra.id)" variant="danger">Remover</b-button>
+                    <b-button @click="onDetalharEdificio" variant="primary">Detalhar</b-button>
+                    <b-button @click="onDeletarEdificio(edificio.id)" variant="danger">Remover</b-button>
                 </b-card>
             </div>
         </b-card-group>    
@@ -26,22 +24,22 @@
 import { EventBus } from '../main'
 
 export default {
-    name:'cardObra',
-    props:['obras_usuario'],
+    name:'listarEdificios',
+    props:['id_obra','array_edificios'],
     data(){
         return{
-            array_obra:[],
+            array_edificios:[],
             teste:null,
-            edf:[]
+            id_obra:null
         }
     },
     methods:{
         onDetalharObra(){
-            alert("Detalhar Obra")
+            alert("Detalhar Edificio")
         },
-         onDeletarObra(x){
+         onDeletarEdificio(x){
             alert("Tem certeza que quer remover esta Obra?")
-            this.$http.delete('http://localhost:5000/obra/'+ x).then(response => {
+            this.$http.delete('http://localhost:5000/obra/'+ id_obra+'/'+x).then(response => {
              window.location.reload();
     }, response => {
       alert("nao foi possivel remover")

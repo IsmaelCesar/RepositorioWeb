@@ -149,7 +149,7 @@ export default {
     if(this.user_props.user_info != null){
       this.is_engenheiro = this.user_props.user_info.is_engenheiro
         if(this.user_props.user_info.obras.length != 0){         
-            this.$http.get('http://localhost:3000/obras?id_pessoa='+this.user_props.user_info.id).then(resp =>{
+            this.$http.get('http://localhost:5000/user/listaObras'+this.user_props.user_info.id).then(resp =>{
               var dadosRetornados
               dadosRetornados = resp.body         
               this.user_props.user_obras = dadosRetornados
