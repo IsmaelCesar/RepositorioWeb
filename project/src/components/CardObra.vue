@@ -41,7 +41,7 @@ export default {
         },
          onDeletarObra(x){
             alert("Tem certeza que quer remover esta Obra?")
-            this.$http.delete('http://localhost:3000/obras/'+ x).then(response => {
+            this.$http.delete('http://localhost:5000/obra/'+ x).then(response => {
              window.location.reload();
     }, response => {
       alert("nao foi possivel remover")
