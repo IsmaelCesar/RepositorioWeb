@@ -264,8 +264,8 @@ export default {
         this.$http.post('http://localhost:5000/edf/1/andar',{
           numero:this.form.numero ,
 	       status: "Em andamento",
-       quantidadeAndar: this.form.quantAndar ,
-        quantidadeApartamento: this.form.quantApart
+         quantidadeAndar: this.form.quantAndar ,
+          quantidadeApartamento: this.form.quantApart
           }).then(response => {
           post.save();
         }, response => {
