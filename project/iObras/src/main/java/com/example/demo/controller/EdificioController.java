@@ -158,10 +158,23 @@ public class EdificioController {
 	
 	@PostMapping(path = "/{id}/andar")
 	public Andar postAndar(@PathVariable("id") Long id, @RequestBody Andar andar ){
-		Edificio edf= edfRepo.getOne(id);
-		andar.setEdificio(edf);
-		return andarRepo.save(andar);
-			
+		Andar retorno=null;
+		if(andar.getQuantidadeAndar()!=0) {
+			Edificio edf= edfRepo.getOne(id);
+			andar.setEdificio(edf);
+			return andarRepo.save(andar);
+		}
+		else {
+			for(int i=1;i<=andar.getQuantidadeAndar();i++) {
+				Edificio edf= edfRepo.getOne(id);
+				andar.setNumero(i);
+				andar.setEdificio(edf);
+				retorno =andarRepo.save(andar);
+			}
+		
+		return retorno;
+	}
+		
 	}
 	
 }

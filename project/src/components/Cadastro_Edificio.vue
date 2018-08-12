@@ -1,6 +1,8 @@
 <template>
   <div class="cadastroEdificio">
     
+    
+
 <div class="py-5">
 <div class="container">
       <div class="row">
@@ -10,6 +12,7 @@
   <div class="card-body" >
     <b-form @submit="onSubmit" @reset="onReset">
     <fieldset><h2>Cadastro Edificação </h2></fieldset>
+     <h1>{{mensagem}}</h1>
     <br>
      <br>
 
@@ -215,6 +218,8 @@
 </div>
 </div>
 
+  
+
    </div>
 </template>
 
@@ -224,14 +229,16 @@ export default {
   created (){
        this.$http.get('http://localhost:5000/user/1/listaObras').then(response => {
       this.obras = response.body
+  this.mensagem=" servdor okay"
     }, response => {
       // error callback
+      this.mensagem="erro no servdor"
     })
   },
   data () {
 
     return {
-
+      mensagem:"",
       idEdificio: "",
       form: {
         edficios:[],
@@ -299,7 +306,7 @@ export default {
       pilaresParcial:0,
       pilaresTotal:this.form.pilares,
       mQuadradosParcial:0,
-     mQuadradosTotal:this.form.alvenaria
+      mQuadradosTotal:this.form.alvenaria
            
          }).then(response => {
          

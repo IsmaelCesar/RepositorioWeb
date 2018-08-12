@@ -20,6 +20,7 @@ public class Andar {
 	private Long id;
 	private int numero;
 	private boolean status;
+	private int quantidadeAndar;
 	private int quantidadeApartamento;
 	
 	@JsonIgnore

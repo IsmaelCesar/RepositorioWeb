@@ -3,6 +3,7 @@
 <template>
   <b-table striped hover :items="obras"></b-table>
 </template>
+<h1>{{mensagem}}</h1>
 
    </div>
 </template>
@@ -14,14 +15,16 @@ export default {
     //1/listaObras
        this.$http.get('http://localhost:5000/user/1/listaObras').then(response => {
       this.obras = response.body
+    this.mensagem=" servdor okay"
     }, response => {
       // error callback
+      this.mensagem="erro no servdor"
     })
   },
   data () {
 
     return {
-
+    mensagem:"",
       idEdificio: "",
       form: {
         edficios:[],

@@ -211,8 +211,6 @@ export default {
     return {
       form: {
         name_obra: '',
-        crea:'',
-        fundacao:'',
         edificio: null,
         quantAndar:'',
          quantApart:'',
@@ -255,7 +253,7 @@ export default {
   },
    methods:{
      onSubmit() {
-          this.$http.get('http://localhost:3000/andares').then(response => {
+          this.$http.get('http://localhost:5000/andar').then(response => {
           this.form.andares = response.body
         }, response => {
           // error callback
@@ -263,44 +261,73 @@ export default {
         var quant= this.form.andares.length;
         
       
-        this.$http.post('http://localhost:3000/andares',{
-          id:quant,
-          nome_obra: this.form.obra,
-          nome_edf: this.form.name,
-            alvenaria: {
-            pilares: 0,
-            pilares_max:this.form.pilares,
-            vigas: 0,
-            vigas_max: this.form.vigas,
-            alvenaria: 0,
-            alvenaria_max: this.form.alvenaria
-          },
-          eletrica: {
-            tubulacoes_eletricas: 0,
-            tubulacoes_eletricas_max: this.form.TubEletrica,
-            pontos_eletricos: 0,
-            pontos_eletricos_max:this.form.PontEletrica 
-          },
-          hidraulica: {
-            tubulacoes_hidraulicas: 0,
-            tubulacoes_hidraulicas_max: this.form.TubHidra,
-            pontos_hidraulicos: 0,
-            pontos_eletricos_max: this.form.PontEletrica
-          },
-          revestimento: {
-            piso: 0,
-            piso_max: this.form.piso,
-            pintura: 0,
-            pintura_max: this.form.pintura ,
-            esquadrias: 0,
-            esquadrias_max: this.form.esquadria
-          }
-        
+        this.$http.post('http://localhost:5000/edf/1/andar',{
+          numero:this.form.numero ,
+	       status: "Em andamento",
+       quantidadeAndar: this.form.quantAndar ,
+        quantidadeApartamento: this.form.quantApart
           }).then(response => {
           post.save();
         }, response => {
           // error callback
         })
+
+ this.$http.post('http://localhost:5000/andar/1/alvenaria',{
+
+       vigasTotal: this.form.vigas,
+      vigasParcial:0,
+      pilaresParcial:0,
+      pilaresTotal:this.form.pilares,
+      mQuadradosParcial:0,
+      mQuadradosTotal:this.form.alvenaria
+           
+         }).then(response => {
+         
+     
+    }, response => {
+      // error callback
+    })
+
+     this.$http.post('http://localhost:5000/andar/1/eletrica',{
+        
+          pontosEletricosTotal: this.form.PontEletrica,
+          pontosEletricosParcial:0 ,
+          tubulacoesTotal: this.form.TubEletrica,
+          tubulacoesParcial:0
+         }).then(response => {
+     
+    }, response => {
+      // error callback
+    })
+
+    this.$http.post('http://localhost:5000/edf/1/hidraulica',{
+
+        pontosHidraulicosTotal: this.form.TubHidra,
+        pontosHidraulicosParcial: 0,
+        tubulacoesTotal: this.form.TubHidra,
+        tubulacoesParcial:0,
+        tubulacoes_hidraulicas: 0,
+           
+         }).then(response => {
+     
+    }, response => {
+      // error callback
+    })
+    this.$http.post('http://localhost:5000/edf/1/revestimento',{
+
+      esquadriasTotal:this.form.esquadria,
+      esquadriasParcial:0,
+      pisoTotal:this.form.piso,
+      pisoParcial:0,
+      pinturaTotal:this.form.pintura ,
+      pinturaParcial:0
+
+         }).then(response => {
+     
+    }, response => {
+      // error callback
+    })
+
     },
     onReset(){
       
