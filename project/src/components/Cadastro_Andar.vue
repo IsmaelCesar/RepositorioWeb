@@ -12,7 +12,7 @@
     <br>
      <br>
        <template>
-  <b-table striped hover :items="edificios"></b-table>
+  <b-table striped hover  responsive :items="edificios"></b-table>
 </template>
 
      <b-form-group id="exampleInputGroup1"
@@ -206,7 +206,7 @@
 export default {
   name: 'cadastroAndar',
    created () {
-    this.$http.get('http://localhost:3000/edficios').then(response => {
+    this.$http.get('http://localhost:5000/edf').then(response => {
       this.edificios = response.body
     }, response => {
       // error callback
@@ -215,6 +215,7 @@ export default {
   data () {
 
     return {
+      idAndar:'',
       form: {
         IdEdificio:'',
         name_obra: '',
@@ -262,18 +263,16 @@ export default {
     onSubmit(evt) {
                
       
-        this.$http.post('http://localhost:5000/edf/'+this.IdEdificio+'/andar',{
+        this.$http.post('http://localhost:5000/edf/'+this.form.IdEdificio +'/andar',{
           numero:this.form.numero ,
-	       status: "Em andamento",
-       quantidadeAndar: this.form.quantAndar ,
-        quantidadeApartamento: this.form.quantApart
+	       status: true,
+         quantidadeAndar: this.form.quantAndar ,
+         quantidadeApartamento: this.form.quantApart
           }).then(response => {
-          this.idAndar=response
-        }, response => {
-          // error callback
-        })
 
- this.$http.post('http://localhost:5000/andar/'+this.idAndar+'/alvenaria',{
+          this.idAndar=response.body
+        alert("hello")
+          this.$http.post('http://localhost:5000/andar/'+this.idAndar+'/alvenaria',{
 
        vigasTotal: this.form.vigas,
       vigasParcial:0,
@@ -329,8 +328,14 @@ export default {
       // error callback
     })
 
+        }, response => {
+          // error callback
+        })
+
+ 
+
       evt.preventDefault();
-      alert(JSON.stringify(this.form));
+     // alert(JSON.stringify(this.form));
 
     },
     onReset(evt){

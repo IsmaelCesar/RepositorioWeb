@@ -116,7 +116,7 @@ export default {
             nome: this.form.name,
         status: false,
         piscina:this.selected,
-        imagem: '',
+        imagem: this.form.imagem,
         numeroCrea: this.form.crea,
         descricao_obra: " "
       

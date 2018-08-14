@@ -19,7 +19,7 @@
      <br>
 
     <template>
-      <b-table striped hover  :items="obras">
+      <b-table striped hover responsive :items="obras">
       </b-table>
       </template>
      
@@ -236,7 +236,7 @@ export default {
   name: 'cadastroEdificio',
   created (){
        this.$http.get('http://localhost:5000/user/1/listaObras').then(response => {
-      this.obras = response.body
+      this.obras = response.body;
    alert(" servidor okay")
     }, response => {
       // error callback
@@ -246,8 +246,8 @@ export default {
   data () {
 
     return {
-      mensagem:"",
-      idEdificio: "",
+      mensagem:'',
+      idEdificio: '',
       form: {
         edficios:[],
         name: '',
@@ -309,11 +309,10 @@ export default {
 
       }).then(response => {
          this.idEdificio = response.body
-    }, response => {
-      // error callback
-    })
 
-     this.$http.post('http://localhost:5000/edf/'+this.idEdificio+'/alvenaria',{
+         alert( this.idEdificio)
+
+           this.$http.post('http://localhost:5000/edf/'+ response.body +'/alvenaria',{
 
        vigasTotal: this.form.vigas,
       vigasParcial:0,
@@ -368,6 +367,11 @@ export default {
     }, response => {
       // error callback
     })
+    }, response => {
+      // error callback
+    })
+
+   
 
      evt.preventDefault();
       alert(JSON.stringify(this.form));
