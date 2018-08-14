@@ -11,16 +11,22 @@
     <fieldset><h2>Cadastro Andar </h2></fieldset>
     <br>
      <br>
+       <template>
+  <b-table striped hover :items="edificios"></b-table>
+</template>
 
      <b-form-group id="exampleInputGroup1"
-                    label="Edificação:"
+                    label="Id do Edificação:"
                     label-for="exampleInput1">
-        <b-form-select id="exampleInput1"
-                      :options="edificios"
+          <b-form-input id="exampleInput1"
+                      type="text"
+                      v-model="form.IdEdificio"
                       required
-                      v-model="form.edificio">
-        </b-form-select>
+                      placeholder="Id do Edificio">
+        </b-form-input>
       </b-form-group>
+
+    
      <b-form-group id="exampleInputGroup2"
                     label="Quantidade de Andar:"
                     label-for="exampleInput2"
@@ -210,6 +216,7 @@ export default {
 
     return {
       form: {
+        IdEdificio:'',
         name_obra: '',
         edificio: null,
         quantAndar:'',
@@ -252,27 +259,21 @@ export default {
 
   },
    methods:{
-     onSubmit() {
-          this.$http.get('http://localhost:5000/andar').then(response => {
-          this.form.andares = response.body
-        }, response => {
-          // error callback
-        })
-        var quant= this.form.andares.length;
-        
+    onSubmit(evt) {
+               
       
-        this.$http.post('http://localhost:5000/edf/1/andar',{
+        this.$http.post('http://localhost:5000/edf/'+this.IdEdificio+'/andar',{
           numero:this.form.numero ,
 	       status: "Em andamento",
-         quantidadeAndar: this.form.quantAndar ,
-          quantidadeApartamento: this.form.quantApart
+       quantidadeAndar: this.form.quantAndar ,
+        quantidadeApartamento: this.form.quantApart
           }).then(response => {
-          post.save();
+          this.idAndar=response
         }, response => {
           // error callback
         })
 
- this.$http.post('http://localhost:5000/andar/1/alvenaria',{
+ this.$http.post('http://localhost:5000/andar/'+this.idAndar+'/alvenaria',{
 
        vigasTotal: this.form.vigas,
       vigasParcial:0,
@@ -288,7 +289,7 @@ export default {
       // error callback
     })
 
-     this.$http.post('http://localhost:5000/andar/1/eletrica',{
+     this.$http.post('http://localhost:5000/andar/'+this.idAndar+'/eletrica',{
         
           pontosEletricosTotal: this.form.PontEletrica,
           pontosEletricosParcial:0 ,
@@ -300,7 +301,7 @@ export default {
       // error callback
     })
 
-    this.$http.post('http://localhost:5000/edf/1/hidraulica',{
+    this.$http.post('http://localhost:5000/edf/'+this.idAndar+'/hidraulica',{
 
         pontosHidraulicosTotal: this.form.TubHidra,
         pontosHidraulicosParcial: 0,
@@ -313,7 +314,7 @@ export default {
     }, response => {
       // error callback
     })
-    this.$http.post('http://localhost:5000/edf/1/revestimento',{
+    this.$http.post('http://localhost:5000/edf/'+this.idAndar+'/revestimento',{
 
       esquadriasTotal:this.form.esquadria,
       esquadriasParcial:0,
@@ -328,10 +329,28 @@ export default {
       // error callback
     })
 
+      evt.preventDefault();
+      alert(JSON.stringify(this.form));
+
     },
-    onReset(){
-      
+    onReset(evt){
+
+        this.form.numero ='',
+        this.form.quantAndar ='',
+        this.form.quantApart='',
+        this.form.vigas='',
+        this.form.pilares='',
+        this.form.alvenaria='',
+        this.form.PontEletrica='',
+        this.form.TubEletrica='',
+        this.form.TubHidra='',
+        this.form.TubHidra='',
+        this.form.esquadria='',
+        this.form.piso='',
+        this.form.pintura='';
+      this.$nextTick(() => { this.show = true });
     }
+  
   }
 }
 </script>

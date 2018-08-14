@@ -35,16 +35,29 @@
         </b-form-input>
       </b-form-group>
 
-      <label>Imagem</label>
-       <b-form-file v-model="file" :state="Boolean(file)" placeholder="Escolha uma foto..."></b-form-file>
-     <div class="mt-3">Selected file: {{file && file.name}}</div>
+        <b-form-group id="exampleInputGroup2"
+                    label="URL da imagem"
+                    label-for="exampleInput2">
+        <b-form-input id="exampleInput2"
+                      type="text"
+                      v-model="form.imagem"
+                      required
+                      placeholder="URL da imagem">
+        </b-form-input>
+      </b-form-group>
+
      
-   <b-form-group label="A obra possuirá Piscina?">
-      <b-form-radio-group v-model="selected"
-                          :options="options"
-                          name="radioInline">
-      </b-form-radio-group>
-    </b-form-group>
+
+      <!--b-form-group id="exampleInputGroup5"
+                    label="A obra possuirá Piscina?"
+                    label-for="exampleInput5">
+        <b-form-select id="exampleInput5"
+                      :options="options"
+                        required
+                      v-model="selected" >
+                      
+        </b-form-select>
+      </b-form-group-->
     
 
 
@@ -64,16 +77,19 @@
 </template>
 
 <script>
+import { EventBus } from '../main'
+
 export default {
   name: 'cadastroObra',
   data () {
 
     return {
+        idUser:'',
       form: {
         name: '',
         crea:'',
         obras: [],
-        file:null
+        imagem: '',
       },
       selected: '',
       user:'',
@@ -86,26 +102,65 @@ export default {
 
   },
   methods:{
-     onSubmit() {
-    
+    beforeCreate (){
+        EventBus.$on('emitIdPessoa',(idPessoa)=>{
+      this.idUser = idPessoa
+      alert(idPessoa )
+    })
+    },
   
-    this.$http.put('http://localhost:5000/user/1/obra',{
-     
-        nome: this.form.name,
-         status: false,
+     onSubmit(evt) {
+
+
+        this.$http.post('http://localhost:5000/user/1/obra',{
+            nome: this.form.name,
+        status: false,
         piscina:this.selected,
-        imagem: this.form.file,
+        imagem: '',
+        numeroCrea: this.form.crea,
+        descricao_obra: " "
+      
+      }).then(response => {
+                 
+       alert("Cadastrado com Sucesso")
+             
+      // post.save();
+    }, response => {
+      // error callback
+      alert("Erro ao Cadastrar Obra ");
+    }) 
+
+  //'+ this.idUser +'
+
+  /*  this.$http.post('http://localhost:5000/user/1/obra',{
+        nome: this.form.name,
+        status: false,
+        piscina:this.selected,
+        imagem: '',
         numeroCrea: this.form.crea,
         descricao_obra: " "
        
       }).then(response => {
     
-
+        alert("Obra Inserida com Sucesso")
     }, response => {
       // error callback
+      alert("Erro ao Inserir Obra")
     })
 
-}
+ evt.preventDefault();
+      alert(JSON.stringify(this.form)); */
+},
+  onReset(evt){
+     evt.preventDefault();
+         this.form.name= ' ',
+    this.selected='',
+     this.form.crea='',
+     this.form.file='';
+     
+  this.$nextTick(() => { this.show = true });
+
+  }
   }
 }
 </script>

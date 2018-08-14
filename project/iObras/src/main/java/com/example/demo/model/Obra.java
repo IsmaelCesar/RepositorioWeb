@@ -27,7 +27,7 @@ public class Obra {
 	private String nome;
 	private String status;
 	private boolean piscina;
-	private File imagem;
+	private  String imagem;
 	private Long numeroCrea;
 	private String descricao;
 	

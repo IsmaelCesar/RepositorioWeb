@@ -26,7 +26,7 @@ public class Edificio {
 	private String status;
 	private String tipoFundacao;
 	private String statusFundacao;
-	private String empresaFundaao;
+	private String empresaFundacao;
 	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="edificio")
 	private List<Andar> andar;

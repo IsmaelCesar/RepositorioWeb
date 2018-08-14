@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.context.annotation.RequestScope;
 
+import com.example.demo.exception.UserNotFoundException;
 import com.example.demo.model.Obra;
 import com.example.demo.model.User;
 import com.example.demo.repository.ObrasRepository;
@@ -42,10 +43,9 @@ public class UserController {
 	if(userRepo.exists(example)==false && user.getSenha().equals(user.getConfSenha())) {
 		return userRepo.save(user);
 		 
+		}else {
+			throw new UserNotFoundException("Usuario já existe ou senha incorreta");
 		}
-	
-	
-		return user;
 		
 	}
 	
@@ -68,7 +68,7 @@ public class UserController {
 	}
 	
 	
-		@PutMapping(path = "/{id}/obra")
+		@PostMapping(path = "/{id}/obra")
 		public List<Obra> update(@PathVariable("id") Long id, @RequestBody Obra obra) {
 			
 			User exemplo= userRepo.getOne(id);

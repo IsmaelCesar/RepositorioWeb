@@ -10,20 +10,28 @@
         <div class="col-md-12">
 <div class="card text-white p-5 bg-primary">
   <div class="card-body" >
+
+    
     <b-form @submit="onSubmit" @reset="onReset">
     <fieldset><h2>Cadastro Edificação </h2></fieldset>
-     <h1>{{mensagem}}</h1>
+    
     <br>
      <br>
 
+    <template>
+      <b-table striped hover  :items="obras">
+      </b-table>
+      </template>
+     
      <b-form-group id="exampleInputGroup1"
-                    label="Obra:"
+                    label=" Id da Obra:"
                     label-for="exampleInput1">
-        <b-form-select id="exampleInput1"
-                      :options="obras"
+                      <b-form-input id="exampleInput2"
+                      type="text"
+                      v-model="form.idObra"
                       required
-                      v-model="form.obra">
-        </b-form-select>
+                      placeholder="Id da Obra">
+        </b-form-input>
       </b-form-group>
 
       <b-form-group id="exampleInputGroup2"
@@ -229,10 +237,10 @@ export default {
   created (){
        this.$http.get('http://localhost:5000/user/1/listaObras').then(response => {
       this.obras = response.body
-  this.mensagem=" servdor okay"
+   alert(" servidor okay")
     }, response => {
       // error callback
-      this.mensagem="erro no servdor"
+    alert("erro no servidor")
     })
   },
   data () {
@@ -245,7 +253,7 @@ export default {
         name: '',
         crea:'',
         fundacao:'',
-        obra: null,
+        idObra: 0,
         status: null,
         statusFund: null,
         empresa:'',
@@ -262,29 +270,35 @@ export default {
         checked: [],
         user:'Engenheiro',
       },
-        obras: ['obra1'],
+        obras: [],
       show: true,
       selected: '',
       options: [
         { text: 'Nao', value: 'Nao' },
         { text: 'Sim', value: 'Sim' }
       ],
-      Status: [
+       Status: [
         { text: 'Select One', value: null },
-        'ativo', 'desativada'
+        { text: 'ativo', value: 'ativo' },
+        { text: 'desativada', value: 'desativada' },
+         
       ],
        StatusFund: [
         { text: 'Select One', value: null },
-        'Irá iniciar','Em andamento', 'Concluida'
+        { text: 'Irá iniciar', value: 'Irá iniciar' },
+        { text: 'Em andamento', value: 'Em andamento' },
+        { text: 'Concluida', value: 'Concluida' },
+        
       ],
     }
     
 
   },
   methods:{
-     onSubmit() {
+     onSubmit(evt) {
     
-       //this.form.obra.id +
+      
+       //'+ this.form.idObra +'
     this.$http.post('http://localhost:5000/Obra/1/edificio',{
        
       nome:this.form.name,
@@ -294,12 +308,12 @@ export default {
 	   empresaFundaao:this.form.empresa
 
       }).then(response => {
-       this.idEdificio = response.body
+         this.idEdificio = response.body
     }, response => {
       // error callback
     })
 
-     this.$http.post('http://localhost:5000/edf/1/alvenaria',{
+     this.$http.post('http://localhost:5000/edf/'+this.idEdificio+'/alvenaria',{
 
        vigasTotal: this.form.vigas,
       vigasParcial:0,
@@ -315,7 +329,7 @@ export default {
       // error callback
     })
 
-     this.$http.post('http://localhost:5000/edf/1/eletrica',{
+     this.$http.post('http://localhost:5000/edf/'+this.idEdificio+'/eletrica',{
         
           pontosEletricosTotal: this.form.PontEletrica,
           pontosEletricosParcial:0 ,
@@ -327,7 +341,7 @@ export default {
       // error callback
     })
 
-    this.$http.post('http://localhost:5000/edf/1/hidraulica',{
+    this.$http.post('http://localhost:5000/edf/'+this.idEdificio+'/hidraulica',{
 
         pontosHidraulicosTotal: this.form.TubHidra,
         pontosHidraulicosParcial: 0,
@@ -340,7 +354,7 @@ export default {
     }, response => {
       // error callback
     })
-    this.$http.post('http://localhost:5000/edf/1/revestimento',{
+    this.$http.post('http://localhost:5000/edf/'+ this.idEdificio+'/revestimento',{
 
       esquadriasTotal:this.form.esquadria,
       esquadriasParcial:0,
@@ -354,8 +368,32 @@ export default {
     }, response => {
       // error callback
     })
+
+     evt.preventDefault();
+      alert(JSON.stringify(this.form));
     
-}
+},
+  onReset(evt){
+     evt.preventDefault();
+        this.form.name='',
+        this.form.status='',
+        this.form.fundacao='',
+        this.form.statusFund='',
+        this.form.empresa='',
+        this.form.vigas='',
+        this.form.pilares='',
+        this.form.alvenaria='',
+        this.form.PontEletrica='',
+        this.form.TubEletrica='',
+        this.form.TubHidra='',
+        this.form.TubHidra='',
+        this.form.esquadria='',
+        this.form.piso='',
+        this.form.pintura='';
+
+  this.$nextTick(() => { this.show = true });
+
+  }
   }
 }
 </script>

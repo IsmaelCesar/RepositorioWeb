@@ -145,6 +145,15 @@
 <script>
 export default {
   name: 'consulta',
+ created (){
+       this.$http.get('http://localhost:5000/user/1/listaObras').then(response => {
+      this.obras = response.body
+    this.mensagem=" servdor okay"
+    }, response => {
+      // error callback
+      this.mensagem="erro no servdor"
+    })
+  },
   data () {
     return {
      user:'Engenheiro',

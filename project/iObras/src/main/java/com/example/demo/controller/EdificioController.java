@@ -107,8 +107,8 @@ public class EdificioController {
 			exemplo.setNome(edificio.getNome());
 			
 		}
-		if(edificio.getEmpresaFundaao()!=null) {
-			exemplo.setEmpresaFundaao(edificio.getEmpresaFundaao());
+		if(edificio.getEmpresaFundacao()!=null) {
+			exemplo.setEmpresaFundacao(edificio.getEmpresaFundacao());
 			
 		}
 		if(edificio.getStatusFundacao()!=null) {
@@ -157,19 +157,19 @@ public class EdificioController {
 	}
 	
 	@PostMapping(path = "/{id}/andar")
-	public Andar postAndar(@PathVariable("id") Long id, @RequestBody Andar andar ){
-		Andar retorno=null;
+	public Long postAndar(@PathVariable("id") Long id, @RequestBody Andar andar ){
+		Long retorno=null;
 		if(andar.getQuantidadeAndar()!=0) {
 			Edificio edf= edfRepo.getOne(id);
 			andar.setEdificio(edf);
-			return andarRepo.save(andar);
+			return andar.getId();
 		}
 		else {
 			for(int i=1;i<=andar.getQuantidadeAndar();i++) {
 				Edificio edf= edfRepo.getOne(id);
 				andar.setNumero(i);
 				andar.setEdificio(edf);
-				retorno =andarRepo.save(andar);
+				retorno =andar.getId();
 			}
 		
 		return retorno;

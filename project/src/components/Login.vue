@@ -114,7 +114,8 @@ export default {
           var dados_pessoa
           dados_pessoa = response.body[0]
           //Emite evento para os outros componente utilizarem
-          EventBus.$emit('emitDadosPessoa',dados_pessoa)   
+          EventBus.$emit('emitDadosPessoa',dados_pessoa) 
+          EventBus.$emit('emitIdPessoa',idPessoa)   
         }, response => {  
           this.msg = "Erro ao carregar dados."
           this.isDismissed = true

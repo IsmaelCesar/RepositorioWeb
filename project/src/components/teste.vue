@@ -1,10 +1,24 @@
 <template>
   <div class="teste">
 <template>
-  <b-table striped hover :items="obras"></b-table>
+  <b-table striped hover :items="obras">
+  </b-table>
 </template>
-<h1>{{mensagem}}</h1>
+ 
 
+<div class="container">
+  <b-form-group id="exampleInputGroup1"
+                    label="Obra:"
+                    label-for="exampleInput1">
+        <b-form-select id="exampleInput1"
+                    :options= "options"
+                      required
+                      v-model="selected">
+        </b-form-select>
+      </b-form-group>
+      
+    </div>
+  <h1>{{selected}}</h1>
    </div>
 </template>
 
@@ -18,54 +32,30 @@ export default {
     this.mensagem=" servdor okay"
     }, response => {
       // error callback
-      this.mensagem="erro no servdor"
+      alert("erro no servdor")
     })
   },
   data () {
 
     return {
+     selected : 'A',
+    options: [
+      { text: 'Um', value: 'A' },
+      { text: 'Dois', value: 'B' },
+      { text: 'Três', value: 'C' }
+    ],
+    form:{
+   
+    },
+       
+   
     mensagem:"",
       idEdificio: "",
       form: {
-        edficios:[],
-        name: '',
-        crea:'',
-        fundacao:'',
-        obra: null,
-        status: null,
-        statusFund: null,
-        empresa:'',
-        alvenaria:'',
-        vigas:'',
-        pilares:'',
-        esquadria:'',
-        pintura:'',
-        piso:'',
-        TubEletrica:'',
-        PontEletrica:'',
-        TubHidra:'',
-        PontHidra:'',
-        checked: [],
-        user:'Engenheiro',
+      
       },
         obras: [],
-      show: true,
-      selected: '',
-      options: [
-        { text: 'Nao', value: 'Nao' },
-        { text: 'Sim', value: 'Sim' }
-      ],
-      Status: [
-        { text: 'Select One', value: null },
-        'ativo', 'desativada'
-      ],
-       StatusFund: [
-        { text: 'Select One', value: null },
-        'Irá iniciar','Em andamento', 'Concluida'
-      ],
-    }
-    
-
+}
   },
   methods:{
      onSubmit() {
@@ -140,6 +130,9 @@ export default {
     }, response => {
       // error callback
     })
+},
+Value(value){ 
+  alert(value);
 }
   }
 }

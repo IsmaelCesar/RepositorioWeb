@@ -21,7 +21,6 @@
 <div class="py-5">
 <div class="container">
       <div class="row">
-  <!--div class="col-md-1"> </div-->
         <div class="col-md-12">
 <div class="card text-white p-5 bg-primary">
   <div class="card-body" >
@@ -79,7 +78,8 @@
         <b-form-select id="exampleInput5"
                       :options="cargos"
                         required
-                      v-model="form.cargo">
+                      v-model="cargo" >
+                      
         </b-form-select>
       </b-form-group>
 
@@ -134,16 +134,17 @@
 <script>
 export default {
   name: 'cadastro',
+
   data () {
 
     return {
-      mensagem: "",
+      mensagem: '',
+       cargo: null,
       form: {
         email: '',
         name: '',
         telefone:'',
         endereco:'',
-        cargo: null,
         crea:'',
         senha:'',
         confsenha:'',
@@ -152,16 +153,15 @@ export default {
       show:true,
       res:true,
         cargos: [
-        { text: 'Select One', value: null },
-        { text: 'Engenheiro', value: true },
-        { text: 'Tecnico', value: false },
-    
+        { text: 'Engenheiro', value: 'true' },
+        { text: 'Tecnico', value: 'false' }
       ]
     }
   },
   methods:{
 
-   onSubmit() {
+
+   onSubmit(evt) {
   
       
     this.$http.post('http://localhost:5000/user',{
@@ -172,18 +172,35 @@ export default {
       telefone: this.form.telefone,
       numCrea: this.form.crea,
       confSenha: this.form.confsenha,
-      engenheiro: this.form.cargo
+      engenheiro: this.cargo
       
       }).then(response => {
                  
-       this.mensagem ="Cadastrado com Sucesso"
+       alert("Cadastrado com Sucesso")
              
       // post.save();
     }, response => {
       // error callback
-      this.mensagem="errooo";
+      alert("Erro ao Cadastrar Usuario ");
     }) 
-  } 
+   evt.preventDefault();
+      alert(JSON.stringify(this.form));
+  },
+
+  onReset(evt){
+     evt.preventDefault();
+         this.form.name= ' ',
+     this.form.email='' ,
+    this.form.senha = '',
+    this.form.endereco ='',
+     this.form.telefone='',
+     this.form.crea='',
+     this.form.confsenha='',
+     this.form.cargo='';
+     
+  this.$nextTick(() => { this.show = true });
+
+  }
 
   } 
 
